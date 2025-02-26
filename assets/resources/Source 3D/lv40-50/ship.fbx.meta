@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "39760b20-2a20-440e-a65a-c5f5d83c8429",
+  "files": [],
+  "subMetas": {
+    "b0ceb": {
+      "importer": "gltf-mesh",
+      "uuid": "39760b20-2a20-440e-a65a-c5f5d83c8429@b0ceb",
+      "displayName": "",
+      "id": "b0ceb",
+      "name": "ship.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f1371": {
+      "importer": "texture",
+      "uuid": "39760b20-2a20-440e-a65a-c5f5d83c8429@f1371",
+      "displayName": "",
+      "id": "f1371",
+      "name": "Map #170.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/ship_blue.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1b7b0": {
+      "importer": "gltf-material",
+      "uuid": "39760b20-2a20-440e-a65a-c5f5d83c8429@1b7b0",
+      "displayName": "",
+      "id": "1b7b0",
+      "name": "Material #153.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "876af": {
+      "importer": "gltf-scene",
+      "uuid": "39760b20-2a20-440e-a65a-c5f5d83c8429@876af",
+      "displayName": "",
+      "id": "876af",
+      "name": "ship.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #170",
+        "uri": "db://assets/resources/Source 3D/lv40-50/ship_blue.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "39760b20-2a20-440e-a65a-c5f5d83c8429@876af",
+    "assetFinder": {
+      "meshes": [
+        "39760b20-2a20-440e-a65a-c5f5d83c8429@b0ceb"
+      ],
+      "skeletons": [],
+      "textures": [
+        "39760b20-2a20-440e-a65a-c5f5d83c8429@f1371"
+      ],
+      "materials": [
+        "39760b20-2a20-440e-a65a-c5f5d83c8429@1b7b0"
+      ],
+      "scenes": [
+        "39760b20-2a20-440e-a65a-c5f5d83c8429@876af"
+      ]
+    }
+  }
+}

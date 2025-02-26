@@ -1,0 +1,127 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f5670456-057f-45e5-aa4f-25ba5376228d",
+  "files": [],
+  "subMetas": {
+    "98326": {
+      "importer": "gltf-material",
+      "uuid": "f5670456-057f-45e5-aa4f-25ba5376228d@98326",
+      "displayName": "",
+      "id": "98326",
+      "name": "Material #136.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5558f": {
+      "importer": "gltf-mesh",
+      "uuid": "f5670456-057f-45e5-aa4f-25ba5376228d@5558f",
+      "displayName": "",
+      "id": "5558f",
+      "name": "maracas.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "59c1f": {
+      "importer": "gltf-embeded-image",
+      "uuid": "f5670456-057f-45e5-aa4f-25ba5376228d@59c1f",
+      "displayName": "",
+      "id": "59c1f",
+      "name": "Map #153.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "81c8d": {
+      "importer": "texture",
+      "uuid": "f5670456-057f-45e5-aa4f-25ba5376228d@81c8d",
+      "displayName": "",
+      "id": "81c8d",
+      "name": "Map #153.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "f5670456-057f-45e5-aa4f-25ba5376228d@59c1f"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "35b41": {
+      "importer": "gltf-scene",
+      "uuid": "f5670456-057f-45e5-aa4f-25ba5376228d@35b41",
+      "displayName": "",
+      "id": "35b41",
+      "name": "maracas.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #153",
+        "uri": "f5670456-057f-45e5-aa4f-25ba5376228d@59c1f"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "f5670456-057f-45e5-aa4f-25ba5376228d@35b41",
+    "assetFinder": {
+      "meshes": [
+        "f5670456-057f-45e5-aa4f-25ba5376228d@5558f"
+      ],
+      "skeletons": [],
+      "textures": [
+        "f5670456-057f-45e5-aa4f-25ba5376228d@81c8d"
+      ],
+      "materials": [
+        "f5670456-057f-45e5-aa4f-25ba5376228d@98326"
+      ],
+      "scenes": [
+        "f5670456-057f-45e5-aa4f-25ba5376228d@35b41"
+      ]
+    }
+  }
+}

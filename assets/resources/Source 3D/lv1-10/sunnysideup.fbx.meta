@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "da598974-90f8-4655-b640-e01639033e06",
+  "files": [],
+  "subMetas": {
+    "01503": {
+      "importer": "gltf-mesh",
+      "uuid": "da598974-90f8-4655-b640-e01639033e06@01503",
+      "displayName": "",
+      "id": "01503",
+      "name": "sunnysideup.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "64b62": {
+      "importer": "gltf-material",
+      "uuid": "da598974-90f8-4655-b640-e01639033e06@64b62",
+      "displayName": "",
+      "id": "64b62",
+      "name": "sunnysideup.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7d030": {
+      "importer": "gltf-scene",
+      "uuid": "da598974-90f8-4655-b640-e01639033e06@7d030",
+      "displayName": "",
+      "id": "7d030",
+      "name": "sunnysideup.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "da598974-90f8-4655-b640-e01639033e06@7d030",
+    "assetFinder": {
+      "meshes": [
+        "da598974-90f8-4655-b640-e01639033e06@01503"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "da598974-90f8-4655-b640-e01639033e06@64b62"
+      ],
+      "scenes": [
+        "da598974-90f8-4655-b640-e01639033e06@7d030"
+      ]
+    }
+  }
+}

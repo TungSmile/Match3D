@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "090abd9a-1658-4575-bfa3-d30b9fda03ea",
+  "files": [],
+  "subMetas": {
+    "5e8e2": {
+      "importer": "gltf-mesh",
+      "uuid": "090abd9a-1658-4575-bfa3-d30b9fda03ea@5e8e2",
+      "displayName": "",
+      "id": "5e8e2",
+      "name": "fork.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1a5b9": {
+      "importer": "texture",
+      "uuid": "090abd9a-1658-4575-bfa3-d30b9fda03ea@1a5b9",
+      "displayName": "",
+      "id": "1a5b9",
+      "name": "Map #125.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/fork_red.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "de754": {
+      "importer": "gltf-material",
+      "uuid": "090abd9a-1658-4575-bfa3-d30b9fda03ea@de754",
+      "displayName": "",
+      "id": "de754",
+      "name": "Material #109.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a0d35": {
+      "importer": "gltf-scene",
+      "uuid": "090abd9a-1658-4575-bfa3-d30b9fda03ea@a0d35",
+      "displayName": "",
+      "id": "a0d35",
+      "name": "fork.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #125",
+        "uri": "db://assets/resources/Source 3D/lv40-50/fork_red.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "090abd9a-1658-4575-bfa3-d30b9fda03ea@a0d35",
+    "assetFinder": {
+      "meshes": [
+        "090abd9a-1658-4575-bfa3-d30b9fda03ea@5e8e2"
+      ],
+      "skeletons": [],
+      "textures": [
+        "090abd9a-1658-4575-bfa3-d30b9fda03ea@1a5b9"
+      ],
+      "materials": [
+        "090abd9a-1658-4575-bfa3-d30b9fda03ea@de754"
+      ],
+      "scenes": [
+        "090abd9a-1658-4575-bfa3-d30b9fda03ea@a0d35"
+      ]
+    }
+  }
+}

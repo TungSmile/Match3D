@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "19adfc76-1ec5-4b92-a2c0-408139f5015e",
+  "files": [],
+  "subMetas": {
+    "1e5a2": {
+      "importer": "gltf-mesh",
+      "uuid": "19adfc76-1ec5-4b92-a2c0-408139f5015e@1e5a2",
+      "displayName": "",
+      "id": "1e5a2",
+      "name": "dartarrow.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "59c02": {
+      "importer": "texture",
+      "uuid": "19adfc76-1ec5-4b92-a2c0-408139f5015e@59c02",
+      "displayName": "",
+      "id": "59c02",
+      "name": "Map #187.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/dartarrow_red.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e1f08": {
+      "importer": "gltf-material",
+      "uuid": "19adfc76-1ec5-4b92-a2c0-408139f5015e@e1f08",
+      "displayName": "",
+      "id": "e1f08",
+      "name": "Material #170.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b4ef1": {
+      "importer": "gltf-scene",
+      "uuid": "19adfc76-1ec5-4b92-a2c0-408139f5015e@b4ef1",
+      "displayName": "",
+      "id": "b4ef1",
+      "name": "dartarrow.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #187",
+        "uri": "db://assets/resources/Source 3D/lv40-50/dartarrow_red.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "19adfc76-1ec5-4b92-a2c0-408139f5015e@b4ef1",
+    "assetFinder": {
+      "meshes": [
+        "19adfc76-1ec5-4b92-a2c0-408139f5015e@1e5a2"
+      ],
+      "skeletons": [],
+      "textures": [
+        "19adfc76-1ec5-4b92-a2c0-408139f5015e@59c02"
+      ],
+      "materials": [
+        "19adfc76-1ec5-4b92-a2c0-408139f5015e@e1f08"
+      ],
+      "scenes": [
+        "19adfc76-1ec5-4b92-a2c0-408139f5015e@b4ef1"
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9",
+  "files": [],
+  "subMetas": {
+    "35635": {
+      "importer": "texture",
+      "uuid": "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@35635",
+      "displayName": "",
+      "id": "35635",
+      "name": "Map #143.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/auto_taxi.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2e2a7": {
+      "importer": "gltf-mesh",
+      "uuid": "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@2e2a7",
+      "displayName": "",
+      "id": "2e2a7",
+      "name": "auto.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9d1f3": {
+      "importer": "gltf-material",
+      "uuid": "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@9d1f3",
+      "displayName": "",
+      "id": "9d1f3",
+      "name": "Material #127.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "051d1": {
+      "importer": "gltf-scene",
+      "uuid": "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@051d1",
+      "displayName": "",
+      "id": "051d1",
+      "name": "auto.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #143",
+        "uri": "db://assets/resources/Source 3D/lv40-50/auto_taxi.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@051d1",
+    "assetFinder": {
+      "meshes": [
+        "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@2e2a7"
+      ],
+      "skeletons": [],
+      "textures": [
+        "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@35635"
+      ],
+      "materials": [
+        "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@9d1f3"
+      ],
+      "scenes": [
+        "a2bce0fd-0d7d-4c75-94c2-d3b3cc851ff9@051d1"
+      ]
+    }
+  }
+}

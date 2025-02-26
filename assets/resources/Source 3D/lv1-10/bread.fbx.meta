@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "08025a0a-3c35-4e0a-a5be-4818caf8d80f",
+  "files": [],
+  "subMetas": {
+    "2c318": {
+      "importer": "gltf-mesh",
+      "uuid": "08025a0a-3c35-4e0a-a5be-4818caf8d80f@2c318",
+      "displayName": "",
+      "id": "2c318",
+      "name": "bread.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "90a75": {
+      "importer": "gltf-material",
+      "uuid": "08025a0a-3c35-4e0a-a5be-4818caf8d80f@90a75",
+      "displayName": "",
+      "id": "90a75",
+      "name": "Material #218.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9fb13": {
+      "importer": "gltf-scene",
+      "uuid": "08025a0a-3c35-4e0a-a5be-4818caf8d80f@9fb13",
+      "displayName": "",
+      "id": "9fb13",
+      "name": "bread.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "08025a0a-3c35-4e0a-a5be-4818caf8d80f@9fb13",
+    "assetFinder": {
+      "meshes": [
+        "08025a0a-3c35-4e0a-a5be-4818caf8d80f@2c318"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "08025a0a-3c35-4e0a-a5be-4818caf8d80f@90a75"
+      ],
+      "scenes": [
+        "08025a0a-3c35-4e0a-a5be-4818caf8d80f@9fb13"
+      ]
+    }
+  }
+}

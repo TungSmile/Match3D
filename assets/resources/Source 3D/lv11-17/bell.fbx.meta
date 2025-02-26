@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "8d7f3343-26be-41f1-8b99-cae4a60b5510",
+  "files": [],
+  "subMetas": {
+    "84ffd": {
+      "importer": "gltf-mesh",
+      "uuid": "8d7f3343-26be-41f1-8b99-cae4a60b5510@84ffd",
+      "displayName": "",
+      "id": "84ffd",
+      "name": "bell.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c1ea2": {
+      "importer": "gltf-material",
+      "uuid": "8d7f3343-26be-41f1-8b99-cae4a60b5510@c1ea2",
+      "displayName": "",
+      "id": "c1ea2",
+      "name": "bell.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c971b": {
+      "importer": "gltf-scene",
+      "uuid": "8d7f3343-26be-41f1-8b99-cae4a60b5510@c971b",
+      "displayName": "",
+      "id": "c971b",
+      "name": "bell.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "8d7f3343-26be-41f1-8b99-cae4a60b5510@c971b",
+    "assetFinder": {
+      "meshes": [
+        "8d7f3343-26be-41f1-8b99-cae4a60b5510@84ffd"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "8d7f3343-26be-41f1-8b99-cae4a60b5510@c1ea2"
+      ],
+      "scenes": [
+        "8d7f3343-26be-41f1-8b99-cae4a60b5510@c971b"
+      ]
+    }
+  }
+}

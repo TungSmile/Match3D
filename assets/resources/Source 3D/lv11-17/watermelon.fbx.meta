@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "300dc938-74e4-4ce9-8ede-433036bdbfed",
+  "files": [],
+  "subMetas": {
+    "d9f64": {
+      "importer": "gltf-mesh",
+      "uuid": "300dc938-74e4-4ce9-8ede-433036bdbfed@d9f64",
+      "displayName": "",
+      "id": "d9f64",
+      "name": "watermelon.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "910f6": {
+      "importer": "gltf-material",
+      "uuid": "300dc938-74e4-4ce9-8ede-433036bdbfed@910f6",
+      "displayName": "",
+      "id": "910f6",
+      "name": "watermelon.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c1587": {
+      "importer": "gltf-scene",
+      "uuid": "300dc938-74e4-4ce9-8ede-433036bdbfed@c1587",
+      "displayName": "",
+      "id": "c1587",
+      "name": "watermelon.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "300dc938-74e4-4ce9-8ede-433036bdbfed@c1587",
+    "assetFinder": {
+      "meshes": [
+        "300dc938-74e4-4ce9-8ede-433036bdbfed@d9f64"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "300dc938-74e4-4ce9-8ede-433036bdbfed@910f6"
+      ],
+      "scenes": [
+        "300dc938-74e4-4ce9-8ede-433036bdbfed@c1587"
+      ]
+    }
+  }
+}

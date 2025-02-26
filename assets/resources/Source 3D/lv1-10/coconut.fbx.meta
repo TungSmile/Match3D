@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "8dd6765c-f746-4607-9280-3b1f55095cf1",
+  "files": [],
+  "subMetas": {
+    "92b6b": {
+      "importer": "gltf-mesh",
+      "uuid": "8dd6765c-f746-4607-9280-3b1f55095cf1@92b6b",
+      "displayName": "",
+      "id": "92b6b",
+      "name": "coconut.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "46f1b": {
+      "importer": "gltf-material",
+      "uuid": "8dd6765c-f746-4607-9280-3b1f55095cf1@46f1b",
+      "displayName": "",
+      "id": "46f1b",
+      "name": "coconut.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "25e0a": {
+      "importer": "gltf-scene",
+      "uuid": "8dd6765c-f746-4607-9280-3b1f55095cf1@25e0a",
+      "displayName": "",
+      "id": "25e0a",
+      "name": "coconut.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "8dd6765c-f746-4607-9280-3b1f55095cf1@25e0a",
+    "assetFinder": {
+      "meshes": [
+        "8dd6765c-f746-4607-9280-3b1f55095cf1@92b6b"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "8dd6765c-f746-4607-9280-3b1f55095cf1@46f1b"
+      ],
+      "scenes": [
+        "8dd6765c-f746-4607-9280-3b1f55095cf1@25e0a"
+      ]
+    }
+  }
+}

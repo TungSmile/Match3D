@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "82ba226f-867f-4072-83b6-3f1a0aee1315",
+  "files": [],
+  "subMetas": {
+    "727a5": {
+      "importer": "gltf-mesh",
+      "uuid": "82ba226f-867f-4072-83b6-3f1a0aee1315@727a5",
+      "displayName": "",
+      "id": "727a5",
+      "name": "book.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5d3ba": {
+      "importer": "gltf-material",
+      "uuid": "82ba226f-867f-4072-83b6-3f1a0aee1315@5d3ba",
+      "displayName": "",
+      "id": "5d3ba",
+      "name": "book.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9802f": {
+      "importer": "gltf-scene",
+      "uuid": "82ba226f-867f-4072-83b6-3f1a0aee1315@9802f",
+      "displayName": "",
+      "id": "9802f",
+      "name": "book.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "82ba226f-867f-4072-83b6-3f1a0aee1315@9802f",
+    "assetFinder": {
+      "meshes": [
+        "82ba226f-867f-4072-83b6-3f1a0aee1315@727a5"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "82ba226f-867f-4072-83b6-3f1a0aee1315@5d3ba"
+      ],
+      "scenes": [
+        "82ba226f-867f-4072-83b6-3f1a0aee1315@9802f"
+      ]
+    }
+  }
+}

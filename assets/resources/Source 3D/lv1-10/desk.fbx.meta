@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "77372637-4f5a-492b-aaa7-4f38c6934ba8",
+  "files": [],
+  "subMetas": {
+    "5b8d0": {
+      "importer": "gltf-mesh",
+      "uuid": "77372637-4f5a-492b-aaa7-4f38c6934ba8@5b8d0",
+      "displayName": "",
+      "id": "5b8d0",
+      "name": "desk.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "68a34": {
+      "importer": "gltf-material",
+      "uuid": "77372637-4f5a-492b-aaa7-4f38c6934ba8@68a34",
+      "displayName": "",
+      "id": "68a34",
+      "name": "desk.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cba39": {
+      "importer": "gltf-scene",
+      "uuid": "77372637-4f5a-492b-aaa7-4f38c6934ba8@cba39",
+      "displayName": "",
+      "id": "cba39",
+      "name": "desk.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "77372637-4f5a-492b-aaa7-4f38c6934ba8@cba39",
+    "assetFinder": {
+      "meshes": [
+        "77372637-4f5a-492b-aaa7-4f38c6934ba8@5b8d0"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "77372637-4f5a-492b-aaa7-4f38c6934ba8@68a34"
+      ],
+      "scenes": [
+        "77372637-4f5a-492b-aaa7-4f38c6934ba8@cba39"
+      ]
+    }
+  }
+}

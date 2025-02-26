@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "8646b16a-b383-4e0d-aef3-41b0b1a05fc0",
+  "files": [],
+  "subMetas": {
+    "e94f9": {
+      "importer": "gltf-mesh",
+      "uuid": "8646b16a-b383-4e0d-aef3-41b0b1a05fc0@e94f9",
+      "displayName": "",
+      "id": "e94f9",
+      "name": "duck.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d4a6b": {
+      "importer": "gltf-material",
+      "uuid": "8646b16a-b383-4e0d-aef3-41b0b1a05fc0@d4a6b",
+      "displayName": "",
+      "id": "d4a6b",
+      "name": "duck.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "70f33": {
+      "importer": "gltf-scene",
+      "uuid": "8646b16a-b383-4e0d-aef3-41b0b1a05fc0@70f33",
+      "displayName": "",
+      "id": "70f33",
+      "name": "duck.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "8646b16a-b383-4e0d-aef3-41b0b1a05fc0@70f33",
+    "assetFinder": {
+      "meshes": [
+        "8646b16a-b383-4e0d-aef3-41b0b1a05fc0@e94f9"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "8646b16a-b383-4e0d-aef3-41b0b1a05fc0@d4a6b"
+      ],
+      "scenes": [
+        "8646b16a-b383-4e0d-aef3-41b0b1a05fc0@70f33"
+      ]
+    }
+  }
+}

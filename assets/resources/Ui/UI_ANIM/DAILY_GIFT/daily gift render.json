@@ -1,0 +1,128 @@
+{ "skeleton": { "images": "D:/NHƯ/FACTORY/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "back", "bone": "root", "attachment": "back" },
+	{ "name": "11", "bone": "root", "attachment": "11" },
+	{ "name": "22", "bone": "root", "attachment": "22" },
+	{ "name": "33", "bone": "root", "attachment": "33" },
+	{ "name": "blink_hom_do", "bone": "root", "attachment": "blink_hom_do" },
+	{ "name": "hom_do", "bone": "root", "attachment": "hom_do" },
+	{ "name": "1", "bone": "root", "attachment": "1" },
+	{ "name": "2", "bone": "root", "attachment": "2" },
+	{ "name": "3", "bone": "root", "attachment": "3" },
+	{ "name": "tia_sang", "bone": "root", "attachment": "tia_sang" },
+	{ "name": "tia_sang2", "bone": "root", "attachment": "tia_sang2" },
+	{ "name": "tich", "bone": "root", "attachment": "tich" },
+	{ "name": "tien", "bone": "root", "attachment": "tien" },
+	{ "name": "hop1", "bone": "root", "attachment": "hop1" },
+	{ "name": "hop2", "bone": "root", "attachment": "hop2" },
+	{ "name": "hop3", "bone": "root", "attachment": "hop3" },
+	{ "name": "close", "bone": "root", "attachment": "close" },
+	{ "name": "action", "bone": "root", "attachment": "action" },
+	{ "name": "blink", "bone": "root", "attachment": "blink" },
+	{ "name": "blink2", "bone": "root", "attachment": "blink2" },
+	{ "name": "item_cho", "bone": "root", "attachment": "item_cho" },
+	{ "name": "itam_cham", "bone": "root", "attachment": "itam_cham" },
+	{ "name": "item_quat", "bone": "root", "attachment": "item_quat" },
+	{ "name": "item_choi", "bone": "root", "attachment": "item_choi" },
+	{ "name": "hop_open", "bone": "root", "attachment": "hop_open" },
+	{ "name": "blink_open", "bone": "root", "attachment": "blink_open" },
+	{ "name": "blink_open2", "bone": "root", "attachment": "blink_open2" },
+	{ "name": "hop_open2", "bone": "root", "attachment": "hop_open2" },
+	{ "name": "hop_open3", "bone": "root", "attachment": "hop_open3" }
+],
+"skins": {
+	"default": {
+		"back": {
+			"back": { "x": 544, "y": -970, "width": 962, "height": 1316 }
+		},
+		"11": {
+			"11": { "x": 548.5, "y": -1357, "width": 847, "height": 360 }
+		},
+		"22": {
+			"22": { "x": 549, "y": -1357, "width": 846, "height": 360 }
+		},
+		"33": {
+			"33": { "x": 549, "y": -1358, "width": 848, "height": 362 }
+		},
+		"blink_hom_do": {
+			"blink_hom_do": { "x": 797, "y": -1319.5, "width": 520, "height": 381 }
+		},
+		"hom_do": {
+			"hom_do": { "x": 786, "y": -1307, "width": 274, "height": 208 }
+		},
+		"1": {
+			"1": { "x": 838, "y": -613.5, "width": 264, "height": 339 }
+		},
+		"2": {
+			"2": { "x": 539, "y": -610.5, "width": 264, "height": 339 }
+		},
+		"3": {
+			"3": { "x": 253.5, "y": -613.5, "width": 267, "height": 339 }
+		},
+		"tia_sang": {
+			"tia_sang": { "x": 255.5, "y": -601, "width": 299, "height": 300 }
+		},
+		"tia_sang2": {
+			"tia_sang2": { "x": 248.5, "y": -605, "width": 239, "height": 170 }
+		},
+		"tich": {
+			"tich": { "x": 312, "y": -638.5, "width": 86, "height": 67 }
+		},
+		"tien": {
+			"tien": { "x": 239.5, "y": -591.5, "width": 143, "height": 139 }
+		},
+		"hop1": {
+			"hop1": { "x": 546.5, "y": -637.5, "width": 141, "height": 79 }
+		},
+		"hop2": {
+			"hop2": { "x": 547.5, "y": -593, "width": 157, "height": 106 }
+		},
+		"hop3": {
+			"hop3": { "x": 547.5, "y": -541, "width": 137, "height": 66 }
+		},
+		"close": {
+			"close": { "x": 997, "y": -326, "width": 104, "height": 104 }
+		},
+		"action": {
+			"action": { "x": 389.5, "y": -1365, "width": 121, "height": 132 }
+		},
+		"blink": {
+			"blink": { "x": 535, "y": -910, "width": 432, "height": 434 }
+		},
+		"blink2": {
+			"blink2": { "x": 524.5, "y": -916, "width": 345, "height": 246 }
+		},
+		"item_cho": {
+			"item_cho": { "x": 910, "y": -681, "width": 228, "height": 214 }
+		},
+		"itam_cham": {
+			"itam_cham": { "x": 842, "y": -883, "width": 220, "height": 228 }
+		},
+		"item_quat": {
+			"item_quat": { "x": 781.5, "y": -910, "width": 193, "height": 244 }
+		},
+		"item_choi": {
+			"item_choi": { "x": 792.5, "y": -869, "width": 191, "height": 244 }
+		},
+		"hop_open": {
+			"hop_open": { "x": 571.5, "y": -832, "width": 635, "height": 600 }
+		},
+		"blink_open": {
+			"blink_open": { "x": 510.5, "y": -815, "width": 809, "height": 318 }
+		},
+		"blink_open2": {
+			"blink_open2": { "x": 534, "y": -881.5, "width": 670, "height": 447 }
+		},
+		"hop_open2": {
+			"hop_open2": { "x": 528, "y": -1019.5, "width": 558, "height": 223 }
+		},
+		"hop_open3": {
+			"hop_open3": { "x": 519, "y": -839, "width": 584, "height": 318 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

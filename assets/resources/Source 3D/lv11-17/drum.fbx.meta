@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c5e8bdfc-3e49-4e7f-9005-b59e66fea4b5",
+  "files": [],
+  "subMetas": {
+    "21910": {
+      "importer": "gltf-scene",
+      "uuid": "c5e8bdfc-3e49-4e7f-9005-b59e66fea4b5@21910",
+      "displayName": "",
+      "id": "21910",
+      "name": "drum.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "91ba9": {
+      "importer": "gltf-mesh",
+      "uuid": "c5e8bdfc-3e49-4e7f-9005-b59e66fea4b5@91ba9",
+      "displayName": "",
+      "id": "91ba9",
+      "name": "drum.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "03718": {
+      "importer": "gltf-material",
+      "uuid": "c5e8bdfc-3e49-4e7f-9005-b59e66fea4b5@03718",
+      "displayName": "",
+      "id": "03718",
+      "name": "drum.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "c5e8bdfc-3e49-4e7f-9005-b59e66fea4b5@21910",
+    "assetFinder": {
+      "meshes": [
+        "c5e8bdfc-3e49-4e7f-9005-b59e66fea4b5@91ba9"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "c5e8bdfc-3e49-4e7f-9005-b59e66fea4b5@03718"
+      ],
+      "scenes": [
+        "c5e8bdfc-3e49-4e7f-9005-b59e66fea4b5@21910"
+      ]
+    }
+  }
+}

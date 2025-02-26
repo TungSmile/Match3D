@@ -1,0 +1,150 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e0740255-2612-43f3-8414-c69bccab643f",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "99623": {
+      "importer": "gltf-material",
+      "uuid": "e0740255-2612-43f3-8414-c69bccab643f@99623",
+      "displayName": "",
+      "id": "99623",
+      "name": "Material #176.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b58be": {
+      "importer": "gltf-mesh",
+      "uuid": "e0740255-2612-43f3-8414-c69bccab643f@b58be",
+      "displayName": "",
+      "id": "b58be",
+      "name": "cutebread.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "73b7f": {
+      "importer": "gltf-animation",
+      "uuid": "e0740255-2612-43f3-8414-c69bccab643f@73b7f",
+      "displayName": "",
+      "id": "73b7f",
+      "name": "Take 001.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.3333332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "9a84e": {
+      "importer": "texture",
+      "uuid": "e0740255-2612-43f3-8414-c69bccab643f@9a84e",
+      "displayName": "",
+      "id": "9a84e",
+      "name": "Map #192.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/cutebread_brown.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a3ca8": {
+      "importer": "gltf-scene",
+      "uuid": "e0740255-2612-43f3-8414-c69bccab643f@a3ca8",
+      "displayName": "",
+      "id": "a3ca8",
+      "name": "cutebread.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #192",
+        "uri": "db://assets/resources/Source 3D/lv40-50/cutebread_brown.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 3.3333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Take 001",
+            "from": 0,
+            "to": 3.3333332538604736,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "e0740255-2612-43f3-8414-c69bccab643f@a3ca8",
+    "assetFinder": {
+      "meshes": [
+        "e0740255-2612-43f3-8414-c69bccab643f@b58be"
+      ],
+      "skeletons": [],
+      "textures": [
+        "e0740255-2612-43f3-8414-c69bccab643f@9a84e"
+      ],
+      "materials": [
+        "e0740255-2612-43f3-8414-c69bccab643f@99623"
+      ],
+      "scenes": [
+        "e0740255-2612-43f3-8414-c69bccab643f@a3ca8"
+      ]
+    }
+  }
+}

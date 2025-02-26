@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "db9883e5-2cbf-4376-8b9a-4945417bd28f",
+  "files": [],
+  "subMetas": {
+    "52cc4": {
+      "importer": "gltf-mesh",
+      "uuid": "db9883e5-2cbf-4376-8b9a-4945417bd28f@52cc4",
+      "displayName": "",
+      "id": "52cc4",
+      "name": "spoon.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2c451": {
+      "importer": "texture",
+      "uuid": "db9883e5-2cbf-4376-8b9a-4945417bd28f@2c451",
+      "displayName": "",
+      "id": "2c451",
+      "name": "Map #127.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/spoon_green.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "784e2": {
+      "importer": "gltf-material",
+      "uuid": "db9883e5-2cbf-4376-8b9a-4945417bd28f@784e2",
+      "displayName": "",
+      "id": "784e2",
+      "name": "Material #111.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f5c7e": {
+      "importer": "gltf-scene",
+      "uuid": "db9883e5-2cbf-4376-8b9a-4945417bd28f@f5c7e",
+      "displayName": "",
+      "id": "f5c7e",
+      "name": "spoon.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #127",
+        "uri": "db://assets/resources/Source 3D/lv40-50/spoon_green.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "db9883e5-2cbf-4376-8b9a-4945417bd28f@f5c7e",
+    "assetFinder": {
+      "meshes": [
+        "db9883e5-2cbf-4376-8b9a-4945417bd28f@52cc4"
+      ],
+      "skeletons": [],
+      "textures": [
+        "db9883e5-2cbf-4376-8b9a-4945417bd28f@2c451"
+      ],
+      "materials": [
+        "db9883e5-2cbf-4376-8b9a-4945417bd28f@784e2"
+      ],
+      "scenes": [
+        "db9883e5-2cbf-4376-8b9a-4945417bd28f@f5c7e"
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c259229f-80c5-43f4-af1b-90108601d2e4",
+  "files": [],
+  "subMetas": {
+    "99960": {
+      "importer": "gltf-mesh",
+      "uuid": "c259229f-80c5-43f4-af1b-90108601d2e4@99960",
+      "displayName": "",
+      "id": "99960",
+      "name": "domino.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e7bb3": {
+      "importer": "texture",
+      "uuid": "c259229f-80c5-43f4-af1b-90108601d2e4@e7bb3",
+      "displayName": "",
+      "id": "e7bb3",
+      "name": "Map #151.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/domino_44.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "036dd": {
+      "importer": "gltf-material",
+      "uuid": "c259229f-80c5-43f4-af1b-90108601d2e4@036dd",
+      "displayName": "",
+      "id": "036dd",
+      "name": "Material #134.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4ab9d": {
+      "importer": "gltf-scene",
+      "uuid": "c259229f-80c5-43f4-af1b-90108601d2e4@4ab9d",
+      "displayName": "",
+      "id": "4ab9d",
+      "name": "domino.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #151",
+        "uri": "db://assets/resources/Source 3D/lv40-50/domino_44.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "c259229f-80c5-43f4-af1b-90108601d2e4@4ab9d",
+    "assetFinder": {
+      "meshes": [
+        "c259229f-80c5-43f4-af1b-90108601d2e4@99960"
+      ],
+      "skeletons": [],
+      "textures": [
+        "c259229f-80c5-43f4-af1b-90108601d2e4@e7bb3"
+      ],
+      "materials": [
+        "c259229f-80c5-43f4-af1b-90108601d2e4@036dd"
+      ],
+      "scenes": [
+        "c259229f-80c5-43f4-af1b-90108601d2e4@4ab9d"
+      ]
+    }
+  }
+}

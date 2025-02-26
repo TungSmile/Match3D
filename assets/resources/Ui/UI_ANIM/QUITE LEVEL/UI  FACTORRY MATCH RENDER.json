@@ -1,0 +1,52 @@
+{ "skeleton": { "images": "D:/NHƯ/FACTORY/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Layer 6", "bone": "root", "attachment": "Layer 6" },
+	{ "name": "back_quit", "bone": "root", "attachment": "back_quit" },
+	{ "name": "back_quit2", "bone": "root", "attachment": "back_quit2" },
+	{ "name": "ui", "bone": "root", "attachment": "ui" },
+	{ "name": "ui2", "bone": "root", "attachment": "ui2" },
+	{ "name": "sao", "bone": "root", "attachment": "sao" },
+	{ "name": "tim", "bone": "root", "attachment": "tim" },
+	{ "name": "bang", "bone": "root", "attachment": "bang" },
+	{ "name": "quit_level", "bone": "root", "attachment": "quit_level" },
+	{ "name": "close", "bone": "root", "attachment": "close" }
+],
+"skins": {
+	"default": {
+		"Layer 6": {
+			"Layer 6": { "x": 540, "y": -960, "width": 1082, "height": 1922 }
+		},
+		"back_quit": {
+			"back_quit": { "x": 541, "y": -984, "width": 954, "height": 1158 }
+		},
+		"back_quit2": {
+			"back_quit2": { "x": 546, "y": -836, "width": 820, "height": 372 }
+		},
+		"ui": {
+			"ui": { "x": 545, "y": -1151, "width": 582, "height": 236 }
+		},
+		"ui2": {
+			"ui2": { "x": 546, "y": -1395, "width": 586, "height": 238 }
+		},
+		"sao": {
+			"sao": { "x": 720, "y": -844, "width": 248, "height": 248 }
+		},
+		"tim": {
+			"tim": { "x": 386, "y": -858, "width": 258, "height": 220 }
+		},
+		"bang": {
+			"bang": { "x": 539.5, "y": -408.5, "width": 783, "height": 263 }
+		},
+		"quit_level": {
+			"quit_level": { "x": 536.5, "y": -407.5, "width": 499, "height": 121 }
+		},
+		"close": {
+			"close": { "x": 940, "y": -286, "width": 104, "height": 104 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

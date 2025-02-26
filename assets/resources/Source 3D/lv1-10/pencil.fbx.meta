@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f6e2a835-20b1-4378-b8a2-f82307c9144b",
+  "files": [],
+  "subMetas": {
+    "0f11c": {
+      "importer": "gltf-mesh",
+      "uuid": "f6e2a835-20b1-4378-b8a2-f82307c9144b@0f11c",
+      "displayName": "",
+      "id": "0f11c",
+      "name": "pencil.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9cc67": {
+      "importer": "gltf-material",
+      "uuid": "f6e2a835-20b1-4378-b8a2-f82307c9144b@9cc67",
+      "displayName": "",
+      "id": "9cc67",
+      "name": "pencil.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "227bd": {
+      "importer": "gltf-scene",
+      "uuid": "f6e2a835-20b1-4378-b8a2-f82307c9144b@227bd",
+      "displayName": "",
+      "id": "227bd",
+      "name": "pencil.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "f6e2a835-20b1-4378-b8a2-f82307c9144b@227bd",
+    "assetFinder": {
+      "meshes": [
+        "f6e2a835-20b1-4378-b8a2-f82307c9144b@0f11c"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "f6e2a835-20b1-4378-b8a2-f82307c9144b@9cc67"
+      ],
+      "scenes": [
+        "f6e2a835-20b1-4378-b8a2-f82307c9144b@227bd"
+      ]
+    }
+  }
+}

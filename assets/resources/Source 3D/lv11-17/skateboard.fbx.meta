@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "832181dd-722c-4c1d-a8eb-82d326a4c43c",
+  "files": [],
+  "subMetas": {
+    "30970": {
+      "importer": "gltf-material",
+      "uuid": "832181dd-722c-4c1d-a8eb-82d326a4c43c@30970",
+      "displayName": "",
+      "id": "30970",
+      "name": "harp.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "57323": {
+      "importer": "gltf-scene",
+      "uuid": "832181dd-722c-4c1d-a8eb-82d326a4c43c@57323",
+      "displayName": "",
+      "id": "57323",
+      "name": "skateboard.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c60af": {
+      "importer": "gltf-mesh",
+      "uuid": "832181dd-722c-4c1d-a8eb-82d326a4c43c@c60af",
+      "displayName": "",
+      "id": "c60af",
+      "name": "skateboard.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "832181dd-722c-4c1d-a8eb-82d326a4c43c@57323",
+    "assetFinder": {
+      "meshes": [
+        "832181dd-722c-4c1d-a8eb-82d326a4c43c@c60af"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "832181dd-722c-4c1d-a8eb-82d326a4c43c@30970"
+      ],
+      "scenes": [
+        "832181dd-722c-4c1d-a8eb-82d326a4c43c@57323"
+      ]
+    }
+  }
+}

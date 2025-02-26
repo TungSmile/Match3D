@@ -1,0 +1,150 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "7debd547-5957-4769-be76-dd1b0346dae8",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "15103": {
+      "importer": "gltf-mesh",
+      "uuid": "7debd547-5957-4769-be76-dd1b0346dae8@15103",
+      "displayName": "",
+      "id": "15103",
+      "name": "poolstick.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "73b7f": {
+      "importer": "gltf-animation",
+      "uuid": "7debd547-5957-4769-be76-dd1b0346dae8@73b7f",
+      "displayName": "",
+      "id": "73b7f",
+      "name": "Take 001.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.3333332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "0d62d": {
+      "importer": "texture",
+      "uuid": "7debd547-5957-4769-be76-dd1b0346dae8@0d62d",
+      "displayName": "",
+      "id": "0d62d",
+      "name": "Map #183.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/poolstick_red.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "dfb38": {
+      "importer": "gltf-material",
+      "uuid": "7debd547-5957-4769-be76-dd1b0346dae8@dfb38",
+      "displayName": "",
+      "id": "dfb38",
+      "name": "Material #166.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bb8dd": {
+      "importer": "gltf-scene",
+      "uuid": "7debd547-5957-4769-be76-dd1b0346dae8@bb8dd",
+      "displayName": "",
+      "id": "bb8dd",
+      "name": "poolstick.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #183",
+        "uri": "db://assets/resources/Source 3D/lv40-50/poolstick_red.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 3.3333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Take 001",
+            "from": 0,
+            "to": 3.3333332538604736,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "7debd547-5957-4769-be76-dd1b0346dae8@bb8dd",
+    "assetFinder": {
+      "meshes": [
+        "7debd547-5957-4769-be76-dd1b0346dae8@15103"
+      ],
+      "skeletons": [],
+      "textures": [
+        "7debd547-5957-4769-be76-dd1b0346dae8@0d62d"
+      ],
+      "materials": [
+        "7debd547-5957-4769-be76-dd1b0346dae8@dfb38"
+      ],
+      "scenes": [
+        "7debd547-5957-4769-be76-dd1b0346dae8@bb8dd"
+      ]
+    }
+  }
+}

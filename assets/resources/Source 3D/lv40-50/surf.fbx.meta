@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "078254fb-6ce3-485d-b340-215e1ac11dcb",
+  "files": [],
+  "subMetas": {
+    "be138": {
+      "importer": "gltf-mesh",
+      "uuid": "078254fb-6ce3-485d-b340-215e1ac11dcb@be138",
+      "displayName": "",
+      "id": "be138",
+      "name": "surf.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "74f24": {
+      "importer": "texture",
+      "uuid": "078254fb-6ce3-485d-b340-215e1ac11dcb@74f24",
+      "displayName": "",
+      "id": "74f24",
+      "name": "Map #117.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/surf_pink.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8d90d": {
+      "importer": "gltf-material",
+      "uuid": "078254fb-6ce3-485d-b340-215e1ac11dcb@8d90d",
+      "displayName": "",
+      "id": "8d90d",
+      "name": "Material #101.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8218a": {
+      "importer": "gltf-scene",
+      "uuid": "078254fb-6ce3-485d-b340-215e1ac11dcb@8218a",
+      "displayName": "",
+      "id": "8218a",
+      "name": "surf.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #117",
+        "uri": "db://assets/resources/Source 3D/lv40-50/surf_pink.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "078254fb-6ce3-485d-b340-215e1ac11dcb@8218a",
+    "assetFinder": {
+      "meshes": [
+        "078254fb-6ce3-485d-b340-215e1ac11dcb@be138"
+      ],
+      "skeletons": [],
+      "textures": [
+        "078254fb-6ce3-485d-b340-215e1ac11dcb@74f24"
+      ],
+      "materials": [
+        "078254fb-6ce3-485d-b340-215e1ac11dcb@8d90d"
+      ],
+      "scenes": [
+        "078254fb-6ce3-485d-b340-215e1ac11dcb@8218a"
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "29baba9d-e189-4be5-a7dc-263bf3f7b287",
+  "files": [],
+  "subMetas": {
+    "dc022": {
+      "importer": "gltf-mesh",
+      "uuid": "29baba9d-e189-4be5-a7dc-263bf3f7b287@dc022",
+      "displayName": "",
+      "id": "dc022",
+      "name": "dumbell.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "af665": {
+      "importer": "gltf-material",
+      "uuid": "29baba9d-e189-4be5-a7dc-263bf3f7b287@af665",
+      "displayName": "",
+      "id": "af665",
+      "name": "Material #287.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "03154": {
+      "importer": "gltf-scene",
+      "uuid": "29baba9d-e189-4be5-a7dc-263bf3f7b287@03154",
+      "displayName": "",
+      "id": "03154",
+      "name": "dumbbell.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "29baba9d-e189-4be5-a7dc-263bf3f7b287@03154",
+    "assetFinder": {
+      "meshes": [
+        "29baba9d-e189-4be5-a7dc-263bf3f7b287@dc022"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "29baba9d-e189-4be5-a7dc-263bf3f7b287@af665"
+      ],
+      "scenes": [
+        "29baba9d-e189-4be5-a7dc-263bf3f7b287@03154"
+      ]
+    }
+  }
+}

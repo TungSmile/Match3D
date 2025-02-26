@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6",
+  "files": [],
+  "subMetas": {
+    "17e9d": {
+      "importer": "gltf-mesh",
+      "uuid": "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@17e9d",
+      "displayName": "",
+      "id": "17e9d",
+      "name": "hotdog.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "002b9": {
+      "importer": "texture",
+      "uuid": "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@002b9",
+      "displayName": "",
+      "id": "002b9",
+      "name": "Map #122.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/hotdog.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2f1c7": {
+      "importer": "gltf-material",
+      "uuid": "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@2f1c7",
+      "displayName": "",
+      "id": "2f1c7",
+      "name": "Material #106.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f467d": {
+      "importer": "gltf-scene",
+      "uuid": "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@f467d",
+      "displayName": "",
+      "id": "f467d",
+      "name": "hotdog.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #122",
+        "uri": "db://assets/resources/Source 3D/lv40-50/hotdog.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@f467d",
+    "assetFinder": {
+      "meshes": [
+        "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@17e9d"
+      ],
+      "skeletons": [],
+      "textures": [
+        "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@002b9"
+      ],
+      "materials": [
+        "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@2f1c7"
+      ],
+      "scenes": [
+        "4d589ae7-8d09-4f5b-b09a-596cb2e0cbc6@f467d"
+      ]
+    }
+  }
+}

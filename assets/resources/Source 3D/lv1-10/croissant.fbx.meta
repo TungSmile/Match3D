@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "fc0735b6-3a26-4ad2-9f0c-76b030dfd3fe",
+  "files": [],
+  "subMetas": {
+    "60f7d": {
+      "importer": "gltf-mesh",
+      "uuid": "fc0735b6-3a26-4ad2-9f0c-76b030dfd3fe@60f7d",
+      "displayName": "",
+      "id": "60f7d",
+      "name": "croissant.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a667b": {
+      "importer": "gltf-material",
+      "uuid": "fc0735b6-3a26-4ad2-9f0c-76b030dfd3fe@a667b",
+      "displayName": "",
+      "id": "a667b",
+      "name": "croissant.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2bcba": {
+      "importer": "gltf-scene",
+      "uuid": "fc0735b6-3a26-4ad2-9f0c-76b030dfd3fe@2bcba",
+      "displayName": "",
+      "id": "2bcba",
+      "name": "croissant.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "fc0735b6-3a26-4ad2-9f0c-76b030dfd3fe@2bcba",
+    "assetFinder": {
+      "meshes": [
+        "fc0735b6-3a26-4ad2-9f0c-76b030dfd3fe@60f7d"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "fc0735b6-3a26-4ad2-9f0c-76b030dfd3fe@a667b"
+      ],
+      "scenes": [
+        "fc0735b6-3a26-4ad2-9f0c-76b030dfd3fe@2bcba"
+      ]
+    }
+  }
+}

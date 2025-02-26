@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "7c4c4ddd-1719-475a-917c-055f14a36fe7",
+  "files": [],
+  "subMetas": {
+    "52463": {
+      "importer": "gltf-scene",
+      "uuid": "7c4c4ddd-1719-475a-917c-055f14a36fe7@52463",
+      "displayName": "",
+      "id": "52463",
+      "name": "carrot.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c5deb": {
+      "importer": "gltf-mesh",
+      "uuid": "7c4c4ddd-1719-475a-917c-055f14a36fe7@c5deb",
+      "displayName": "",
+      "id": "c5deb",
+      "name": "carrot.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fde01": {
+      "importer": "texture",
+      "uuid": "7c4c4ddd-1719-475a-917c-055f14a36fe7@fde01",
+      "displayName": "",
+      "id": "fde01",
+      "name": "Map #140.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/carrot.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a8511": {
+      "importer": "gltf-material",
+      "uuid": "7c4c4ddd-1719-475a-917c-055f14a36fe7@a8511",
+      "displayName": "",
+      "id": "a8511",
+      "name": "Material #124.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #140",
+        "uri": "db://assets/resources/Source 3D/lv40-50/carrot.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "7c4c4ddd-1719-475a-917c-055f14a36fe7@52463",
+    "assetFinder": {
+      "meshes": [
+        "7c4c4ddd-1719-475a-917c-055f14a36fe7@c5deb"
+      ],
+      "skeletons": [],
+      "textures": [
+        "7c4c4ddd-1719-475a-917c-055f14a36fe7@fde01"
+      ],
+      "materials": [
+        "7c4c4ddd-1719-475a-917c-055f14a36fe7@a8511"
+      ],
+      "scenes": [
+        "7c4c4ddd-1719-475a-917c-055f14a36fe7@52463"
+      ]
+    }
+  }
+}

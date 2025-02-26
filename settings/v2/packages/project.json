@@ -1,0 +1,16 @@
+{
+  "general": {
+    "designResolution": {
+      "height": 1920,
+      "width": 1080
+    }
+  },
+  "physics": {
+    "defaultMaterial": {
+      "restitution": 0.5,
+      "rollingFriction": 0.1,
+      "spinningFriction": 0.1,
+      "friction": 0.5
+    }
+  }
+}

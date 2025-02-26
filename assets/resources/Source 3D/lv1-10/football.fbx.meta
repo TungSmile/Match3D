@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "29cf7eb7-9069-4d1b-ac88-b69fe770b734",
+  "files": [],
+  "subMetas": {
+    "25932": {
+      "importer": "gltf-mesh",
+      "uuid": "29cf7eb7-9069-4d1b-ac88-b69fe770b734@25932",
+      "displayName": "",
+      "id": "25932",
+      "name": "football.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "eb85a": {
+      "importer": "gltf-material",
+      "uuid": "29cf7eb7-9069-4d1b-ac88-b69fe770b734@eb85a",
+      "displayName": "",
+      "id": "eb85a",
+      "name": "football.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "564dd": {
+      "importer": "gltf-scene",
+      "uuid": "29cf7eb7-9069-4d1b-ac88-b69fe770b734@564dd",
+      "displayName": "",
+      "id": "564dd",
+      "name": "football.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "29cf7eb7-9069-4d1b-ac88-b69fe770b734@564dd",
+    "assetFinder": {
+      "meshes": [
+        "29cf7eb7-9069-4d1b-ac88-b69fe770b734@25932"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "29cf7eb7-9069-4d1b-ac88-b69fe770b734@eb85a"
+      ],
+      "scenes": [
+        "29cf7eb7-9069-4d1b-ac88-b69fe770b734@564dd"
+      ]
+    }
+  }
+}

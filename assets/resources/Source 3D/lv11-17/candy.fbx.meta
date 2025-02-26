@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "33fbec77-40bc-497a-b338-60b4781ca4a2",
+  "files": [],
+  "subMetas": {
+    "a3320": {
+      "importer": "gltf-mesh",
+      "uuid": "33fbec77-40bc-497a-b338-60b4781ca4a2@a3320",
+      "displayName": "",
+      "id": "a3320",
+      "name": "candy.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d1192": {
+      "importer": "gltf-material",
+      "uuid": "33fbec77-40bc-497a-b338-60b4781ca4a2@d1192",
+      "displayName": "",
+      "id": "d1192",
+      "name": "candy.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2742a": {
+      "importer": "gltf-scene",
+      "uuid": "33fbec77-40bc-497a-b338-60b4781ca4a2@2742a",
+      "displayName": "",
+      "id": "2742a",
+      "name": "candy.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "33fbec77-40bc-497a-b338-60b4781ca4a2@2742a",
+    "assetFinder": {
+      "meshes": [
+        "33fbec77-40bc-497a-b338-60b4781ca4a2@a3320"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "33fbec77-40bc-497a-b338-60b4781ca4a2@d1192"
+      ],
+      "scenes": [
+        "33fbec77-40bc-497a-b338-60b4781ca4a2@2742a"
+      ]
+    }
+  }
+}

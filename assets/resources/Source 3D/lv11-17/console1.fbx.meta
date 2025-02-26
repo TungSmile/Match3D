@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "3896df25-fdf0-4c05-924f-b3daa82fb48b",
+  "files": [],
+  "subMetas": {
+    "057ce": {
+      "importer": "gltf-mesh",
+      "uuid": "3896df25-fdf0-4c05-924f-b3daa82fb48b@057ce",
+      "displayName": "",
+      "id": "057ce",
+      "name": "console1.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a7b43": {
+      "importer": "gltf-material",
+      "uuid": "3896df25-fdf0-4c05-924f-b3daa82fb48b@a7b43",
+      "displayName": "",
+      "id": "a7b43",
+      "name": "console1.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5033f": {
+      "importer": "gltf-scene",
+      "uuid": "3896df25-fdf0-4c05-924f-b3daa82fb48b@5033f",
+      "displayName": "",
+      "id": "5033f",
+      "name": "console1.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "3896df25-fdf0-4c05-924f-b3daa82fb48b@5033f",
+    "assetFinder": {
+      "meshes": [
+        "3896df25-fdf0-4c05-924f-b3daa82fb48b@057ce"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "3896df25-fdf0-4c05-924f-b3daa82fb48b@a7b43"
+      ],
+      "scenes": [
+        "3896df25-fdf0-4c05-924f-b3daa82fb48b@5033f"
+      ]
+    }
+  }
+}

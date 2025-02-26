@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "7c19a6b0-2cff-492c-86f1-54012665637f",
+  "files": [],
+  "subMetas": {
+    "3a512": {
+      "importer": "gltf-mesh",
+      "uuid": "7c19a6b0-2cff-492c-86f1-54012665637f@3a512",
+      "displayName": "",
+      "id": "3a512",
+      "name": "oven.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "544b6": {
+      "importer": "texture",
+      "uuid": "7c19a6b0-2cff-492c-86f1-54012665637f@544b6",
+      "displayName": "",
+      "id": "544b6",
+      "name": "Map #145.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/oven_blue.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6a447": {
+      "importer": "gltf-material",
+      "uuid": "7c19a6b0-2cff-492c-86f1-54012665637f@6a447",
+      "displayName": "",
+      "id": "6a447",
+      "name": "Material #129.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8a179": {
+      "importer": "gltf-scene",
+      "uuid": "7c19a6b0-2cff-492c-86f1-54012665637f@8a179",
+      "displayName": "",
+      "id": "8a179",
+      "name": "oven.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #145",
+        "uri": "db://assets/resources/Source 3D/lv40-50/oven_blue.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "7c19a6b0-2cff-492c-86f1-54012665637f@8a179",
+    "assetFinder": {
+      "meshes": [
+        "7c19a6b0-2cff-492c-86f1-54012665637f@3a512"
+      ],
+      "skeletons": [],
+      "textures": [
+        "7c19a6b0-2cff-492c-86f1-54012665637f@544b6"
+      ],
+      "materials": [
+        "7c19a6b0-2cff-492c-86f1-54012665637f@6a447"
+      ],
+      "scenes": [
+        "7c19a6b0-2cff-492c-86f1-54012665637f@8a179"
+      ]
+    }
+  }
+}

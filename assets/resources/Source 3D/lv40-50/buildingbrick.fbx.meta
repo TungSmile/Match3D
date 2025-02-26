@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "7ee799af-91e0-45c6-bdbc-2f38b4217b07",
+  "files": [],
+  "subMetas": {
+    "8128f": {
+      "importer": "gltf-mesh",
+      "uuid": "7ee799af-91e0-45c6-bdbc-2f38b4217b07@8128f",
+      "displayName": "",
+      "id": "8128f",
+      "name": "BuildingBrick.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a5c3c": {
+      "importer": "texture",
+      "uuid": "7ee799af-91e0-45c6-bdbc-2f38b4217b07@a5c3c",
+      "displayName": "",
+      "id": "a5c3c",
+      "name": "Map #152.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/buildingbrick_red.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a76ba": {
+      "importer": "gltf-material",
+      "uuid": "7ee799af-91e0-45c6-bdbc-2f38b4217b07@a76ba",
+      "displayName": "",
+      "id": "a76ba",
+      "name": "Material #135.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d9a2b": {
+      "importer": "gltf-scene",
+      "uuid": "7ee799af-91e0-45c6-bdbc-2f38b4217b07@d9a2b",
+      "displayName": "",
+      "id": "d9a2b",
+      "name": "buildingbrick.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #152",
+        "uri": "db://assets/resources/Source 3D/lv40-50/buildingbrick_red.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "7ee799af-91e0-45c6-bdbc-2f38b4217b07@d9a2b",
+    "assetFinder": {
+      "meshes": [
+        "7ee799af-91e0-45c6-bdbc-2f38b4217b07@8128f"
+      ],
+      "skeletons": [],
+      "textures": [
+        "7ee799af-91e0-45c6-bdbc-2f38b4217b07@a5c3c"
+      ],
+      "materials": [
+        "7ee799af-91e0-45c6-bdbc-2f38b4217b07@a76ba"
+      ],
+      "scenes": [
+        "7ee799af-91e0-45c6-bdbc-2f38b4217b07@d9a2b"
+      ]
+    }
+  }
+}

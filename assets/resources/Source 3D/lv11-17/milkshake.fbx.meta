@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "d5b7413d-4311-46d3-a674-1b4ab23c56de",
+  "files": [],
+  "subMetas": {
+    "38c81": {
+      "importer": "gltf-mesh",
+      "uuid": "d5b7413d-4311-46d3-a674-1b4ab23c56de@38c81",
+      "displayName": "",
+      "id": "38c81",
+      "name": "milkshake.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "39db9": {
+      "importer": "gltf-material",
+      "uuid": "d5b7413d-4311-46d3-a674-1b4ab23c56de@39db9",
+      "displayName": "",
+      "id": "39db9",
+      "name": "milkshake.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f1e11": {
+      "importer": "gltf-scene",
+      "uuid": "d5b7413d-4311-46d3-a674-1b4ab23c56de@f1e11",
+      "displayName": "",
+      "id": "f1e11",
+      "name": "milkshake.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "d5b7413d-4311-46d3-a674-1b4ab23c56de@f1e11",
+    "assetFinder": {
+      "meshes": [
+        "d5b7413d-4311-46d3-a674-1b4ab23c56de@38c81"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "d5b7413d-4311-46d3-a674-1b4ab23c56de@39db9"
+      ],
+      "scenes": [
+        "d5b7413d-4311-46d3-a674-1b4ab23c56de@f1e11"
+      ]
+    }
+  }
+}

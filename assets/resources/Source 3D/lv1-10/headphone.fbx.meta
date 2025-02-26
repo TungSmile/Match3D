@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "2067e26e-d7eb-4637-b2b0-12f3237f1c88",
+  "files": [],
+  "subMetas": {
+    "e947f": {
+      "importer": "gltf-mesh",
+      "uuid": "2067e26e-d7eb-4637-b2b0-12f3237f1c88@e947f",
+      "displayName": "",
+      "id": "e947f",
+      "name": "headphone.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "eb31a": {
+      "importer": "gltf-material",
+      "uuid": "2067e26e-d7eb-4637-b2b0-12f3237f1c88@eb31a",
+      "displayName": "",
+      "id": "eb31a",
+      "name": "headphone.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f4e81": {
+      "importer": "gltf-scene",
+      "uuid": "2067e26e-d7eb-4637-b2b0-12f3237f1c88@f4e81",
+      "displayName": "",
+      "id": "f4e81",
+      "name": "headphone.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "2067e26e-d7eb-4637-b2b0-12f3237f1c88@f4e81",
+    "assetFinder": {
+      "meshes": [
+        "2067e26e-d7eb-4637-b2b0-12f3237f1c88@e947f"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "2067e26e-d7eb-4637-b2b0-12f3237f1c88@eb31a"
+      ],
+      "scenes": [
+        "2067e26e-d7eb-4637-b2b0-12f3237f1c88@f4e81"
+      ]
+    }
+  }
+}

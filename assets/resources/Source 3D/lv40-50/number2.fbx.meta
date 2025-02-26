@@ -1,0 +1,167 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "d4405c47-569b-417d-bf48-a07d9276c140",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "4dfc6": {
+      "importer": "gltf-mesh",
+      "uuid": "d4405c47-569b-417d-bf48-a07d9276c140@4dfc6",
+      "displayName": "",
+      "id": "4dfc6",
+      "name": "number2_collision.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "73b7f": {
+      "importer": "gltf-animation",
+      "uuid": "d4405c47-569b-417d-bf48-a07d9276c140@73b7f",
+      "displayName": "",
+      "id": "73b7f",
+      "name": "Take 001.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.3333332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "e7d3c": {
+      "importer": "gltf-embeded-image",
+      "uuid": "d4405c47-569b-417d-bf48-a07d9276c140@e7d3c",
+      "displayName": "",
+      "id": "e7d3c",
+      "name": "Map #134.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "8fc54": {
+      "importer": "texture",
+      "uuid": "d4405c47-569b-417d-bf48-a07d9276c140@8fc54",
+      "displayName": "",
+      "id": "8fc54",
+      "name": "Map #134.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d4405c47-569b-417d-bf48-a07d9276c140@e7d3c"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e1f45": {
+      "importer": "gltf-material",
+      "uuid": "d4405c47-569b-417d-bf48-a07d9276c140@e1f45",
+      "displayName": "",
+      "id": "e1f45",
+      "name": "Material #118.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e3f6b": {
+      "importer": "gltf-scene",
+      "uuid": "d4405c47-569b-417d-bf48-a07d9276c140@e3f6b",
+      "displayName": "",
+      "id": "e3f6b",
+      "name": "number2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #134",
+        "uri": "d4405c47-569b-417d-bf48-a07d9276c140@e7d3c"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 3.3333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Take 001",
+            "from": 0,
+            "to": 3.3333332538604736,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "d4405c47-569b-417d-bf48-a07d9276c140@e3f6b",
+    "assetFinder": {
+      "meshes": [
+        "d4405c47-569b-417d-bf48-a07d9276c140@4dfc6"
+      ],
+      "skeletons": [],
+      "textures": [
+        "d4405c47-569b-417d-bf48-a07d9276c140@8fc54"
+      ],
+      "materials": [
+        "d4405c47-569b-417d-bf48-a07d9276c140@e1f45"
+      ],
+      "scenes": [
+        "d4405c47-569b-417d-bf48-a07d9276c140@e3f6b"
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "36ce7dd6-098d-4312-8e1f-d5943ce8cf6a",
+  "files": [],
+  "subMetas": {
+    "b97a9": {
+      "importer": "gltf-mesh",
+      "uuid": "36ce7dd6-098d-4312-8e1f-d5943ce8cf6a@b97a9",
+      "displayName": "",
+      "id": "b97a9",
+      "name": "cupcake.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "20fe2": {
+      "importer": "gltf-material",
+      "uuid": "36ce7dd6-098d-4312-8e1f-d5943ce8cf6a@20fe2",
+      "displayName": "",
+      "id": "20fe2",
+      "name": "cupcake.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "93c74": {
+      "importer": "gltf-scene",
+      "uuid": "36ce7dd6-098d-4312-8e1f-d5943ce8cf6a@93c74",
+      "displayName": "",
+      "id": "93c74",
+      "name": "cupcake.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "36ce7dd6-098d-4312-8e1f-d5943ce8cf6a@93c74",
+    "assetFinder": {
+      "meshes": [
+        "36ce7dd6-098d-4312-8e1f-d5943ce8cf6a@b97a9"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "36ce7dd6-098d-4312-8e1f-d5943ce8cf6a@20fe2"
+      ],
+      "scenes": [
+        "36ce7dd6-098d-4312-8e1f-d5943ce8cf6a@93c74"
+      ]
+    }
+  }
+}

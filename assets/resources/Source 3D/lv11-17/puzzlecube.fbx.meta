@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "9672437f-ce44-47a2-aaec-49162b7768e8",
+  "files": [],
+  "subMetas": {
+    "19615": {
+      "importer": "gltf-scene",
+      "uuid": "9672437f-ce44-47a2-aaec-49162b7768e8@19615",
+      "displayName": "",
+      "id": "19615",
+      "name": "puzzlecube.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "222ec": {
+      "importer": "gltf-mesh",
+      "uuid": "9672437f-ce44-47a2-aaec-49162b7768e8@222ec",
+      "displayName": "",
+      "id": "222ec",
+      "name": "PuzzleCube.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "be643": {
+      "importer": "texture",
+      "uuid": "9672437f-ce44-47a2-aaec-49162b7768e8@be643",
+      "displayName": "",
+      "id": "be643",
+      "name": "Map #147.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv11-17/puzzlecube.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "df5d8": {
+      "importer": "gltf-material",
+      "uuid": "9672437f-ce44-47a2-aaec-49162b7768e8@df5d8",
+      "displayName": "",
+      "id": "df5d8",
+      "name": "Material #131.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #147",
+        "uri": "db://assets/resources/Source 3D/lv11-17/puzzlecube.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "9672437f-ce44-47a2-aaec-49162b7768e8@19615",
+    "assetFinder": {
+      "meshes": [
+        "9672437f-ce44-47a2-aaec-49162b7768e8@222ec"
+      ],
+      "skeletons": [],
+      "textures": [
+        "9672437f-ce44-47a2-aaec-49162b7768e8@be643"
+      ],
+      "materials": [
+        "9672437f-ce44-47a2-aaec-49162b7768e8@df5d8"
+      ],
+      "scenes": [
+        "9672437f-ce44-47a2-aaec-49162b7768e8@19615"
+      ]
+    }
+  }
+}

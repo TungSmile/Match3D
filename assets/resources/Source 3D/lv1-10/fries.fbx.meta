@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "9e0c80d6-4800-4401-929f-e1ce310e7abc",
+  "files": [],
+  "subMetas": {
+    "9bc8a": {
+      "importer": "gltf-mesh",
+      "uuid": "9e0c80d6-4800-4401-929f-e1ce310e7abc@9bc8a",
+      "displayName": "",
+      "id": "9bc8a",
+      "name": "fries.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ef3f3": {
+      "importer": "gltf-material",
+      "uuid": "9e0c80d6-4800-4401-929f-e1ce310e7abc@ef3f3",
+      "displayName": "",
+      "id": "ef3f3",
+      "name": "fries.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9f0b4": {
+      "importer": "gltf-scene",
+      "uuid": "9e0c80d6-4800-4401-929f-e1ce310e7abc@9f0b4",
+      "displayName": "",
+      "id": "9f0b4",
+      "name": "fries.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "9e0c80d6-4800-4401-929f-e1ce310e7abc@9f0b4",
+    "assetFinder": {
+      "meshes": [
+        "9e0c80d6-4800-4401-929f-e1ce310e7abc@9bc8a"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "9e0c80d6-4800-4401-929f-e1ce310e7abc@ef3f3"
+      ],
+      "scenes": [
+        "9e0c80d6-4800-4401-929f-e1ce310e7abc@9f0b4"
+      ]
+    }
+  }
+}

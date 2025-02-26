@@ -1,0 +1,80 @@
+{ "skeleton": { "images": "D:/NHƯ/FACTORY/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Layer 6", "bone": "root", "attachment": "Layer 6" },
+	{ "name": "back_pause", "bone": "root", "attachment": "back_pause" },
+	{ "name": "back_pause2", "bone": "root", "attachment": "back_pause2" },
+	{ "name": "ui", "bone": "root", "attachment": "ui" },
+	{ "name": "ui2", "bone": "root", "attachment": "ui2" },
+	{ "name": "ui4", "bone": "root", "attachment": "ui4" },
+	{ "name": "ui3", "bone": "root", "attachment": "ui3" },
+	{ "name": "loa", "bone": "root", "attachment": "loa" },
+	{ "name": "chuong", "bone": "root", "attachment": "chuong" },
+	{ "name": "dien_thoai", "bone": "root", "attachment": "dien_thoai" },
+	{ "name": "not_nhac", "bone": "root", "attachment": "not_nhac" },
+	{ "name": "gach", "bone": "root", "attachment": "gach" },
+	{ "name": "continue", "bone": "root", "attachment": "continue" },
+	{ "name": "quit", "bone": "root", "attachment": "quit" },
+	{ "name": "bang", "bone": "root", "attachment": "bang" },
+	{ "name": "pause", "bone": "root", "attachment": "pause" },
+	{ "name": "close", "bone": "root", "attachment": "close" }
+],
+"skins": {
+	"default": {
+		"Layer 6": {
+			"Layer 6": { "x": 540, "y": -960, "width": 1082, "height": 1922 }
+		},
+		"back_pause": {
+			"back_pause": { "x": 541, "y": -984, "width": 954, "height": 1158 }
+		},
+		"back_pause2": {
+			"back_pause2": { "x": 543, "y": -775, "width": 904, "height": 370 }
+		},
+		"ui": {
+			"ui": { "x": 238.5, "y": -780.5, "width": 179, "height": 179 }
+		},
+		"ui2": {
+			"ui2": { "x": 446.5, "y": -781.5, "width": 179, "height": 179 }
+		},
+		"ui4": {
+			"ui4": { "x": 555, "y": -1115, "width": 582, "height": 236 }
+		},
+		"ui3": {
+			"ui3": { "x": 555.5, "y": -1379, "width": 587, "height": 238 }
+		},
+		"loa": {
+			"loa": { "x": 443.5, "y": -784.5, "width": 101, "height": 103 }
+		},
+		"chuong": {
+			"chuong": { "x": 866, "y": -785.5, "width": 84, "height": 105 }
+		},
+		"dien_thoai": {
+			"dien_thoai": { "x": 652.5, "y": -782, "width": 123, "height": 104 }
+		},
+		"not_nhac": {
+			"not_nhac": { "x": 236, "y": -783.5, "width": 108, "height": 105 }
+		},
+		"gach": {
+			"gach": { "x": 446, "y": -780, "width": 106, "height": 114 }
+		},
+		"continue": {
+			"continue": { "x": 556, "y": -1110.5, "width": 440, "height": 97 }
+		},
+		"quit": {
+			"quit": { "x": 554, "y": -1384, "width": 210, "height": 114 }
+		},
+		"bang": {
+			"bang": { "x": 539.5, "y": -408.5, "width": 783, "height": 263 }
+		},
+		"pause": {
+			"pause": { "x": 548.5, "y": -399, "width": 311, "height": 92 }
+		},
+		"close": {
+			"close": { "x": 988, "y": -432, "width": 104, "height": 104 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

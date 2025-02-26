@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "a425434d-8ae4-481d-b54e-0f15236e86f8",
+  "files": [],
+  "subMetas": {
+    "59612": {
+      "importer": "gltf-material",
+      "uuid": "a425434d-8ae4-481d-b54e-0f15236e86f8@59612",
+      "displayName": "",
+      "id": "59612",
+      "name": "Material #151.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "dcd2b": {
+      "importer": "gltf-mesh",
+      "uuid": "a425434d-8ae4-481d-b54e-0f15236e86f8@dcd2b",
+      "displayName": "",
+      "id": "dcd2b",
+      "name": "cannon.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2f8f6": {
+      "importer": "texture",
+      "uuid": "a425434d-8ae4-481d-b54e-0f15236e86f8@2f8f6",
+      "displayName": "",
+      "id": "2f8f6",
+      "name": "Map #168.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/cannon_d1.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a6dc2": {
+      "importer": "gltf-scene",
+      "uuid": "a425434d-8ae4-481d-b54e-0f15236e86f8@a6dc2",
+      "displayName": "",
+      "id": "a6dc2",
+      "name": "cannon.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #168",
+        "uri": "db://assets/resources/Source 3D/lv40-50/cannon_d1.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "a425434d-8ae4-481d-b54e-0f15236e86f8@a6dc2",
+    "assetFinder": {
+      "meshes": [
+        "a425434d-8ae4-481d-b54e-0f15236e86f8@dcd2b"
+      ],
+      "skeletons": [],
+      "textures": [
+        "a425434d-8ae4-481d-b54e-0f15236e86f8@2f8f6"
+      ],
+      "materials": [
+        "a425434d-8ae4-481d-b54e-0f15236e86f8@59612"
+      ],
+      "scenes": [
+        "a425434d-8ae4-481d-b54e-0f15236e86f8@a6dc2"
+      ]
+    }
+  }
+}

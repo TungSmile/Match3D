@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "1d8544c3-7730-4309-81cc-84fd37e04629",
+  "files": [],
+  "subMetas": {
+    "7c24e": {
+      "importer": "gltf-mesh",
+      "uuid": "1d8544c3-7730-4309-81cc-84fd37e04629@7c24e",
+      "displayName": "",
+      "id": "7c24e",
+      "name": "PlayingClay.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d57d3": {
+      "importer": "gltf-material",
+      "uuid": "1d8544c3-7730-4309-81cc-84fd37e04629@d57d3",
+      "displayName": "",
+      "id": "d57d3",
+      "name": "PlayingClay.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "58f05": {
+      "importer": "gltf-scene",
+      "uuid": "1d8544c3-7730-4309-81cc-84fd37e04629@58f05",
+      "displayName": "",
+      "id": "58f05",
+      "name": "PlayingClay.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "1d8544c3-7730-4309-81cc-84fd37e04629@58f05",
+    "assetFinder": {
+      "meshes": [
+        "1d8544c3-7730-4309-81cc-84fd37e04629@7c24e"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "1d8544c3-7730-4309-81cc-84fd37e04629@d57d3"
+      ],
+      "scenes": [
+        "1d8544c3-7730-4309-81cc-84fd37e04629@58f05"
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "75f1edad-544e-4069-b667-31f9155439d8",
+  "files": [],
+  "subMetas": {
+    "d68fa": {
+      "importer": "gltf-mesh",
+      "uuid": "75f1edad-544e-4069-b667-31f9155439d8@d68fa",
+      "displayName": "",
+      "id": "d68fa",
+      "name": "teapot.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5c06f": {
+      "importer": "texture",
+      "uuid": "75f1edad-544e-4069-b667-31f9155439d8@5c06f",
+      "displayName": "",
+      "id": "5c06f",
+      "name": "Map #118.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/teapot_blue.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1f0c0": {
+      "importer": "gltf-material",
+      "uuid": "75f1edad-544e-4069-b667-31f9155439d8@1f0c0",
+      "displayName": "",
+      "id": "1f0c0",
+      "name": "Material #102.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "46b05": {
+      "importer": "gltf-scene",
+      "uuid": "75f1edad-544e-4069-b667-31f9155439d8@46b05",
+      "displayName": "",
+      "id": "46b05",
+      "name": "teapot.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #118",
+        "uri": "db://assets/resources/Source 3D/lv40-50/teapot_blue.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "75f1edad-544e-4069-b667-31f9155439d8@46b05",
+    "assetFinder": {
+      "meshes": [
+        "75f1edad-544e-4069-b667-31f9155439d8@d68fa"
+      ],
+      "skeletons": [],
+      "textures": [
+        "75f1edad-544e-4069-b667-31f9155439d8@5c06f"
+      ],
+      "materials": [
+        "75f1edad-544e-4069-b667-31f9155439d8@1f0c0"
+      ],
+      "scenes": [
+        "75f1edad-544e-4069-b667-31f9155439d8@46b05"
+      ]
+    }
+  }
+}

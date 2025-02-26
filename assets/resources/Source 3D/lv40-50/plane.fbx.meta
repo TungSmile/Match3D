@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "867bfba3-9bc2-4d3a-a437-f8d2656a8390",
+  "files": [],
+  "subMetas": {
+    "2e76e": {
+      "importer": "gltf-mesh",
+      "uuid": "867bfba3-9bc2-4d3a-a437-f8d2656a8390@2e76e",
+      "displayName": "",
+      "id": "2e76e",
+      "name": "plane.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "534ad": {
+      "importer": "texture",
+      "uuid": "867bfba3-9bc2-4d3a-a437-f8d2656a8390@534ad",
+      "displayName": "",
+      "id": "534ad",
+      "name": "Map #135.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/plane_green.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1d6cd": {
+      "importer": "gltf-material",
+      "uuid": "867bfba3-9bc2-4d3a-a437-f8d2656a8390@1d6cd",
+      "displayName": "",
+      "id": "1d6cd",
+      "name": "Material #119.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c6407": {
+      "importer": "gltf-scene",
+      "uuid": "867bfba3-9bc2-4d3a-a437-f8d2656a8390@c6407",
+      "displayName": "",
+      "id": "c6407",
+      "name": "plane.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #135",
+        "uri": "db://assets/resources/Source 3D/lv40-50/plane_green.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "867bfba3-9bc2-4d3a-a437-f8d2656a8390@c6407",
+    "assetFinder": {
+      "meshes": [
+        "867bfba3-9bc2-4d3a-a437-f8d2656a8390@2e76e"
+      ],
+      "skeletons": [],
+      "textures": [
+        "867bfba3-9bc2-4d3a-a437-f8d2656a8390@534ad"
+      ],
+      "materials": [
+        "867bfba3-9bc2-4d3a-a437-f8d2656a8390@1d6cd"
+      ],
+      "scenes": [
+        "867bfba3-9bc2-4d3a-a437-f8d2656a8390@c6407"
+      ]
+    }
+  }
+}

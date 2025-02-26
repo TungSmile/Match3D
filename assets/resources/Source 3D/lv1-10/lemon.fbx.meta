@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "d0835592-2c32-4c39-9517-e0767fb0e996",
+  "files": [],
+  "subMetas": {
+    "2805c": {
+      "importer": "gltf-mesh",
+      "uuid": "d0835592-2c32-4c39-9517-e0767fb0e996@2805c",
+      "displayName": "",
+      "id": "2805c",
+      "name": "lemon.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e40aa": {
+      "importer": "texture",
+      "uuid": "d0835592-2c32-4c39-9517-e0767fb0e996@e40aa",
+      "displayName": "",
+      "id": "e40aa",
+      "name": "Map #207.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv1-10/lemon.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c979c": {
+      "importer": "gltf-material",
+      "uuid": "d0835592-2c32-4c39-9517-e0767fb0e996@c979c",
+      "displayName": "",
+      "id": "c979c",
+      "name": "Material #194.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3d548": {
+      "importer": "gltf-scene",
+      "uuid": "d0835592-2c32-4c39-9517-e0767fb0e996@3d548",
+      "displayName": "",
+      "id": "3d548",
+      "name": "lemon.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #207",
+        "uri": "db://assets/resources/Source 3D/lv1-10/lemon.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "d0835592-2c32-4c39-9517-e0767fb0e996@3d548",
+    "assetFinder": {
+      "meshes": [
+        "d0835592-2c32-4c39-9517-e0767fb0e996@2805c"
+      ],
+      "skeletons": [],
+      "textures": [
+        "d0835592-2c32-4c39-9517-e0767fb0e996@e40aa"
+      ],
+      "materials": [
+        "d0835592-2c32-4c39-9517-e0767fb0e996@c979c"
+      ],
+      "scenes": [
+        "d0835592-2c32-4c39-9517-e0767fb0e996@3d548"
+      ]
+    }
+  }
+}

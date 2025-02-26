@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea",
+  "files": [],
+  "subMetas": {
+    "d329e": {
+      "importer": "gltf-mesh",
+      "uuid": "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@d329e",
+      "displayName": "",
+      "id": "d329e",
+      "name": "beachball.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c21b7": {
+      "importer": "texture",
+      "uuid": "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@c21b7",
+      "displayName": "",
+      "id": "c21b7",
+      "name": "Map #25.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/beachball_d1.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bce37": {
+      "importer": "gltf-material",
+      "uuid": "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@bce37",
+      "displayName": "",
+      "id": "bce37",
+      "name": "beachball.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5a16b": {
+      "importer": "gltf-scene",
+      "uuid": "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@5a16b",
+      "displayName": "",
+      "id": "5a16b",
+      "name": "beachball.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #25",
+        "uri": "db://assets/resources/Source 3D/lv40-50/beachball_d1.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@5a16b",
+    "assetFinder": {
+      "meshes": [
+        "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@d329e"
+      ],
+      "skeletons": [],
+      "textures": [
+        "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@c21b7"
+      ],
+      "materials": [
+        "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@bce37"
+      ],
+      "scenes": [
+        "0a0a2bc9-ef8f-40e0-99de-8f62182bcdea@5a16b"
+      ]
+    }
+  }
+}

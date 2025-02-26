@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "34467707-f7c1-44fc-beff-20ccba2a2a44",
+  "files": [],
+  "subMetas": {
+    "39ac5": {
+      "importer": "gltf-mesh",
+      "uuid": "34467707-f7c1-44fc-beff-20ccba2a2a44@39ac5",
+      "displayName": "",
+      "id": "39ac5",
+      "name": "chair.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fe678": {
+      "importer": "gltf-material",
+      "uuid": "34467707-f7c1-44fc-beff-20ccba2a2a44@fe678",
+      "displayName": "",
+      "id": "fe678",
+      "name": "chair.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4e90e": {
+      "importer": "gltf-scene",
+      "uuid": "34467707-f7c1-44fc-beff-20ccba2a2a44@4e90e",
+      "displayName": "",
+      "id": "4e90e",
+      "name": "chair.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "34467707-f7c1-44fc-beff-20ccba2a2a44@4e90e",
+    "assetFinder": {
+      "meshes": [
+        "34467707-f7c1-44fc-beff-20ccba2a2a44@39ac5"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "34467707-f7c1-44fc-beff-20ccba2a2a44@fe678"
+      ],
+      "scenes": [
+        "34467707-f7c1-44fc-beff-20ccba2a2a44@4e90e"
+      ]
+    }
+  }
+}

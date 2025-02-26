@@ -1,0 +1,180 @@
+{ "skeleton": { "images": "D:/NHƯ/FACTORY/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "back", "bone": "root", "attachment": "back" },
+	{ "name": "back2", "bone": "root", "attachment": "back2" },
+	{ "name": "thanh_shop", "bone": "root", "attachment": "thanh_shop" },
+	{ "name": "hong", "bone": "root", "attachment": "hong" },
+	{ "name": "hong2", "bone": "root", "attachment": "hong2" },
+	{ "name": "xanh", "bone": "root", "attachment": "xanh" },
+	{ "name": "xanh2", "bone": "root", "attachment": "xanh2" },
+	{ "name": "vang", "bone": "root", "attachment": "vang" },
+	{ "name": "vang2", "bone": "root", "attachment": "vang2" },
+	{ "name": "vang_don", "bone": "root", "attachment": "vang_don" },
+	{ "name": "ads", "bone": "root", "attachment": "ads" },
+	{ "name": "ads2", "bone": "root", "attachment": "ads2" },
+	{ "name": "vang_ads", "bone": "root", "attachment": "vang_ads" },
+	{ "name": "cong", "bone": "root", "attachment": "cong" },
+	{ "name": "thanh_xanh", "bone": "root", "attachment": "thanh_xanh" },
+	{ "name": "thanh_xanh2", "bone": "root", "attachment": "thanh_xanh2" },
+	{ "name": "action", "bone": "root", "attachment": "action" },
+	{ "name": "ui_action", "bone": "root", "attachment": "ui_action" },
+	{ "name": "Vector Smart Object", "bone": "root", "attachment": "Vector Smart Object" },
+	{ "name": "nap_hop_do", "bone": "root", "attachment": "nap_hop_do" },
+	{ "name": "blink2", "bone": "root", "attachment": "blink2" },
+	{ "name": "vang_trong_hom", "bone": "root", "attachment": "vang_trong_hom" },
+	{ "name": "hom_do", "bone": "root", "attachment": "hom_do" },
+	{ "name": "vang_tren_hom", "bone": "root", "attachment": "vang_tren_hom" },
+	{ "name": "hom_duoi", "bone": "root", "attachment": "hom_duoi" },
+	{ "name": "nap_hom", "bone": "root", "attachment": "nap_hom" },
+	{ "name": "blink", "bone": "root", "attachment": "blink" },
+	{ "name": "tien_hom", "bone": "root", "attachment": "tien_hom" },
+	{ "name": "hom", "bone": "root", "attachment": "hom" },
+	{ "name": "tien_hom2", "bone": "root", "attachment": "tien_hom2" },
+	{ "name": "item_cho", "bone": "root", "attachment": "item_cho" },
+	{ "name": "item_nam_cham", "bone": "root", "attachment": "item_nam_cham" },
+	{ "name": "item_quat", "bone": "root", "attachment": "item_quat" },
+	{ "name": "item_choi", "bone": "root", "attachment": "item_choi" },
+	{ "name": "item_tim", "bone": "root", "attachment": "item_tim" },
+	{ "name": "item_tien", "bone": "root", "attachment": "item_tien" },
+	{ "name": "banner_tim", "bone": "root", "attachment": "banner_tim" },
+	{ "name": "banner_do", "bone": "root", "attachment": "banner_do" },
+	{ "name": "back_banner_shop", "bone": "root", "attachment": "back_banner_shop" },
+	{ "name": "back_banner_shop2", "bone": "root", "attachment": "back_banner_shop2" },
+	{ "name": "bang_shop", "bone": "root", "attachment": "bang_shop" },
+	{ "name": "close", "bone": "root", "attachment": "close" }
+],
+"skins": {
+	"default": {
+		"back": {
+			"back": { "x": 540, "y": -960, "width": 1090, "height": 1930 }
+		},
+		"back2": {
+			"back2": { "x": 544.5, "y": -944.5, "width": 983, "height": 1241 }
+		},
+		"thanh_shop": {
+			"thanh_shop": { "x": 544, "y": -231, "width": 1036, "height": 154 }
+		},
+		"hong": {
+			"hong": { "x": 548.5, "y": -539, "width": 923, "height": 388 }
+		},
+		"hong2": {
+			"hong2": { "x": 761.5, "y": -484.5, "width": 429, "height": 233 }
+		},
+		"xanh": {
+			"xanh": { "x": 547.5, "y": -943.5, "width": 925, "height": 389 }
+		},
+		"xanh2": {
+			"xanh2": { "x": 759.5, "y": -888, "width": 433, "height": 234 }
+		},
+		"vang": {
+			"vang": { "x": 547, "y": -539, "width": 924, "height": 388 }
+		},
+		"vang2": {
+			"vang2": { "x": 759.5, "y": -485, "width": 437, "height": 238 }
+		},
+		"vang_don": {
+			"vang_don": { "x": 314, "y": -966, "width": 456, "height": 430 }
+		},
+		"ads": {
+			"ads": { "x": 308, "y": -939.5, "width": 188, "height": 175 }
+		},
+		"ads2": {
+			"ads2": { "x": 292, "y": -946, "width": 164, "height": 80 }
+		},
+		"vang_ads": {
+			"vang_ads": { "x": 870, "y": -943.5, "width": 144, "height": 159 }
+		},
+		"cong": {
+			"cong": { "x": 772.5, "y": -944, "width": 33, "height": 36 }
+		},
+		"thanh_xanh": {
+			"thanh_xanh": { "x": 546.5, "y": -1267, "width": 923, "height": 132 }
+		},
+		"thanh_xanh2": {
+			"thanh_xanh2": { "x": 298, "y": -1265.5, "width": 368, "height": 107 }
+		},
+		"action": {
+			"action": { "x": 837.5, "y": -1266, "width": 105, "height": 116 }
+		},
+		"ui_action": {
+			"ui_action": { "x": 893.5, "y": -1253, "width": 47, "height": 46 }
+		},
+		"Vector Smart Object": {
+			"Vector Smart Object": { "x": 329, "y": -548.5, "width": 422, "height": 109 }
+		},
+		"nap_hop_do": {
+			"nap_hop_do": { "x": 337, "y": -446.5, "width": 220, "height": 165 }
+		},
+		"blink2": {
+			"blink2": { "x": 383.5, "y": -498, "width": 275, "height": 210 }
+		},
+		"vang_trong_hom": {
+			"vang_trong_hom": { "x": 365.5, "y": -502.5, "width": 155, "height": 113 }
+		},
+		"hom_do": {
+			"hom_do": { "x": 367, "y": -556.5, "width": 222, "height": 91 }
+		},
+		"vang_tren_hom": {
+			"vang_tren_hom": { "x": 365.5, "y": -567, "width": 321, "height": 78 }
+		},
+		"hom_duoi": {
+			"hom_duoi": { "x": 342, "y": -510, "width": 214, "height": 68 }
+		},
+		"nap_hom": {
+			"nap_hom": { "x": 318.5, "y": -454, "width": 193, "height": 140 }
+		},
+		"blink": {
+			"blink": { "x": 403, "y": -520, "width": 358, "height": 210 }
+		},
+		"tien_hom": {
+			"tien_hom": { "x": 343, "y": -515, "width": 190, "height": 98 }
+		},
+		"hom": {
+			"hom": { "x": 343.5, "y": -512.5, "width": 233, "height": 177 }
+		},
+		"tien_hom2": {
+			"tien_hom2": { "x": 338, "y": -565, "width": 330, "height": 70 }
+		},
+		"item_cho": {
+			"item_cho": { "x": 628, "y": -433.5, "width": 90, "height": 83 }
+		},
+		"item_nam_cham": {
+			"item_nam_cham": { "x": 752.5, "y": -537.5, "width": 85, "height": 89 }
+		},
+		"item_quat": {
+			"item_quat": { "x": 747.5, "y": -435, "width": 79, "height": 98 }
+		},
+		"item_choi": {
+			"item_choi": { "x": 619.5, "y": -536, "width": 79, "height": 98 }
+		},
+		"item_tim": {
+			"item_tim": { "x": 881.5, "y": -437, "width": 107, "height": 88 }
+		},
+		"item_tien": {
+			"item_tien": { "x": 879, "y": -541, "width": 90, "height": 98 }
+		},
+		"banner_tim": {
+			"banner_tim": { "x": 177.5, "y": -1239, "width": 203, "height": 184 }
+		},
+		"banner_do": {
+			"banner_do": { "x": 177.5, "y": -430, "width": 199, "height": 186 }
+		},
+		"back_banner_shop": {
+			"back_banner_shop": { "x": 546, "y": -985.5, "width": 954, "height": 1427 }
+		},
+		"back_banner_shop2": {
+			"back_banner_shop2": { "x": 548, "y": -968.5, "width": 914, "height": 1163 }
+		},
+		"bang_shop": {
+			"bang_shop": { "x": 541, "y": -257, "width": 778, "height": 260 }
+		},
+		"close": {
+			"close": { "x": 1000, "y": -282, "width": 104, "height": 104 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

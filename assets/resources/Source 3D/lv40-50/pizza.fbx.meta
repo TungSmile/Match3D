@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "1c55378a-2ca2-4519-b4d4-23e60fc0840c",
+  "files": [],
+  "subMetas": {
+    "29fa6": {
+      "importer": "gltf-mesh",
+      "uuid": "1c55378a-2ca2-4519-b4d4-23e60fc0840c@29fa6",
+      "displayName": "",
+      "id": "29fa6",
+      "name": "pizza.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1b546": {
+      "importer": "texture",
+      "uuid": "1c55378a-2ca2-4519-b4d4-23e60fc0840c@1b546",
+      "displayName": "",
+      "id": "1b546",
+      "name": "Map #138.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/pizza_d1.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a184f": {
+      "importer": "gltf-material",
+      "uuid": "1c55378a-2ca2-4519-b4d4-23e60fc0840c@a184f",
+      "displayName": "",
+      "id": "a184f",
+      "name": "Material #122.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2fba4": {
+      "importer": "gltf-scene",
+      "uuid": "1c55378a-2ca2-4519-b4d4-23e60fc0840c@2fba4",
+      "displayName": "",
+      "id": "2fba4",
+      "name": "pizza.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #138",
+        "uri": "db://assets/resources/Source 3D/lv40-50/pizza_d1.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "1c55378a-2ca2-4519-b4d4-23e60fc0840c@2fba4",
+    "assetFinder": {
+      "meshes": [
+        "1c55378a-2ca2-4519-b4d4-23e60fc0840c@29fa6"
+      ],
+      "skeletons": [],
+      "textures": [
+        "1c55378a-2ca2-4519-b4d4-23e60fc0840c@1b546"
+      ],
+      "materials": [
+        "1c55378a-2ca2-4519-b4d4-23e60fc0840c@a184f"
+      ],
+      "scenes": [
+        "1c55378a-2ca2-4519-b4d4-23e60fc0840c@2fba4"
+      ]
+    }
+  }
+}

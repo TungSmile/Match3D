@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "4a9bbc76-a444-4eb8-af20-05a83b0eec44",
+  "files": [],
+  "subMetas": {
+    "67c46": {
+      "importer": "gltf-mesh",
+      "uuid": "4a9bbc76-a444-4eb8-af20-05a83b0eec44@67c46",
+      "displayName": "",
+      "id": "67c46",
+      "name": "tooncube.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "adf6e": {
+      "importer": "texture",
+      "uuid": "4a9bbc76-a444-4eb8-af20-05a83b0eec44@adf6e",
+      "displayName": "",
+      "id": "adf6e",
+      "name": "Map #172.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/tooncube_green.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0008f": {
+      "importer": "gltf-material",
+      "uuid": "4a9bbc76-a444-4eb8-af20-05a83b0eec44@0008f",
+      "displayName": "",
+      "id": "0008f",
+      "name": "Material #155.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d1be9": {
+      "importer": "gltf-scene",
+      "uuid": "4a9bbc76-a444-4eb8-af20-05a83b0eec44@d1be9",
+      "displayName": "",
+      "id": "d1be9",
+      "name": "tooncube.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #172",
+        "uri": "db://assets/resources/Source 3D/lv40-50/tooncube_green.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "4a9bbc76-a444-4eb8-af20-05a83b0eec44@d1be9",
+    "assetFinder": {
+      "meshes": [
+        "4a9bbc76-a444-4eb8-af20-05a83b0eec44@67c46"
+      ],
+      "skeletons": [],
+      "textures": [
+        "4a9bbc76-a444-4eb8-af20-05a83b0eec44@adf6e"
+      ],
+      "materials": [
+        "4a9bbc76-a444-4eb8-af20-05a83b0eec44@0008f"
+      ],
+      "scenes": [
+        "4a9bbc76-a444-4eb8-af20-05a83b0eec44@d1be9"
+      ]
+    }
+  }
+}

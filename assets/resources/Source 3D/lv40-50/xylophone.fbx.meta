@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "576ec7cb-2e1a-4005-8cda-2dd8325df97e",
+  "files": [],
+  "subMetas": {
+    "82866": {
+      "importer": "texture",
+      "uuid": "576ec7cb-2e1a-4005-8cda-2dd8325df97e@82866",
+      "displayName": "",
+      "id": "82866",
+      "name": "Map #146.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/resources/Source 3D/lv40-50/xylophone.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8886e": {
+      "importer": "gltf-mesh",
+      "uuid": "576ec7cb-2e1a-4005-8cda-2dd8325df97e@8886e",
+      "displayName": "",
+      "id": "8886e",
+      "name": "xylophone.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "196b4": {
+      "importer": "gltf-material",
+      "uuid": "576ec7cb-2e1a-4005-8cda-2dd8325df97e@196b4",
+      "displayName": "",
+      "id": "196b4",
+      "name": "Material #130.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e9b7b": {
+      "importer": "gltf-scene",
+      "uuid": "576ec7cb-2e1a-4005-8cda-2dd8325df97e@e9b7b",
+      "displayName": "",
+      "id": "e9b7b",
+      "name": "xylophone.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Map #146",
+        "uri": "db://assets/resources/Source 3D/lv40-50/xylophone.png"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "576ec7cb-2e1a-4005-8cda-2dd8325df97e@e9b7b",
+    "assetFinder": {
+      "meshes": [
+        "576ec7cb-2e1a-4005-8cda-2dd8325df97e@8886e"
+      ],
+      "skeletons": [],
+      "textures": [
+        "576ec7cb-2e1a-4005-8cda-2dd8325df97e@82866"
+      ],
+      "materials": [
+        "576ec7cb-2e1a-4005-8cda-2dd8325df97e@196b4"
+      ],
+      "scenes": [
+        "576ec7cb-2e1a-4005-8cda-2dd8325df97e@e9b7b"
+      ]
+    }
+  }
+}
