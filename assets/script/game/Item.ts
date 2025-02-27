@@ -30,9 +30,6 @@ export class Item extends Component {
         t.scheduleOnce(() => {
             t.rigiBody.clearVelocity()
             t.rigiBody.useGravity = false;
-
-            log('do it 2')
-
         }, 0.3)
 
         // test
@@ -53,7 +50,6 @@ export class Item extends Component {
         let t = this;
         t.rigiBody.useGravity = true;
         t.rigiBody.applyForce(new Vec3(0, -500, 0));
-        log('has run')
     }
 
 

@@ -15,7 +15,14 @@ enum EventGame {
     REPLAY = "??????"
 }
 
-
+enum StatusItem {
+    InPool = 0,
+    PoolToTask = 1,
+    PoolToTemp = 2,
+    TempToTask = 3,
+    TempToPool = 4,
+    PoolToManaget = 5
+}
 
 
 
@@ -23,5 +30,5 @@ enum EventGame {
 export class Constants {
     public static AudioSource = AudioSource;
     public static EventGame = EventGame;
-
+    public static scriptGAme = [];
 }
