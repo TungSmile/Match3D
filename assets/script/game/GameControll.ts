@@ -157,10 +157,12 @@ export class GameControll extends Component {
         let t = this;
         GameData.instance.removeItem(typeItem);
         GameData.instance.addItemToTask(typeItem);
-
-        // log(GameData.instance.getTaskMission())
-        //  : GameData.instance.addItemToTempStock(typeItem) ? log(GameData.instance.getTempTask()) : t.endGame = true;
-        t.refreshUIMenu(Constants.StatusItem.PoolToTask, typeItem);
+        if (GameData.instance.needCleanStock) {
+            t.refreshUIMenu(Constants.StatusItem.TempToTask, typeItem);
+        } else
+            // log(GameData.instance.getTaskMission())
+            //  : GameData.instance.addItemToTempStock(typeItem) ? log(GameData.instance.getTempTask()) : t.endGame = true;
+            t.refreshUIMenu(Constants.StatusItem.PoolToTask, typeItem);
         t.ItemHoldUp.destroy();
         t.ItemHoldUp = null;
 
@@ -186,7 +188,7 @@ export class GameControll extends Component {
     refreshUIMenu(status, type: number) {
         let t = this;
         let uiAnimtion = t.Menu2d.getChildByName("HeadMenu").getComponent(Menu2D);
-        
+
         switch (status) {
             case Constants.StatusItem.PoolToTask:
                 uiAnimtion.setItemEvent(type)
@@ -195,7 +197,11 @@ export class GameControll extends Component {
             case Constants.StatusItem.PoolToTemp:
                 uiAnimtion.setItemEvent(type)
                 uiAnimtion.animItemToStock(t.posTouchHand);
-
+                break;
+            case Constants.StatusItem.TempToTask:
+                uiAnimtion.setItemEvent(type);
+                uiAnimtion.animItemToStock(t.posTouchHand);
+                uiAnimtion.animStockToTask(type)
                 break;
             default:
                 break;

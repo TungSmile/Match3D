@@ -82,7 +82,7 @@ export class Menu2D extends Component {
         this.typeItemSelecter = type;
     }
 
-    // all pos is positionWorld => cancal
+    // all pos is positionWorld => cancel
     // all pos is localPos
 
     animItemToStock(posFrom: Vec3) {
@@ -128,18 +128,31 @@ export class Menu2D extends Component {
 
     animStockToTask(type: number) {
         let t = this;
-        let data = GameData.instance.removeItemInTempStock(-2);
+        let data = GameData.instance.removeItemInTempStock(type);
         let time = 1;
-
+        let task = t.taskMission.children[GameData.instance.findTaskByTypeItem(type)]
+        let taskPos = new Vec3;
+        if (taskPos) {
+            taskPos = task.getWorldPosition(new Vec3);
+            log("??????")
+        }
         GameData.instance.needCleanStock = false;
         data.forEach(e => {
             let temp = t.tempStock.children[e]
             if (temp) {
                 let icon = temp.getChildByName("icon");
+                let posOrigin = icon.getWorldPosition(new Vec3);
                 tween(icon)
-                    .to(time, { position: new Vec3 })
+                    .to(time, { worldPosition: taskPos })
+                    .call(() => {
+                        icon.getComponent(Sprite).spriteFrame = null;
+                    })
+                    .to(0, { worldPosition: posOrigin })
+                    .call(() => { })
+                    .start()
             }
         });
+        t.scheduleOnce(() => { t.loadUITempStock() }, 1.2)
     }
 
     findTaskByTypeItem(type: number) {
