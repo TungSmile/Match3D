@@ -1,4 +1,5 @@
 import { _decorator, Component, log, Node } from 'cc';
+import { Constants } from './Constants';
 const { ccclass, property } = _decorator;
 
 
@@ -31,6 +32,9 @@ export class GameData extends Component {
     private poolTask: Task[] = [];
     private poolTempTask: number[] = [];
     newTask: boolean = false;
+    eventStock: number = -1;
+    eventTask: number = -1;
+    needCleanStock: boolean = false;
 
     // allItem []  type<numberTypeItem , count %3==0;
     // taskMission [{type:1,quanlity:7},..] type E type allItem , count %3==0;
@@ -85,12 +89,14 @@ export class GameData extends Component {
             return false;
         }
 
-        // xử lý clean tempstock
-        let qua = t.removeItemInTempStock(valueRd);
-        if (qua > 2) {
+        // xử lý clean tempstock (not ok)
+        // let qua = t.removeItemInTempStock(valueRd);
+        // if (qua > 2) {
+        //     log('is run ???')
+        // }
 
-        }
-
+        // check tempStock has item
+        t.needCleanStock = t.poolTempTask.indexOf(valueRd) ? true : false;
 
 
         for (let i = 0; i < t.poolTask.length; i++) {
@@ -145,8 +151,10 @@ export class GameData extends Component {
 
     addItemToTask(typeItem: number) {
         let t = this;
-        t.poolTask.forEach(e => {
+        for (let i = 0; i < t.poolTask.length; i++) {
+            let e = t.poolTask[i];
             if (e.type == typeItem) {
+                t.eventTask = i;
                 e.quantity--;
                 //clean task if done
                 if (e.quantity <= 0) {
@@ -157,7 +165,21 @@ export class GameData extends Component {
                 }
                 return true;
             }
-        })
+        }
+        // t.poolTask.forEach(e => {
+        //     if (e.type == typeItem) {
+
+        //         e.quantity--;
+        //         //clean task if done
+        //         if (e.quantity <= 0) {
+        //             e.type = -1;
+        //             e.quantity = 0;
+        //             t.newTask = true;
+        //             t.refreshTaskMission(-1)
+        //         }
+        //         return true;
+        //     }
+        // })
         return false;
     }
 
@@ -172,38 +194,50 @@ export class GameData extends Component {
         for (let i = 0; i < t.poolTempTask.length; i++) {
             if (t.poolTempTask[i] == -1) {
                 t.poolTempTask[i] = typeItem;
+                t.eventStock = i;
                 return true;
             }
         }
         return false;
     }
 
+
+    // slove all item if done return true
     removeItemInTempStock(typeItem: number) {
         let t = this;
-        let count = 0;
-        for (let i = 0; i < t.poolTempTask.length && count < 3; i++) {
+        let count = [];
+        for (let i = 0; i < t.poolTempTask.length && count.length < 3; i++) {
             if (t.poolTempTask[i] == typeItem) {
                 t.poolTempTask[i] = -1;
-                count++;
+                count.push(i)
+                // return i;
             }
         }
+        // return false;
         return count;
     }
 
 
-    // tempPool=[3,2,3,1]  [3,3]
+    // poolItem=[3,2,3,1]  [3,3]
 
     // chưa xử lý item nằm ở temp stock
     randomItemInPool() {
         let t = this;
-        let temp = [...t.poolItem];
-        let temp2 = [...t.poolTask];
-        temp2.forEach(e => {
-            if (temp[e.type])
-                temp[e.type] -= e.quantity;
+        let poolItem = [...t.poolItem];
+        let taskItem = [...t.poolTask];
+        let stockItem = [...t.poolTempTask]
+
+        stockItem.forEach(e => {
+            if (poolItem[e] > -1)
+                poolItem[e]++;
         })
-        // log(temp, "random");
-        const validIndices = temp
+
+        taskItem.forEach(e => {
+            if (poolItem[e.type])
+                poolItem[e.type] -= e.quantity;
+        })
+
+        const validIndices = poolItem
             .map((value, index) => (value >= 3 ? index : -1))
             .filter(index => index !== -1);
 
@@ -213,14 +247,22 @@ export class GameData extends Component {
 
         }
         const randomIndex = validIndices[Math.floor(Math.random() * validIndices.length)];
-        // log(randomIndex, "random");
         return randomIndex;
 
 
     }
 
 
-
+    findTaskByTypeItem(typeItem: number) {
+        let t = this;
+        t.poolTask
+        for (let i = 0; i < t.poolTask.length; i++) {
+            if (t.poolTask[i].type == typeItem) {
+                return i
+            }
+        }
+        return -1;
+    }
 
 
 }

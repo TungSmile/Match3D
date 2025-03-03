@@ -31,4 +31,5 @@ export class Constants {
     public static AudioSource = AudioSource;
     public static EventGame = EventGame;
     public static scriptGAme = [];
+    public static StatusItem = StatusItem
 }

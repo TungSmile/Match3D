@@ -1,4 +1,4 @@
-import { _decorator, Camera, Component, EventTouch, geometry, log, Node, PhysicsSystem, SpriteFrame } from 'cc';
+import { _decorator, Camera, Component, EventTouch, geometry, log, Node, PhysicsSystem, SpriteFrame, Vec3 } from 'cc';
 import { AudioManager } from './AudioManager';
 import { Constants } from '../data/Constants';
 import { Item } from './Item';
@@ -24,6 +24,9 @@ export class GameControll extends Component {
     private eventTouch: boolean = true;
 
     endGame: boolean = false;
+
+    // world position
+    posTouchHand: Vec3 = null
 
 
     protected onLoad(): void {
@@ -53,7 +56,7 @@ export class GameControll extends Component {
             return
         }
         t.eventTouch = false;
-        // const touches = event.getAllTouches();
+        t.posTouchHand = t.Menu2d.getChildByName("Camera").getComponent(Camera).screenToWorld(new Vec3(event.getLocationX(), event.getLocationY(), 0))
         // t.startEventRotation = event.getLocation();
         const camera = t.CamMain.getComponent(Camera);
         let ray = new geometry.Ray();
@@ -149,15 +152,19 @@ export class GameControll extends Component {
     }
 
 
+
     correctItem(typeItem: number) {
         let t = this;
         GameData.instance.removeItem(typeItem);
-        GameData.instance.addItemToTask(typeItem)
-        log(GameData.instance.getTaskMission())
+        GameData.instance.addItemToTask(typeItem);
+
+        // log(GameData.instance.getTaskMission())
         //  : GameData.instance.addItemToTempStock(typeItem) ? log(GameData.instance.getTempTask()) : t.endGame = true;
-        t.refreshUIMenu();
+        t.refreshUIMenu(Constants.StatusItem.PoolToTask, typeItem);
         t.ItemHoldUp.destroy();
         t.ItemHoldUp = null;
+
+
     }
 
     wrongItem(typeItem: number) {
@@ -167,7 +174,7 @@ export class GameControll extends Component {
             GameData.instance.removeItem(typeItem);
             t.ItemHoldUp.destroy();
             t.ItemHoldUp = null;
-            t.refreshUIMenu();
+            t.refreshUIMenu(Constants.StatusItem.PoolToTemp, typeItem);
         } else {
             t.endGame = true;
             t.touchCancel()
@@ -176,9 +183,25 @@ export class GameControll extends Component {
 
     }
 
-    refreshUIMenu() {
+    refreshUIMenu(status, type: number) {
         let t = this;
-        t.Menu2d.getChildByName("HeadMenu").getComponent(Menu2D).getData();
+        let uiAnimtion = t.Menu2d.getChildByName("HeadMenu").getComponent(Menu2D);
+        
+        switch (status) {
+            case Constants.StatusItem.PoolToTask:
+                uiAnimtion.setItemEvent(type)
+                uiAnimtion.animItemToTask(t.posTouchHand);
+                break;
+            case Constants.StatusItem.PoolToTemp:
+                uiAnimtion.setItemEvent(type)
+                uiAnimtion.animItemToStock(t.posTouchHand);
+
+                break;
+            default:
+                break;
+        }
+
+        // t.Menu2d.getChildByName("HeadMenu").getComponent(Menu2D).getData();
     }
 
 
