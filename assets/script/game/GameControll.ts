@@ -88,7 +88,7 @@ export class GameControll extends Component {
     checkItem(n: Node) {
         let t = this;
         let typeItem = Number(n.name);
-        log(typeItem, "check")
+        // log(typeItem, "check")
         let taskS = GameData.instance.getTaskMission();
         if (n.getComponent(Item)) {
             t.ItemHoldUp = n
@@ -113,7 +113,7 @@ export class GameControll extends Component {
         // 2. mouse or  figher outside frame item => wrong
         let itemInHand = t.ItemHoldUp?.getComponent(Item);
         if (!itemInHand) {
-            console.log("Item hasnt script ???/ u are select planet");
+            log("Item hasnt script ???/ u are select planet");
             t.eventTouch = true;
             t.ItemHoldUp = null;
             return;
@@ -181,14 +181,14 @@ export class GameControll extends Component {
             t.endGame = true;
             t.touchCancel()
         }
-        log(GameData.instance.getTempTask(), t.endGame)
+        log(GameData.instance.getTempTask(), t.endGame, "check case to stock")
 
     }
 
     refreshUIMenu(status, type: number) {
         let t = this;
         let uiAnimtion = t.Menu2d.getChildByName("HeadMenu").getComponent(Menu2D);
-
+        log(status, "check staus is number")
         switch (status) {
             case Constants.StatusItem.PoolToTask:
                 uiAnimtion.setItemEvent(type)
@@ -200,8 +200,10 @@ export class GameControll extends Component {
                 break;
             case Constants.StatusItem.TempToTask:
                 uiAnimtion.setItemEvent(type);
-                uiAnimtion.animItemToStock(t.posTouchHand);
-                uiAnimtion.animStockToTask(type)
+                uiAnimtion.animItemToTask(t.posTouchHand);
+                t.scheduleOnce(() => {
+                    uiAnimtion.animStockToTask()
+                }, 1)
                 break;
             default:
                 break;

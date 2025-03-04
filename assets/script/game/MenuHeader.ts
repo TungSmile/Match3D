@@ -1,4 +1,4 @@
-import { _decorator, Component, game, Label, log, Node, Sprite, SpriteFrame, tween, UITransform, Vec3 } from 'cc';
+import { _decorator, Component, Label, log, Node, Sprite, SpriteFrame, tween, UITransform, Vec3, Animation, SkeletalAnimation, sp } from 'cc';
 import { GameData } from '../data/GameData';
 const { ccclass, property } = _decorator;
 
@@ -56,6 +56,8 @@ export class Menu2D extends Component {
             }
         }
     }
+
+
 
 
     loadUITempStock() {
@@ -125,39 +127,103 @@ export class Menu2D extends Component {
             .start()
     }
 
-
-    animStockToTask(type: number) {
+    // type loi duyet moi task voi stock lq meos thg o ngoai
+    animStockToTask() {
         let t = this;
-        let data = GameData.instance.removeItemInTempStock(type);
         let time = 1;
-        let task = t.taskMission.children[GameData.instance.findTaskByTypeItem(type)]
+        let data = GameData.instance.checkItemInStock(GameData.instance.typeItemCleanStock);
+        let task = t.taskMission.children[GameData.instance.findTaskByTypeItem(GameData.instance.typeItemCleanStock)]
+
+
+
+        // let data = GameData.instance.removeItemInTempStock(type);
+        // let time = 1;
+        // let index = GameData.instance.findTaskByTypeItem(type)
+        // let test = GameData.instance.getTaskMission()
+        // log(index, type, test, "check index");
+        // let task = t.taskMission.children[index]
+
+
+
         let taskPos = new Vec3;
         if (taskPos) {
             taskPos = task.getWorldPosition(new Vec3);
             log("??????")
         }
         GameData.instance.needCleanStock = false;
-        data.forEach(e => {
-            let temp = t.tempStock.children[e]
+        // t.animationHandMachine(task.getChildByName("handMachine"))
+        for (let i = 0; i < data.length; i++) {
+            let e = data[i];
+            let temp = t.tempStock.children[e];
             if (temp) {
                 let icon = temp.getChildByName("icon");
                 let posOrigin = icon.getWorldPosition(new Vec3);
+                GameData.instance.addItemToTask(GameData.instance.typeItemCleanStock);
                 tween(icon)
-                    .to(time, { worldPosition: taskPos })
+                    .to(time + (i * 0.1), { worldPosition: taskPos })
                     .call(() => {
+                        GameData.instance.remoteItemInStock(GameData.instance.typeItemCleanStock)
                         icon.getComponent(Sprite).spriteFrame = null;
                     })
                     .to(0, { worldPosition: posOrigin })
-                    .call(() => { })
+                    .call(() => {
+                        t.loadUITaskMission()
+                        t.loadUITempStock()
+                    })
                     .start()
             }
-        });
-        t.scheduleOnce(() => { t.loadUITempStock() }, 1.2)
+        }
+
+        // data.forEach(e => {
+        //     let temp = t.tempStock.children[e]
+        //     if (temp) {
+        //         let icon = temp.getChildByName("icon");
+        //         let posOrigin = icon.getWorldPosition(new Vec3);
+        //         GameData.instance.addItemToTask(GameData.instance.typeItemCleanStock);
+        //         tween(icon)
+        //             .to(time, { worldPosition: taskPos })
+        //             .call(() => {
+        //                 GameData.instance.remoteItemInStock(GameData.instance.typeItemCleanStock)
+        //                 icon.getComponent(Sprite).spriteFrame = null;
+        //             })
+        //             .to(0, { worldPosition: posOrigin })
+        //             .call(() => {
+        //                 t.loadUITaskMission()
+        //                 t.loadUITempStock()
+        //             })
+        //             .start()
+        //     }
+        // });
+        // t.scheduleOnce(() => {
+        //     log(GameData.instance.getTempTask(), "after clean stock");
+        //     log(GameData.instance.getTaskMission(), "after clean stock");
+        //     log(GameData.instance.getPoolItem(), "after clean stock");
+        //     t.loadUITaskMission()
+        //     t.loadUITempStock()
+        // }, time * 2)
     }
 
     findTaskByTypeItem(type: number) {
         let t = this;
 
+    }
+
+
+    // n is hand machine
+    animationHandMachine(n: Node) {
+        let t = this;
+        n.active = true;
+        // let anim = n.getComponent(sp.Skeleton);
+        // anim.setAnimation(0, "takeBox", false);
+        // anim.addAnimation(0, "dropBox", false);
+
+
+        let anim = n.getComponent(Animation);
+        anim.play("takeBox");
+        anim.once(Animation.EventType.FINISHED, () => {
+            anim.play('dropBox');
+        }, t);
+        log("check anima hand machine")
     }
 
 
