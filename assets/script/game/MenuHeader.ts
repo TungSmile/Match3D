@@ -117,6 +117,16 @@ export class Menu2D extends Component {
         t.itemMove.getComponent(Sprite).spriteFrame = t.poolIcons[t.typeItemSelecter];
         t.itemMove.setPosition(localFrom);
 
+
+        t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
+        log("???", GameData.instance.newTask)
+        if (GameData.instance.newTask) {
+            t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
+            log("are run in func item to task")
+        }
+
+
+
         tween(t.itemMove)
             .to(time, { position: loacalTo })
             .call(() => {
@@ -210,22 +220,40 @@ export class Menu2D extends Component {
 
 
     // n is hand machine
-    animationHandMachine(n: Node) {
+    animationTakeBox(n: Node) {
         let t = this;
-        n.active = true;
-        // let anim = n.getComponent(sp.Skeleton);
-        // anim.setAnimation(0, "takeBox", false);
-        // anim.addAnimation(0, "dropBox", false);
+        let leftH = n.getChildByName("handLeft");
+        let rightH = n.getChildByName("handRight");
+        let box = n.getChildByName("boxActive");
+        let originPos = leftH.getPosition(new Vec3);
+        let toPos = new Vec3(0, 25, 0)
+        let time = 0.5;
+        tween(leftH)
+            .to(time, { position: toPos })
+            .call(() => {
+                leftH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
+                leftH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
+            })
+            .delay(time)
+            .to(time, { position: originPos })
+            .start();
+        tween(rightH)
+            .to(time, { position: toPos })
+            .call(() => {
+                rightH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
+                rightH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
+            })
+            .delay(time)
+            .to(time, { position: originPos })
+            .start();
 
 
-        let anim = n.getComponent(Animation);
-        anim.play("takeBox");
-        anim.once(Animation.EventType.FINISHED, () => {
-            anim.play('dropBox');
-        }, t);
-        log("check anima hand machine")
+
     }
 
+    animationDropBox(n: Node) {
+        let t = this;
+    }
 
     update(deltaTime: number) {
 

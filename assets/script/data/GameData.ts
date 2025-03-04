@@ -173,7 +173,7 @@ export class GameData extends Component {
                     e.type = -1;
                     e.quantity = 0;
                     t.newTask = true;
-                    t.refreshTaskMission(-1)
+                    t.refreshTaskMission(-1);
                 }
                 return true;
             }

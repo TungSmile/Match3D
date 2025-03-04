@@ -201,9 +201,9 @@ export class GameControll extends Component {
             case Constants.StatusItem.TempToTask:
                 uiAnimtion.setItemEvent(type);
                 uiAnimtion.animItemToTask(t.posTouchHand);
-                t.scheduleOnce(() => {
+                // t.scheduleOnce(() => {
                     uiAnimtion.animStockToTask()
-                }, 1)
+                // }, 1)
                 break;
             default:
                 break;

@@ -1,0 +1,20 @@
+
+Hand_2.skel.png
+size: 166,68
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tay_gap_tay_3
+  rotate: false
+  xy: 2, 2
+  size: 88, 64
+  orig: 90, 66
+  offset: 1, 1
+  index: -1
+tay_gap_tay_4
+  rotate: true
+  xy: 92, 9
+  size: 57, 72
+  orig: 60, 75
+  offset: 2, 1
+  index: -1
