@@ -19,16 +19,21 @@ export class Menu2D extends Component {
     itemMove: Node = null;
 
     typeItemSelecter: number = -1;
+    numberTaskHasShow: number = 0;
 
-
+    // for position hand
+    positiveDis = new Vec3(0, 35, 0);
+    negativeDis = new Vec3(0, -35, 0);
+    timeAnim = 0.3;
     start() {
         this.getData()
     }
 
     getData() {
         let t = this;
-        t.loadUITaskMission()
-        t.loadUITempStock()
+        t.loadUITaskMission();
+        t.loadUITempStock();
+        t.numberTaskHasShow = GameData.instance.countTask;
     }
 
     refreshTask() {
@@ -118,23 +123,30 @@ export class Menu2D extends Component {
         t.itemMove.setPosition(localFrom);
 
 
-        t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
-        log("???", GameData.instance.newTask)
-        if (GameData.instance.newTask) {
-            t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
-            log("are run in func item to task")
-        }
-
-
-
+        // action item fly to task
         tween(t.itemMove)
             .to(time, { position: loacalTo })
             .call(() => {
                 log(' anim item to task done');
                 t.itemMove.getComponent(Sprite).spriteFrame = null;
-                t.loadUITaskMission()
             })
             .start()
+
+
+        // t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
+        log("???", GameData.instance.countTask)
+        if (t.numberTaskHasShow != GameData.instance.countTask) {
+            t.numberTaskHasShow = GameData.instance.countTask;
+            t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
+            time += (t.timeAnim * 2)
+            log("are run in func item to task")
+        }
+
+
+        log(time, "check time")
+        t.scheduleOnce(() => {
+            t.loadUITaskMission()
+        }, time)
     }
 
     // type loi duyet moi task voi stock lq meos thg o ngoai
@@ -143,18 +155,12 @@ export class Menu2D extends Component {
         let time = 1;
         let data = GameData.instance.checkItemInStock(GameData.instance.typeItemCleanStock);
         let task = t.taskMission.children[GameData.instance.findTaskByTypeItem(GameData.instance.typeItemCleanStock)]
-
-
-
         // let data = GameData.instance.removeItemInTempStock(type);
         // let time = 1;
         // let index = GameData.instance.findTaskByTypeItem(type)
         // let test = GameData.instance.getTaskMission()
         // log(index, type, test, "check index");
         // let task = t.taskMission.children[index]
-
-
-
         let taskPos = new Vec3;
         if (taskPos) {
             taskPos = task.getWorldPosition(new Vec3);
@@ -172,17 +178,20 @@ export class Menu2D extends Component {
                 tween(icon)
                     .to(time + (i * 0.1), { worldPosition: taskPos })
                     .call(() => {
-                        GameData.instance.remoteItemInStock(GameData.instance.typeItemCleanStock)
+                        GameData.instance.remoteItemInStock(GameData.instance.typeItemCleanStock);
+                        GameData.instance.addItemToTask(GameData.instance.typeItemCleanStock)
                         icon.getComponent(Sprite).spriteFrame = null;
                     })
                     .to(0, { worldPosition: posOrigin })
                     .call(() => {
+                        t.loadUITempStock();
                         t.loadUITaskMission()
-                        t.loadUITempStock()
+
                     })
                     .start()
             }
         }
+
 
         // data.forEach(e => {
         //     let temp = t.tempStock.children[e]
@@ -205,12 +214,12 @@ export class Menu2D extends Component {
         //     }
         // });
         // t.scheduleOnce(() => {
-        //     log(GameData.instance.getTempTask(), "after clean stock");
+        //     // log(GameData.instance.getTempTask(), "after clean stock");
         //     log(GameData.instance.getTaskMission(), "after clean stock");
-        //     log(GameData.instance.getPoolItem(), "after clean stock");
+        //     // log(GameData.instance.getPoolItem(), "after clean stock");
         //     t.loadUITaskMission()
-        //     t.loadUITempStock()
-        // }, time * 2)
+        //     // t.loadUITempStock()
+        // }, time + (data.length * 0.1))
     }
 
     findTaskByTypeItem(type: number) {
@@ -221,38 +230,77 @@ export class Menu2D extends Component {
 
     // n is hand machine
     animationTakeBox(n: Node) {
+        // all time 1.5s
         let t = this;
         let leftH = n.getChildByName("handLeft");
         let rightH = n.getChildByName("handRight");
         let box = n.getChildByName("boxActive");
-        let originPos = leftH.getPosition(new Vec3);
-        let toPos = new Vec3(0, 25, 0)
-        let time = 0.5;
+        box.getChildByName("clipboard").active = false;
+        box.getChildByName("Done").active = true;
+        box.getChildByName("icon").active = false;
         tween(leftH)
-            .to(time, { position: toPos })
+            .by(t.timeAnim, { position: t.negativeDis })
             .call(() => {
                 leftH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
                 leftH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
             })
-            .delay(time)
-            .to(time, { position: originPos })
+            .delay(t.timeAnim)
+            .by(t.timeAnim, { position: t.positiveDis })
             .start();
         tween(rightH)
-            .to(time, { position: toPos })
+            .by(t.timeAnim, { position: t.negativeDis })
             .call(() => {
                 rightH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
                 rightH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
             })
-            .delay(time)
-            .to(time, { position: originPos })
+            .delay(t.timeAnim)
+            .by(t.timeAnim, { position: t.positiveDis })
             .start();
-
-
+        tween(box)
+            .delay(t.timeAnim * 2)
+            .by(t.timeAnim, { position: t.positiveDis })
+            .delay(t.timeAnim)
+            .call(() => {
+                t.animationDropBox(n)
+                box.getChildByName("Done").active = false;
+                box.getChildByName("icon").active = true;
+            })
+            .start();
 
     }
 
+
+
+
     animationDropBox(n: Node) {
         let t = this;
+        let leftH = n.getChildByName("handLeft");
+        let rightH = n.getChildByName("handRight");
+        let box = n.getChildByName("boxActive");
+        box.getChildByName("clipboard").active = true;
+        tween(leftH)
+            .by(t.timeAnim, { position: t.negativeDis })
+            .call(() => {
+                leftH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
+                leftH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
+            })
+            .delay(t.timeAnim)
+            .by(t.timeAnim, { position: t.positiveDis })
+            .start();
+        tween(rightH)
+            .by(t.timeAnim, { position: t.negativeDis })
+            .call(() => {
+                rightH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
+                rightH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
+            })
+            .delay(t.timeAnim)
+            .by(t.timeAnim, { position: t.positiveDis })
+            .start();
+        tween(box)
+            .by(t.timeAnim, { position: t.negativeDis })
+            .start();
+
+
     }
 
     update(deltaTime: number) {

@@ -199,6 +199,8 @@
           {}
         ]
       }
-    }
+    },
+    "dumpMaterials": false,
+    "depthWriteInAlphaModeBlend": false
   }
 }

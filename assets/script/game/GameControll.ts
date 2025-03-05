@@ -178,7 +178,11 @@ export class GameControll extends Component {
             t.ItemHoldUp = null;
             t.refreshUIMenu(Constants.StatusItem.PoolToTemp, typeItem);
         } else {
-            t.endGame = true;
+
+            // chưa có logic full stock và add thêm item thì sẽ show gì
+            // t.endGame = true;
+
+
             t.touchCancel()
         }
         log(GameData.instance.getTempTask(), t.endGame, "check case to stock")
@@ -201,9 +205,9 @@ export class GameControll extends Component {
             case Constants.StatusItem.TempToTask:
                 uiAnimtion.setItemEvent(type);
                 uiAnimtion.animItemToTask(t.posTouchHand);
-                // t.scheduleOnce(() => {
-                    uiAnimtion.animStockToTask()
-                // }, 1)
+                t.scheduleOnce(() => {
+                uiAnimtion.animStockToTask()
+                }, 1)
                 break;
             default:
                 break;
