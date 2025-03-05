@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, log, Node, Sprite, SpriteFrame, tween, UITransform, Vec3, Animation, SkeletalAnimation, sp } from 'cc';
+import { _decorator, Component, Label, log, Node, Sprite, SpriteFrame, tween, UITransform, Vec3, sp } from 'cc';
 import { GameData } from '../data/GameData';
 const { ccclass, property } = _decorator;
 
@@ -176,13 +176,14 @@ export class Menu2D extends Component {
                 let posOrigin = icon.getWorldPosition(new Vec3);
                 GameData.instance.addItemToTask(GameData.instance.typeItemCleanStock);
                 tween(icon)
-                    .to(time + (i * 0.1), { worldPosition: taskPos })
+                    .to(time, { worldPosition: taskPos })
                     .call(() => {
                         GameData.instance.remoteItemInStock(GameData.instance.typeItemCleanStock);
                         GameData.instance.addItemToTask(GameData.instance.typeItemCleanStock)
                         icon.getComponent(Sprite).spriteFrame = null;
                     })
                     .to(0, { worldPosition: posOrigin })
+                    .delay((i * 0.1))
                     .call(() => {
                         t.loadUITempStock();
                         t.loadUITaskMission()

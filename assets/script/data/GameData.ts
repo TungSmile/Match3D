@@ -25,63 +25,97 @@ export class GameData extends Component {
         return this.getInstance<GameData>()
     }
 
-
     useScriptGame: boolean = false;
-    numberSlotTaskMission: number = 3;
-    limitTaskMission: number = 4;
-    numberSlotTempTask: number = 4;
+
+    poolItem: number[] = [];
     numberTypeItem: number = 4;
     quanlityForType: number = 9;
-    private poolItem: number[] = [];
-    private poolTask: Task[] = [];
-    private poolTempTask: number[] = [];
+
+
+    numberSlotTaskMission: number = 2;
+    limitTaskMission: number = 4;
+    poolTask: Task[] = [];
     newTask: boolean = false;
-    eventStock: number = -1;
     eventTask: number = -1;
+    capacityItemTask: number = 3;
+
+
+    numberSlotTempTask: number = 4;
+    poolTempTask: number[] = [];
+    eventStock: number = -1;
     needCleanStock: boolean = false;
     typeItemCleanStock: number = -1;
-    countTask: number = 0;
+    countTask: number = 0; // => useless
 
-    // allItem []  type<numberTypeItem , count %3==0;
-    // taskMission [{type:1,quanlity:7},..] type E type allItem , count %3==0;
-    // temp [{type:1,count:7},..] type E type allItem , count %3==0;
-
-
+    // block muti item event
+    eventItem: boolean = false;
 
     createDataLogicGame() {
         let t = this;
-        // run once 
         if (t.poolItem.length > 0) {
             return;
         }
         for (let i = 0; i < t.numberTypeItem; i++) {
             t.poolItem.push(t.quanlityForType);
         }
-        // let tempTask: Task = { type: -1, quantity: 0, capacity: 3, needRest: false, isLock: false }
-        // t.poolTask = Array(t.numberSlotTaskMission).fill(null).map(() => ({ ...tempTask }));
-
-
         for (let i = 0; i < t.limitTaskMission; i++) {
-            let task: Task = { type: -1, quantity: 0, capacity: 3, needRest: false, unlock: i < t.numberSlotTaskMission ? true : false };
+            let task: Task = { type: -1, quantity: 0, capacity: t.capacityItemTask, needRest: false, unlock: i < t.numberSlotTaskMission ? true : false };
             t.poolTask.push(task)
-
         }
-
-
         t.poolTempTask = Array(t.numberSlotTempTask).fill(-1);
-        // while (!t.refreshTaskMission(t.randomItemInPool())) {
-        //     t.newTask = true;
-        // }
 
         for (let i = 0; i < t.numberSlotTaskMission; i++) {
             t.newTask = true;
             t.refreshTaskMission(-1)
-            // log(t.poolTask, "start2");
-
         }
-        // console.log(t.poolTask);
+    }
+
+
+    checkTaskFree() {
+        let t = this;
+        for (let id = 0; id < t.poolTask.length; id++) {
+            let task = t.poolTask[id];
+            if (task.needRest && task.quantity < 1) {
+                return id;
+            }
+        }
+        return -1;
+    }
+
+    setTaskMissionByIndex(id: number, task: Task = { type: -1, quantity: 0, capacity: this.capacityItemTask, needRest: false, unlock: false }) {
+        let t = this;
+        t.poolTask[id] = task;
+    }
+
+
+    resetTaskMission() {
+        let t = this;
+        let valueRd = t.randomItemInPool();
+        let idTask = t.checkTaskFree();
+        let hasItemStock = 0; // check item has in stock
+        if (valueRd < 0) {
+            log("enough item to reset task");
+            return false;
+        }
+        if (idTask < 0) {
+            log("every task busy");
+            return false;
+        }
+        if (hasItemStock > 0) {
+            t.needCleanStock = true;
+        }
+        t.setTaskMissionByIndex(idTask, { type: valueRd, quantity: 0, capacity: t.capacityItemTask, needRest: false, unlock: true })
+        return true;
+    }
+
+    addItemToTaskByType(type: number) {
+        let t = this;
 
     }
+
+
+
+
 
     getPoolItem() {
         return this.poolItem;
@@ -95,7 +129,7 @@ export class GameData extends Component {
         return this.poolTempTask;
     }
 
-    // refresh task
+
     refreshTaskMission(typeItem: number) {
         let t = this;
         let valueRd = t.randomItemInPool();
@@ -185,7 +219,7 @@ export class GameData extends Component {
                 return true;
             }
         }
-       
+
         return false;
     }
 
@@ -208,7 +242,7 @@ export class GameData extends Component {
         let count = [];
         for (let i = 0; i < t.poolTempTask.length && count.length < 3; i++) {
             if (t.poolTempTask[i] == typeItem) {
-                count.push(i)   
+                count.push(i)
             }
         }
         return count;

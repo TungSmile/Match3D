@@ -1,9 +1,9 @@
 import { _decorator, Camera, Component, EventTouch, geometry, log, Node, PhysicsSystem, SpriteFrame, Vec3 } from 'cc';
-import { AudioManager } from './AudioManager';
+// import { AudioManager } from './AudioManager';
 import { Constants } from '../data/Constants';
-import { Item } from './Item';
 import { GameData } from '../data/GameData';
 import { Menu2D } from './MenuHeader';
+import { Item } from '../model/Item';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameControll')
