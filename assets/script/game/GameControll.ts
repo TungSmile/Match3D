@@ -19,6 +19,11 @@ export class GameControll extends Component {
     @property({ type: Node })
     Menu2d: Node = null
 
+
+    @property({ type: Node })
+    TaskController: Node = null
+
+
     private ItemHoldUp: Node = null;
     // block muti event touch
     private eventTouch: boolean = true;
@@ -118,25 +123,12 @@ export class GameControll extends Component {
             t.ItemHoldUp = null;
             return;
         }
-        let taskS = GameData.instance.getTaskMission();
         let typeItem = Number(t.ItemHoldUp.name);
-        if (taskS.some(item => item.type == typeItem)) {
+        if (GameData.instance.findIdTaskByType(typeItem) > -1) {
             t.correctItem(typeItem);
-            // GameData.instance.removeItem(typeItem);
-            // t.ItemHoldUp.destroy();
-            // t.ItemHoldUp = null;
         } else {
             t.wrongItem(typeItem);
-            // t.ItemHoldUp.getComponent(Item).lightFrame(false)
-            // t.ItemHoldUp.getComponent(Item).unPicKItem();
-            // t.ItemHoldUp = null;
         }
-        // if (inOrOut) {
-        //     t.ItemHoldUp.getComponent(Item).unPicKItem();
-        //     t.ItemHoldUp = null;
-        // } else {
-        //     t.ItemHoldUp = null;
-        // }
         t.eventTouch = true;
     }
 
@@ -155,7 +147,7 @@ export class GameControll extends Component {
 
     correctItem(typeItem: number) {
         let t = this;
-        GameData.instance.removeItem(typeItem);
+        GameData.instance.removeItemInPool(typeItem);
         GameData.instance.addItemToTask(typeItem);
         if (GameData.instance.needCleanStock) {
             t.refreshUIMenu(Constants.StatusItem.TempToTask, typeItem);
@@ -173,7 +165,7 @@ export class GameControll extends Component {
         let t = this;
         // GameData.instance.removeItem(typeItem);
         if (GameData.instance.addItemToTempStock(typeItem)) {
-            GameData.instance.removeItem(typeItem);
+            GameData.instance.removeItemInPool(typeItem);
             t.ItemHoldUp.destroy();
             t.ItemHoldUp = null;
             t.refreshUIMenu(Constants.StatusItem.PoolToTemp, typeItem);
@@ -206,7 +198,7 @@ export class GameControll extends Component {
                 uiAnimtion.setItemEvent(type);
                 uiAnimtion.animItemToTask(t.posTouchHand);
                 t.scheduleOnce(() => {
-                uiAnimtion.animStockToTask()
+                    uiAnimtion.animStockToTask()
                 }, 1)
                 break;
             default:

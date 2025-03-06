@@ -3,10 +3,14 @@ import { Constants } from './Constants';
 const { ccclass, property } = _decorator;
 
 
+// viết quá nhiều func mà méo biz có dùng hết ko => smell code
+// chỉ cần crud 
+
+
 interface Task {
     type: number;
-    quantity: number;
-    capacity: number;
+    quantity: number; //1
+    capacity: number; //3
     needRest: boolean;
     unlock: boolean;
 }
@@ -50,6 +54,7 @@ export class GameData extends Component {
     // block muti item event
     eventItem: boolean = false;
 
+
     createDataLogicGame() {
         let t = this;
         if (t.poolItem.length > 0) {
@@ -71,7 +76,11 @@ export class GameData extends Component {
     }
 
 
-    checkTaskFree() {
+
+
+
+
+    findTaskFree() {
         let t = this;
         for (let id = 0; id < t.poolTask.length; id++) {
             let task = t.poolTask[id];
@@ -91,7 +100,7 @@ export class GameData extends Component {
     resetTaskMission() {
         let t = this;
         let valueRd = t.randomItemInPool();
-        let idTask = t.checkTaskFree();
+        let idTask = t.findTaskFree();
         let hasItemStock = 0; // check item has in stock
         if (valueRd < 0) {
             log("enough item to reset task");
@@ -108,14 +117,16 @@ export class GameData extends Component {
         return true;
     }
 
-    addItemToTaskByType(type: number) {
+    findIdTaskByType(typeItem: number) {
         let t = this;
-
+        for (let i = 0; i < t.poolTask.length; i++) {
+            let e = t.poolTask[i];
+            if (e.type == typeItem) {
+                return i
+            }
+        }
+        return -1;
     }
-
-
-
-
 
     getPoolItem() {
         return this.poolItem;
@@ -128,6 +139,13 @@ export class GameData extends Component {
     getTempTask() {
         return this.poolTempTask;
     }
+
+
+    // need refator code
+
+
+
+
 
 
     refreshTaskMission(typeItem: number) {
@@ -179,14 +197,13 @@ export class GameData extends Component {
         t.poolTask[t.numberSlotTaskMission - 1].unlock = true
     }
 
-
     createSlotTempTask() {
         let t = this;
         t.numberSlotTempTask++;
         t.poolTempTask.push(-1);
     }
 
-    removeItem(typeItem: number) {
+    removeItemInPool(typeItem: number) {
         let t = this;
         if (typeItem >= 0 && typeItem < t.numberTypeItem) {
             if (t.poolItem[typeItem] > 0) {
@@ -236,7 +253,6 @@ export class GameData extends Component {
         return false;
     }
 
-
     checkItemInStock(typeItem: number) {
         let t = this;
         let count = [];
@@ -247,7 +263,6 @@ export class GameData extends Component {
         }
         return count;
     }
-
 
     remoteItemInStock(typeItem: number) {
         let t = this;
@@ -262,35 +277,35 @@ export class GameData extends Component {
 
 
 
+
+    // [3,4,4,4]
+    // [1,3]
+
+
+
     randomItemInPool() {
-        let t = this;
-        let poolItem = [...t.poolItem];
-        let taskItem = [...t.poolTask];
-        let stockItem = [...t.poolTempTask]
+        const t = this;
+        const poolItem = [...t.poolItem];
 
-        stockItem.forEach(e => {
-            if (poolItem[e] > -1)
-                poolItem[e]++;
-        })
-
-        taskItem.forEach(e => {
-            if (poolItem[e.type])
-                poolItem[e.type] -= e.quantity;
-        })
-
-        const validIndices = poolItem
-            .map((value, index) => (value >= 3 ? index : -1))
-            .filter(index => index !== -1);
-
-        if (validIndices.length == 0) {
-            t.newTask = false;
-            return -2
-
+        for (const e of t.poolTempTask) {
+            if (poolItem[e] >= 0) poolItem[e] = (poolItem[e] || 0) + 1;
         }
-        const randomIndex = validIndices[Math.floor(Math.random() * validIndices.length)];
-        return randomIndex;
 
+        for (const e of t.poolTask) {
+            if (poolItem[e.type] >= 0) poolItem[e.type] = (poolItem[e.type] || 0) - (e.capacity - e.quantity);
+        }
 
+        const validIndices = [];
+        for (let i = 0; i < poolItem.length; i++) {
+            if (poolItem[i] >= 3) validIndices.push(i);
+        }
+
+        if (!validIndices.length) {
+            t.newTask = false;
+            return -1;
+        }
+
+        return validIndices[Math.floor(Math.random() * validIndices.length)];
     }
 
 

@@ -141,8 +141,6 @@ export class Menu2D extends Component {
             time += (t.timeAnim * 2)
             log("are run in func item to task")
         }
-
-
         log(time, "check time")
         t.scheduleOnce(() => {
             t.loadUITaskMission()
@@ -164,7 +162,7 @@ export class Menu2D extends Component {
         let taskPos = new Vec3;
         if (taskPos) {
             taskPos = task.getWorldPosition(new Vec3);
-            log("??????")
+            log("??????");
         }
         GameData.instance.needCleanStock = false;
         // t.animationHandMachine(task.getChildByName("handMachine"))
