@@ -44,9 +44,9 @@ export class Item extends Component {
     }
 
 
-
-
-
+    cleanVector() {
+        this.rigiBody.clearVelocity()
+    }
 
 
 

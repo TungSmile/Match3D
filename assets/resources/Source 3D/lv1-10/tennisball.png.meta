@@ -2,7 +2,7 @@
   "ver": "1.0.24",
   "importer": "image",
   "imported": true,
-  "uuid": "e46dc355-4353-4dfe-852a-828899eca982",
+  "uuid": "f29f9e9b-00ad-4771-95c5-87b9c6586487",
   "files": [
     ".json",
     ".png"
@@ -10,7 +10,7 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "e46dc355-4353-4dfe-852a-828899eca982@6c48a",
+      "uuid": "f29f9e9b-00ad-4771-95c5-87b9c6586487@6c48a",
       "displayName": "tennisball",
       "id": "6c48a",
       "name": "texture",
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "e46dc355-4353-4dfe-852a-828899eca982",
+        "imageUuidOrDatabaseUri": "f29f9e9b-00ad-4771-95c5-87b9c6586487",
         "visible": true
       },
       "ver": "1.0.22",
@@ -37,6 +37,6 @@
     "type": "texture",
     "fixAlphaTransparencyArtifacts": true,
     "hasAlpha": false,
-    "redirect": "e46dc355-4353-4dfe-852a-828899eca982@6c48a"
+    "redirect": "f29f9e9b-00ad-4771-95c5-87b9c6586487@6c48a"
   }
 }

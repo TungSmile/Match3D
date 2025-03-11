@@ -32,11 +32,11 @@ export class GameData extends Component {
     useScriptGame: boolean = false;
 
     poolItem: number[] = [];
-    numberTypeItem: number = 4;
-    quanlityForType: number = 9;
+    numberTypeItem: number = 7;
+    quanlityForType: number = 12;
 
 
-    numberSlotTaskMission: number = 2;
+    numberSlotTaskMission: number = 1;
     limitTaskMission: number = 4;
     poolTask: Task[] = [];
     newTask: boolean = false;
@@ -44,7 +44,7 @@ export class GameData extends Component {
     capacityItemTask: number = 3;
 
 
-    numberSlotTempTask: number = 4;
+    numberSlotTempTask: number = 3
     poolTempTask: number[] = [];
     eventStock: number = -1;
     needCleanStock: boolean = false;
@@ -53,6 +53,12 @@ export class GameData extends Component {
 
     // block muti item event
     eventItem: boolean = false;
+
+    numScript: number = 0;
+
+    hintCount: number = 0;
+    scoreWin: number = 0;
+    scoreLose: number = 0;
 
 
     createDataLogicGame() {
@@ -129,7 +135,8 @@ export class GameData extends Component {
     }
 
     getPoolItem() {
-        return this.poolItem;
+        let clone = [...this.poolItem]
+        return clone;
     }
 
     getTaskMission() {
@@ -154,6 +161,12 @@ export class GameData extends Component {
         if (!t.newTask && valueRd >= 0) {
             log("no task complete or empty pool")
             return false;
+        }
+
+        if (t.useScriptGame) {
+            valueRd = Constants.scriptGame[t.numScript];
+            log("run when select script game")
+            t.numScript++
         }
 
         // xử lý clean tempstock (not ok)

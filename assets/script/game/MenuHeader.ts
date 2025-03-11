@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, log, Node, Sprite, SpriteFrame, tween, UITransform, Vec3, sp } from 'cc';
+import { _decorator, Component, Label, log, Node, Sprite, SpriteFrame, tween, UITransform, Vec3, sp, Prefab, instantiate } from 'cc';
 import { GameData } from '../data/GameData';
 const { ccclass, property } = _decorator;
 
@@ -25,21 +25,28 @@ export class Menu2D extends Component {
     positiveDis = new Vec3(0, 35, 0);
     negativeDis = new Vec3(0, -35, 0);
     timeAnim = 0.3;
+
+
+    @property({ type: Prefab })
+    stock: Prefab = null;
+
     start() {
-        this.getData()
+        this.getData();
+        // this.renderTempStock();
     }
 
     getData() {
         let t = this;
         t.loadUITaskMission();
-        t.loadUITempStock();
+        t.renderTempStock();
+
+        // t.loadUITempStock();
         t.numberTaskHasShow = GameData.instance.countTask;
     }
 
     refreshTask() {
         let t = this
     }
-
 
     newTaskMission() {
         let t = this;
@@ -61,8 +68,6 @@ export class Menu2D extends Component {
             }
         }
     }
-
-
 
 
     loadUITempStock() {
@@ -118,10 +123,9 @@ export class Menu2D extends Component {
         let localFrom = t.node.getComponent(UITransform).convertToNodeSpaceAR(posFrom, new Vec3);
         let posTo = t.taskMission.children[GameData.instance.eventTask].getWorldPosition(new Vec3);
         let loacalTo = t.node.getComponent(UITransform).convertToNodeSpaceAR(posTo, new Vec3);
-
         t.itemMove.getComponent(Sprite).spriteFrame = t.poolIcons[t.typeItemSelecter];
         t.itemMove.setPosition(localFrom);
-
+        log(localFrom, posFrom)
 
         // action item fly to task
         tween(t.itemMove)
@@ -226,7 +230,6 @@ export class Menu2D extends Component {
 
     }
 
-
     // n is hand machine
     animationTakeBox(n: Node) {
         // all time 1.5s
@@ -269,8 +272,6 @@ export class Menu2D extends Component {
     }
 
 
-
-
     animationDropBox(n: Node) {
         let t = this;
         let leftH = n.getChildByName("handLeft");
@@ -301,6 +302,26 @@ export class Menu2D extends Component {
 
 
     }
+
+
+    // func calculation temp stock need render
+
+    // 1080/8 135
+    renderTempStock() {
+        let t = this;
+        let temp = 135;
+        let n = GameData.instance.numberSlotTempTask;
+        let startX = -temp * (n - 1) / 2;
+        for (let i = 0; i < n; i++) {
+            let e = instantiate(t.stock);
+            e.name = i.toString();
+            t.tempStock.addChild(e);
+            let x = startX + i * temp;
+            e.setPosition(new Vec3(x, 6.5, 0));
+        }
+    }
+
+
 
     update(deltaTime: number) {
 

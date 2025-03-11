@@ -1,4 +1,4 @@
-import { _decorator, Component, Enum, Node } from 'cc';
+import { _decorator } from 'cc';
 const { ccclass, property } = _decorator;
 
 enum AudioSource {
@@ -21,15 +21,27 @@ enum StatusItem {
     PoolToTemp = 2,
     TempToTask = 3,
     TempToPool = 4,
-    PoolToManaget = 5
+    PoolToManaget = 5,
+    HintToTask = 6
 }
 
+
+enum ConfigPoolItem {
+    StartY = 1,
+    EndY = 3,// 
+    StartX = -2,
+    EndX = 2,
+    StartZ = 2,
+    EndZ = -3.5
+}
 
 
 @ccclass("Constants")
 export class Constants {
     public static AudioSource = AudioSource;
     public static EventGame = EventGame;
-    public static scriptGAme = [];
-    public static StatusItem = StatusItem
+    public static scriptGame = [0, 1, 2];
+    public static StatusItem = StatusItem;
+    public static ConfigPoolItem = ConfigPoolItem;
+
 }
