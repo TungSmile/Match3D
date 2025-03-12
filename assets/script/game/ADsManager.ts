@@ -5,11 +5,11 @@ const { ccclass, property } = _decorator;
 @ccclass('ADsManager')
 export class ADsManager extends Component {
    
-    androidLink: string = "https://play.google.com/store/apps/details?id=com.gplay.annoying.puzzle.game2";
+    androidLink: string = "https://play.google.com/store/apps/details?id=com.gplay.match.packing3d";
 
-    iosLink: string = "https://play.google.com/store/apps/details?id=com.gplay.annoying.puzzle.game2";
+    iosLink: string = "https://play.google.com/store/apps/details?id=com.gplay.match.packing3d";
 
-    defaultLink: string = "https://play.google.com/store/apps/details?id=com.gplay.annoying.puzzle.game2";
+    defaultLink: string = "https://play.google.com/store/apps/details?id=com.gplay.match.packing3d";
 
 
     start() {
