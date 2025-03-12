@@ -4,7 +4,7 @@ const { ccclass, property } = _decorator;
 @ccclass('Item')
 export class Item extends Component {
     private rigiBody: RigidBody = null;
-    private timeSmooth: number = 0.3;
+    private timeSmooth: number = 0.2;
 
 
     start() {

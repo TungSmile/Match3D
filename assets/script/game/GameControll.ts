@@ -1,10 +1,12 @@
-import { _decorator, Camera, Component, EventTouch, geometry, log, Node, PhysicsSystem, SpriteFrame, tween, Vec3, view } from 'cc';
+import { _decorator, AudioClip, Camera, Component, EventTouch, geometry, log, Node, PhysicsSystem, Sprite, SpriteFrame, tween, Vec3, view } from 'cc';
 // import { AudioManager } from './AudioManager';
 import { Constants } from '../data/Constants';
 import { GameData } from '../data/GameData';
 import { Menu2D } from './MenuHeader';
 import { Item } from '../model/Item';
 import { PoolItem } from './PoolItem';
+import super_html_playable from '../super_html_playable';
+import { ADsManager } from './ADsManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameControll')
@@ -30,6 +32,9 @@ export class GameControll extends Component {
 
     @property({ type: Node })
     nodeHint: Node = null
+
+    @property({ type: [AudioClip] })
+    sound: AudioClip[] = [];
 
 
     private ItemHoldUp: Node = null;
@@ -68,13 +73,10 @@ export class GameControll extends Component {
         // AudioManager.playSound(Constants.AudioSource.BACKGROUND);
         GameData.instance.createDataLogicGame();
         GameData.instance.useScriptGame = t.useScriptGame;
-        t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_START, t.fristTouch, t);
-
-        // t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_MOVE, t.touchCancel, t);
+        t.animRenderFirstTouch()
         t.scheduleOnce(() => {
-            t.fristTouch()
-            t.stepHint(GameData.instance.scoreWin);
-        }, 5)
+            t.Menu2d.getChildByName("fristTouch").on(Node.EventType.TOUCH_START, t.fristTouch, t);
+        }, 2)
     }
 
 
@@ -84,12 +86,10 @@ export class GameControll extends Component {
             return
         }
         t.fristTouchCount = true;
-        t.Menu2d.getChildByName("ArenaListenerTouch").off(Node.EventType.TOUCH_START, t.fristTouch, t);
-        // t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_START, t.touchStart, t);
-        // t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_END, t.touchEnd, t);
-        // t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_CANCEL, t.touchCancel, t);
-        // t.stepHint(GameData.instance.scoreWin);
-
+        t.Menu2d.getChildByName("fristTouch").destroy();
+        t.Menu2d.getChildByName("text").destroy();
+        t.stepHint(GameData.instance.scoreWin);
+        t.resetRenderFirstTouch()
     }
 
 
@@ -152,6 +152,16 @@ export class GameControll extends Component {
         // }
     }
 
+    touchMove(event) {
+        let t = this;
+        if (t.endGame) {
+            return
+        }
+        let curentPoint = t.Menu2d.getChildByName("Camera").getComponent(Camera).screenToWorld(new Vec3(event.getLocationX(), event.getLocationY(), 0));
+        if (Vec3.distance(curentPoint, t.posTouchHand) > 30) {
+            t.touchCancel()
+        }
+    }
 
 
     touchEnd(event) {
@@ -168,14 +178,20 @@ export class GameControll extends Component {
         }
         let typeItem = Number(t.ItemHoldUp.name);
         if (GameData.instance.findIdTaskByType(typeItem) > -1) {
-            t.correctItem(typeItem);
+            t.scheduleOnce(() => {
+                t.correctItem(typeItem);
+                t.eventTouch = true;
+            }, 0.3)
         } else {
-            t.wrongItem(typeItem);
+            t.scheduleOnce(() => {
+                t.wrongItem(typeItem);
+                t.eventTouch = true;
+            }, 0.3)
         }
-        t.eventTouch = true;
-        // t.scheduleOnce(() => {
-        //     t.stepHint(GameData.instance.scoreWin);
-        // }, 2.8)
+
+        t.scheduleOnce(() => {
+            t.checkEndGame();
+        }, 0.5)
     }
 
     touchCancel() {
@@ -184,6 +200,8 @@ export class GameControll extends Component {
         if (itemInHand) {
             t.ItemHoldUp.getComponent(Item).lightFrame(false)
             t.ItemHoldUp.getComponent(Item).unPicKItem();
+            GameData.instance.playAudio(t.node, t.sound[2])
+
         }
         t.eventTouch = true;
         t.ItemHoldUp = null;
@@ -201,8 +219,7 @@ export class GameControll extends Component {
         else if (GameData.instance.needCleanStock) {
             t.refreshUIMenu(Constants.StatusItem.TempToTask, typeItem);
         } else
-            // log(GameData.instance.getTaskMission())
-            //  : GameData.instance.addItemToTempStock(typeItem) ? log(GameData.instance.getTempTask()) : t.endGame = true;
+
             t.refreshUIMenu(Constants.StatusItem.PoolToTask, typeItem);
         t.ItemHoldUp.destroy();
         t.ItemHoldUp = null;
@@ -212,18 +229,15 @@ export class GameControll extends Component {
 
     wrongItem(typeItem: number) {
         let t = this;
-        // GameData.instance.removeItem(typeItem);
         if (GameData.instance.addItemToTempStock(typeItem)) {
             GameData.instance.removeItemInPool(typeItem);
             t.ItemHoldUp.destroy();
             t.ItemHoldUp = null;
             t.refreshUIMenu(Constants.StatusItem.PoolToTemp, typeItem);
         } else {
-
             // chưa có logic full stock và add thêm item thì sẽ show gì
-            // t.endGame = true;
-
-
+            GameData.instance.scoreLose = 4;
+            t.endGame = true;
             t.touchCancel()
         }
     }
@@ -236,11 +250,17 @@ export class GameControll extends Component {
             case Constants.StatusItem.PoolToTask:
                 uiAnimtion.setItemEvent(type)
                 uiAnimtion.animItemToTask(t.posTouchHand);
+                t.scheduleOnce(() => {
+                    GameData.instance.playAudio(t.node, t.sound[1])
+                }, 0.3)
                 GameData.instance.scoreWin++;
                 break;
             case Constants.StatusItem.PoolToTemp:
                 uiAnimtion.setItemEvent(type)
                 uiAnimtion.animItemToStock(t.posTouchHand);
+                t.scheduleOnce(() => {
+                    GameData.instance.playAudio(t.node, t.sound[1])
+                }, 0.3)
                 GameData.instance.scoreLose++;
                 break;
             case Constants.StatusItem.TempToTask:
@@ -254,6 +274,9 @@ export class GameControll extends Component {
             case Constants.StatusItem.HintToTask:
                 uiAnimtion.setItemEvent(type)
                 uiAnimtion.animItemToTask(t.posTouchHand);
+                t.scheduleOnce(() => {
+                    GameData.instance.playAudio(t.node, t.sound[1])
+                }, 0.3)
                 GameData.instance.scoreWin++;
                 break;
             default:
@@ -274,23 +297,25 @@ export class GameControll extends Component {
 
     stepHint(step: number = 0) {
         let t = this;
-        let pos
-        log("next step hint", step)
-
-
+        let pos: Vec3;
         switch (step) {
             case 0:
                 pos = t.getPosForHint();
-                console.log(pos, "check");
                 tween(t.nodeHint)
+                    // .delay(1)
                     .to(1, { position: pos })
                     .call(() => {
-                        t.animPushHand()
+                        t.Menu2d.getChildByName("CTA").on(Node.EventType.TOUCH_START, () => {
+                            GameData.instance.scoreLose = 4;
+                            t.checkEndGame();
+                        }, t);
+                        t.animPushHand();
                     })
-                    .delay(3)
+                    // .delay(3)
                     .call(() => {
-                        t.posTouchHand = pos;
+                        t.posTouchHand = t.nodeHint.getWorldPosition(new Vec3)
                         t.correctItem(Number(t.ItemHoldUp.name))
+                        GameData.instance.playAudio(t.node, t.sound[0])
                     }).delay(0.5)
                     .call(() => {
                         t.stepHint(GameData.instance.scoreWin);
@@ -305,9 +330,12 @@ export class GameControll extends Component {
                     .call(() => {
                         t.animPushHand()
                     })
-                    .delay(3)
+                    // .delay(3)
                     .call(() => {
+                        t.posTouchHand = t.nodeHint.getWorldPosition(new Vec3)
                         t.correctItem(Number(t.ItemHoldUp.name))
+                        GameData.instance.playAudio(t.node, t.sound[0])
+
                     }).delay(0.5)
                     .call(() => {
                         t.stepHint(GameData.instance.scoreWin);
@@ -321,7 +349,9 @@ export class GameControll extends Component {
                     .to(1, { position: pos })
                     .call(() => {
                         t.animPushHand();
+                        t.animScaleCTA()
                         t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_START, t.touchStart, t);
+                        t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_MOVE, t.touchMove, t);
                         t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_END, t.touchEnd, t);
                         t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_CANCEL, t.touchCancel, t);
                     })
@@ -334,24 +364,16 @@ export class GameControll extends Component {
 
     }
 
-
-
-
     effHand = null;
     animPushHand() {
         let t = this;
         let hand = t.nodeHint.getChildByName("hand");
         hand.active = true;
-        let timeAnim = 0.5;
+        let timeAnim = 0.3;
+
         t.effHand = tween(hand)
             .to(timeAnim, { position: new Vec3(0, - 15, 0) })
             .to(timeAnim, { position: new Vec3(0, 15, 0) })
-            // .to(timeAnim, { position: new Vec3(0, -15, 0) })
-            // .to(timeAnim, { position: new Vec3(0, 15, 0) })
-            // .to(timeAnim, { position: new Vec3(0, -15, 0) })
-            // .to(timeAnim, { position: new Vec3(0, 15, 0) })
-            // .to(timeAnim, { position: new Vec3(0, -15, 0) })
-            // .to(timeAnim, { position: new Vec3(0, 15, 0) })
             .call(() => {
                 t.animPushHand()
             })
@@ -364,11 +386,6 @@ export class GameControll extends Component {
 
 
     }
-
-
-
-
-
     resetAnimHint(isDestroy: boolean = false) {
         let t = this;
         if (t.effHand != null) {
@@ -382,21 +399,116 @@ export class GameControll extends Component {
     }
 
 
-
-    checkEndGame() {
+    turnOffEventTouch() {
         let t = this;
-        if (GameData.instance.scoreWin == 3) {
-            // event end game when win
-            t.endGame = true;
+        t.Menu2d.getChildByName("ArenaListenerTouch").off(Node.EventType.TOUCH_START, t.touchStart, t);
+        t.Menu2d.getChildByName("ArenaListenerTouch").off(Node.EventType.TOUCH_MOVE, t.touchMove, t);
+        t.Menu2d.getChildByName("ArenaListenerTouch").off(Node.EventType.TOUCH_END, t.touchEnd, t);
+        t.Menu2d.getChildByName("ArenaListenerTouch").off(Node.EventType.TOUCH_CANCEL, t.touchCancel, t);
+    }
 
-        }
-        if (GameData.instance.scoreLose == 3) {
-            // event end game when lose
-            t.endGame = true;
+    effCTA = null
+    animScaleCTA() {
+        let t = this;
+        // let targetRD = t.Menu2d.getChildByPath("CTA/rd").getComponent(Sprite);
+        // let time = 2;
+        // targetRD.fillStart = 0;
+        // targetRD.fillRange = 0;
+        // t.effCTA = tween(targetRD)
+        //     .to(time, { fillRange: 1 })
+        //     .to(time, { fillStart: 1 })
+        //     .call(() => {
+        //         t.animRendedCTA()
+        //     }).start()
 
+        let targetRD = t.Menu2d.getChildByPath("CTA/text");
+        targetRD.active = true;
+        let timeAnim = 0.6;
+        t.effCTA = tween(targetRD)
+            .to(timeAnim, { scale: new Vec3(1.2, 1.2, 1.2) })
+            .to(timeAnim, { scale: new Vec3(1, 1, 1) })
+            .call(() => {
+                t.animScaleCTA()
+            })
+            .start()
+
+    }
+
+
+    resetAnimCTA() {
+        let t = this;
+        if (t.effCTA != null) {
+            t.effCTA.stop();
+            t.effCTA = null;
         }
     }
 
+
+    effFT
+    animRenderFirstTouch() {
+        let t = this;
+        let targetRD = t.Menu2d.getChildByName("text").getComponent(Sprite);
+        let time = 2;
+        // targetRD.fillStart = 0;
+        // targetRD.fillRange = 0;
+        tween(targetRD)
+            .to(time, { fillRange: 1 })
+            .call(() => {
+                t.animScaleFT()
+            })
+            .start()
+    }
+
+
+    animScaleFT() {
+        let t = this;
+        let targetRD = t.Menu2d.getChildByName("text");
+        let timeAnim = 0.3;
+        t.effFT = tween(targetRD)
+            .to(timeAnim, { scale: new Vec3(1.2, 1.2, 1.2) })
+            .to(timeAnim * 2, { scale: new Vec3(0.8, 0.8, 0.8) })
+            .to(timeAnim, { scale: new Vec3(1, 1, 1) })
+            .call(() => {
+                t.animScaleFT()
+            })
+            .start()
+    }
+
+
+    resetRenderFirstTouch() {
+        let t = this;
+        t.Menu2d.getChildByName("text").destroy()
+        if (t.effFT != null) {
+            t.effFT.stop();
+            t.effFT = null;
+        }
+    }
+
+
+
+
+    checkEndGame() {
+        let t = this;
+        if (GameData.instance.scoreWin >= 3) {
+            // event end game when win
+            t.endGame = true;
+            t.turnOffEventTouch();
+            t.EventNetWork();
+            t.node.getComponent(ADsManager).openAdUrl();
+        }
+        if (GameData.instance.scoreLose >= 4) {
+            // event end game when lose
+            t.endGame = true;
+            t.turnOffEventTouch()
+            t.EventNetWork();
+            t.node.getComponent(ADsManager).openAdUrl();
+
+        }
+    }
+    EventNetWork() {
+        super_html_playable.game_end();
+
+    }
     update(deltaTime: number) {
 
     }

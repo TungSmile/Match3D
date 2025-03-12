@@ -1,4 +1,4 @@
-import { _decorator, Component, log, Node } from 'cc';
+import { _decorator, AudioClip, AudioSource, Component, log, Node } from 'cc';
 import { Constants } from './Constants';
 const { ccclass, property } = _decorator;
 
@@ -287,14 +287,8 @@ export class GameData extends Component {
         }
         return false;
     }
-
-
-
-
     // [3,4,4,4]
     // [1,3]
-
-
 
     randomItemInPool() {
         const t = this;
@@ -334,7 +328,23 @@ export class GameData extends Component {
 
 
 
-
+    playAudio(node: Node, audio: AudioClip, loop: boolean = false, vol: number = 1) {
+        let audioSource = node.getComponent(AudioSource);
+        if (!audioSource) {
+            audioSource = node.addComponent(AudioSource);
+        }
+        audioSource.clip = audio;
+        audioSource.volume = vol;
+        if (audioSource) {
+            audioSource.play();
+        }
+        if (loop) {
+            audioSource.node.on(AudioSource.EventType.ENDED, () => {
+                audioSource.play();
+            }, this)
+        }
+       
+    }
 
 
 
