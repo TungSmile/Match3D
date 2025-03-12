@@ -5,7 +5,7 @@ const { ccclass, property } = _decorator;
 export class Item extends Component {
     private rigiBody: RigidBody = null;
     private timeSmooth: number = 0.2;
-
+    private light: boolean = false;
 
     start() {
         let t = this;
@@ -34,13 +34,11 @@ export class Item extends Component {
         t.rigiBody.applyForce(new Vec3(0, -500, 0));
     }
 
-    lightFrame(on: boolean = true) {
+    lightFrame(on: boolean = true, posCam: Vec3 = new Vec3()) {
         let t = this;
-        if (on) {
-
-        } else {
-
-        }
+        let round = t.node.getChildByName("round");
+        round.active = on;
+        on ? round.lookAt(posCam, new Vec3(0, 0, 1)) : 0;
     }
 
 
@@ -60,6 +58,7 @@ export class Item extends Component {
 
     update(deltaTime: number) {
 
+       
     }
 }
 

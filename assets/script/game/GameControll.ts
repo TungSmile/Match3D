@@ -142,7 +142,7 @@ export class GameControll extends Component {
         if (n.getComponent(Item)) {
             t.ItemHoldUp = n
             n.getComponent(Item).pickByHand();
-            n.getComponent(Item).lightFrame(true)
+            n.getComponent(Item).lightFrame(true, t.CamMain.node.getWorldPosition())
         }
         // log(taskS.some(item => item.type == typeItem))
         // if (taskS.some(item => item.type == typeItem)) {
