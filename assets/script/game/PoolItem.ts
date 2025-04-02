@@ -55,11 +55,19 @@ export class PoolItem extends Component {
                 }
             }
         });
-
-
-
         return rs;
+    }
 
+
+    findItemById(id: number) {
+        let t = this;
+        for (let i = 0; i < t.node.children.length; i++) {
+            let item = t.node.children[i];
+            if (item.getComponent(Item).getId() == id) {
+                return item;
+            }
+        }
+        return null
     }
 
 

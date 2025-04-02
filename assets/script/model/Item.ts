@@ -7,6 +7,7 @@ export class Item extends Component {
     private rigiBody: RigidBody = null;
     private timeSmooth: number = 0.2;
     private light: boolean = false;
+    private id: number = 0;
 
     start() {
         let t = this;
@@ -31,12 +32,13 @@ export class Item extends Component {
     }
     unPicKItem() {
         let t = this;
-        t.rigiBody.applyLocalForce(new Vec3(0, -500, 0));s
+        t.rigiBody.applyLocalForce(new Vec3(0, -500, 0)); s
         t.scheduleOnce(() => {
             t.rigiBody.clearVelocity()
             t.rigiBody.useGravity = true;
         }, t.timeSmooth)
     }
+
 
 
 
@@ -118,6 +120,15 @@ export class Item extends Component {
         if (mesh) {
             return mesh.renderingSubMeshes[0].geometricInfo.indices;
         }
+    }
+
+
+    getId() {
+        return this.id;
+    }
+
+    setID(id: number) {
+        this.id = id;
     }
 
     update(deltaTime: number) {

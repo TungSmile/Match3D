@@ -4,34 +4,14 @@
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319",
+    "__uuid__": "64dd857e-973f-4a03-9ece-3e2fbaa8d629",
     "__expectedType__": "cc.EffectAsset"
   },
   "_techIdx": 0,
   "_defines": [
-    {},
-    {},
     {}
   ],
   "_states": [
-    {
-      "rasterizerState": {},
-      "depthStencilState": {},
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      }
-    },
-    {
-      "rasterizerState": {},
-      "depthStencilState": {},
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      }
-    },
     {
       "rasterizerState": {},
       "depthStencilState": {},
@@ -50,11 +30,7 @@
         "g": 255,
         "b": 0,
         "a": 255
-      },
-      "metallic": 1,
-      "specularIntensity": 1
-    },
-    {},
-    {}
+      }
+    }
   ]
 }

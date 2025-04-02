@@ -178,7 +178,7 @@ export class GameControll extends Component {
         const camera = t.CamMain.getComponent(Camera);
         camera.screenPointToRay(pos.x, pos.y, ray);
         const mask = 0xffffffff;
-        const maxDistance = 10000;
+        const maxDistance = 20;
         const queryTrigger = true;
         const bResult = PhysicsSystem.instance.raycastClosest(ray, mask, maxDistance, queryTrigger);
         if (bResult) {
@@ -194,11 +194,11 @@ export class GameControll extends Component {
 
     checkItem(n: Node) {
         let t = this;
-
-        log(n.name, "check name node")
         // let pen = t.node.getComponent(Graphics);
         if (n.getComponent(Item)) {
+            log("??????")
             t.ItemHoldUp = n
+            t.paintItem();
             // n.getComponent(Item).pickByHand();
             n.getComponent(Item).pullToCam(t.CamMain.node.getWorldPosition(new Vec3), true)
             n.getComponent(Item).lightFrame(true, t.CamMain.node.getWorldPosition(new Vec3));
@@ -231,15 +231,32 @@ export class GameControll extends Component {
             // t.pen.lineTo(50, 50);
             // t.pen.lineTo(100, 100);
             // t.pen.stroke();
-
         } else {
-            t.touchCancel()
+            t.ItemHoldUp = null
         }
 
     }
 
+    paintItem() {
+        let t = this;
+        let pen = t.node.getComponent(Graphics);
+        if (t.ItemHoldUp == null) {
+            t.pen.clear();
+            return
+        }
+        let pos = t.CamMain.convertToUINode(t.ItemHoldUp.getWorldPosition(new Vec3), t.Menu2d, new Vec3);
+        log(pos.x, pos.y, "what the fucking position")
+        t.pen.clear();
+        t.pen.lineWidth = 10;
+        t.pen.strokeColor.fromHEX('#FF0000');
+        t.pen.moveTo(pos.x, pos.y);
+        t.pen.lineTo(0, 0);
+        t.pen.stroke();
+    }
+
     convert3DTo2D(worldPos: Vec3): Vec3 {
         let t = this;
+
         return this.CamMain.getComponent(Camera).convertToUINode(worldPos, t.Menu2d);
     }
 
@@ -342,7 +359,6 @@ export class GameControll extends Component {
             t.ItemHoldUp = null;
             t.refreshUIMenu(Constants.StatusItem.PoolToTemp, typeItem);
         } else {
-            // chưa có logic full stock và add thêm item thì sẽ show gì
             GameData.instance.scoreLose = 4;
             t.endGame = true;
             t.touchCancel()
@@ -398,7 +414,6 @@ export class GameControll extends Component {
         let item = t.poolItem.getComponent(PoolItem).findPosItemClosetByType(Constants.scriptGame[GameData.instance.hintCount]);
         let pos = t.CamMain.convertToUINode(item.getWorldPosition(new Vec3), t.Menu2d, new Vec3);
         t.ItemHoldUp = item;
-        log(pos, "check Pos")
         return pos;
     }
 
@@ -424,7 +439,8 @@ export class GameControll extends Component {
                         t.posTouchHand = t.nodeHint.getWorldPosition(new Vec3)
                         t.correctItem(Number(t.ItemHoldUp.name))
                         GameData.instance.playAudio(t.node, t.sound[0])
-                    }).delay(0.5)
+                    })
+                    .delay(0.5)
                     .call(() => {
                         t.stepHint(GameData.instance.scoreWin);
                     })
@@ -446,7 +462,8 @@ export class GameControll extends Component {
                         t.correctItem(Number(t.ItemHoldUp.name))
                         GameData.instance.playAudio(t.node, t.sound[0])
 
-                    }).delay(0.5)
+                    })
+                    .delay(0.5)
                     .call(() => {
                         t.stepHint(GameData.instance.scoreWin);
                     })
@@ -486,7 +503,7 @@ export class GameControll extends Component {
         let timeAnim = 0.3;
 
         t.effHand = tween(hand)
-            .to(timeAnim, { position: new Vec3(0, - 15, 0) })
+            .to(timeAnim, { position: new Vec3(0, -15, 0) })
             .to(timeAnim, { position: new Vec3(0, 15, 0) })
             .call(() => {
                 t.animPushHand()
@@ -635,6 +652,7 @@ export class GameControll extends Component {
         let t = this;
         if (GameData.instance.scoreWin >= 48) {
             // event end game when win
+            log("win")
             t.endGame = true;
             t.turnOffEventTouch();
             t.EventNetWork();
@@ -642,6 +660,7 @@ export class GameControll extends Component {
         }
         if (GameData.instance.scoreLose >= 4) {
             // event end game when lose
+            log("lose")
             t.endGame = true;
             t.turnOffEventTouch()
             t.EventNetWork();

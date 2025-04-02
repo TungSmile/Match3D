@@ -22,8 +22,8 @@ export class Menu2D extends Component {
     numberTaskHasShow: number = 0;
 
     // for position hand
-    positiveDis = new Vec3(0, 35, 0);
-    negativeDis = new Vec3(0, -35, 0);
+    positiveDis = new Vec3(0, 60, 0);
+    negativeDis = new Vec3(0, 25, 0);
     timeAnim = 0.3;
 
 
@@ -73,7 +73,6 @@ export class Menu2D extends Component {
     loadUITempStock() {
         let t = this;
         let data = GameData.instance.getTempTask();
-        log(data, "fortemp")
         for (let i = 0; i < t.tempStock.children.length; i++) {
             let e = t.tempStock.children[i];
             let d: number = data[i];
@@ -110,7 +109,6 @@ export class Menu2D extends Component {
         tween(t.itemMove)
             .to(time, { position: loacalTo })
             .call(() => {
-                log(' anim item to stock done');
                 t.itemMove.getComponent(Sprite).spriteFrame = null;
                 t.loadUITempStock()
             })
@@ -125,27 +123,22 @@ export class Menu2D extends Component {
         let loacalTo = t.node.getComponent(UITransform).convertToNodeSpaceAR(posTo, new Vec3);
         t.itemMove.getComponent(Sprite).spriteFrame = t.poolIcons[t.typeItemSelecter];
         t.itemMove.setPosition(localFrom);
-        log(localFrom, posFrom)
 
         // action item fly to task
         tween(t.itemMove)
             .to(time, { position: loacalTo })
             .call(() => {
-                log(' anim item to task done');
                 t.itemMove.getComponent(Sprite).spriteFrame = null;
             })
             .start()
 
 
         // t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
-        log("???", GameData.instance.countTask)
         if (t.numberTaskHasShow != GameData.instance.countTask) {
             t.numberTaskHasShow = GameData.instance.countTask;
             t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
             time += (t.timeAnim * 2)
-            log("are run in func item to task")
         }
-        log(time, "check time")
         t.scheduleOnce(() => {
             t.loadUITaskMission()
         }, time)
@@ -156,6 +149,8 @@ export class Menu2D extends Component {
         let t = this;
         let time = 1;
         let data = GameData.instance.checkItemInStock(GameData.instance.typeItemCleanStock);
+        GameData.instance.scoreLose -= data.length;
+
         let task = t.taskMission.children[GameData.instance.findTaskByTypeItem(GameData.instance.typeItemCleanStock)]
         // let data = GameData.instance.removeItemInTempStock(type);
         // let time = 1;
@@ -166,7 +161,6 @@ export class Menu2D extends Component {
         let taskPos = new Vec3;
         if (taskPos) {
             taskPos = task.getWorldPosition(new Vec3);
-            log("??????");
         }
         GameData.instance.needCleanStock = false;
         // t.animationHandMachine(task.getChildByName("handMachine"))
@@ -241,7 +235,7 @@ export class Menu2D extends Component {
         box.getChildByName("Done").active = true;
         box.getChildByName("icon").active = false;
         tween(leftH)
-            .by(t.timeAnim, { position: t.negativeDis })
+            .to(t.timeAnim, { position: t.negativeDis })
             .call(() => {
                 leftH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
                 leftH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
@@ -250,17 +244,17 @@ export class Menu2D extends Component {
             .by(t.timeAnim, { position: t.positiveDis })
             .start();
         tween(rightH)
-            .by(t.timeAnim, { position: t.negativeDis })
+            .to(t.timeAnim, { position: t.negativeDis })
             .call(() => {
                 rightH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
                 rightH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
             })
             .delay(t.timeAnim)
-            .by(t.timeAnim, { position: t.positiveDis })
+            .to(t.timeAnim, { position: t.positiveDis })
             .start();
         tween(box)
             .delay(t.timeAnim * 2)
-            .by(t.timeAnim, { position: t.positiveDis })
+            .to(t.timeAnim, { position: new Vec3(0, 35, 0) })
             .delay(t.timeAnim)
             .call(() => {
                 t.animationDropBox(n)
@@ -279,25 +273,25 @@ export class Menu2D extends Component {
         let box = n.getChildByName("boxActive");
         box.getChildByName("clipboard").active = true;
         tween(leftH)
-            .by(t.timeAnim, { position: t.negativeDis })
+            .to(t.timeAnim, { position: t.negativeDis })
             .call(() => {
                 leftH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
                 leftH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
             })
             .delay(t.timeAnim)
-            .by(t.timeAnim, { position: t.positiveDis })
+            .to(t.timeAnim, { position: t.positiveDis })
             .start();
         tween(rightH)
-            .by(t.timeAnim, { position: t.negativeDis })
+            .to(t.timeAnim, { position: t.negativeDis })
             .call(() => {
                 rightH.getComponent(sp.Skeleton).setAnimation(0, "action", false);
                 rightH.getComponent(sp.Skeleton).addAnimation(0, "end", true);
             })
             .delay(t.timeAnim)
-            .by(t.timeAnim, { position: t.positiveDis })
+            .to(t.timeAnim, { position: t.positiveDis })
             .start();
         tween(box)
-            .by(t.timeAnim, { position: t.negativeDis })
+            .to(t.timeAnim, { position: Vec3.ZERO })
             .start();
 
 
