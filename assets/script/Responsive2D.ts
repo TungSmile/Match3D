@@ -425,28 +425,28 @@ export class Responsive2D extends Component {
                 let ratio = width / height;
                 if (width > height) {
                     switch (this.node.name) {
-                        case 'Logo':
-                            ratio > 2 ? this.node.setScale(new Vec3(0.37, 0.37, 0)) : 0;
-                            ratio < 1.6 ? horSpace = ratio * 8 : 0;
-                            break;
-                        case 'Game':
-                            ratio < 1.5 ? horSpace = 0 : 0;
-                            ratio > 2 ? horSpace = ratio * -2 : 0;
-                            break;
-                        case 'Brand':
-                            ratio > 2.2 ? this.node.setScale(new Vec3(0.5, 0.5, 0)) : 0;
-                            if (ratio < 1.6) {
-                                this.node.setScale(new Vec3(0.7, 0.7, 0));
-                                horSpace = ratio * 3;
-                            }
-                            break;
-                        case 'Button':
-                            if (ratio < 1.6) {
-                                this.node.setScale(new Vec3(0.3, 0.3, 0));
-                                horSpace = ratio * 5;
-                            }
-                            ratio > 2 ? horSpace = ratio * 8 : 0
-                            break;
+                        // case 'Logo':
+                        //     ratio > 2 ? this.node.setScale(new Vec3(0.37, 0.37, 0)) : 0;
+                        //     ratio < 1.6 ? horSpace = ratio * 8 : 0;
+                        //     break;
+                        // case 'Game':
+                        //     ratio < 1.5 ? horSpace = 0 : 0;
+                        //     ratio > 2 ? horSpace = ratio * -2 : 0;
+                        //     break;
+                        // case 'Brand':
+                        //     ratio > 2.2 ? this.node.setScale(new Vec3(0.5, 0.5, 0)) : 0;
+                        //     if (ratio < 1.6) {
+                        //         this.node.setScale(new Vec3(0.7, 0.7, 0));
+                        //         horSpace = ratio * 3;
+                        //     }
+                        //     break;
+                        // case 'Button':
+                        //     if (ratio < 1.6) {
+                        //         this.node.setScale(new Vec3(0.3, 0.3, 0));
+                        //         horSpace = ratio * 5;
+                        //     }
+                        //     ratio > 2 ? horSpace = ratio * 8 : 0
+                        //     break;
                         default:
                             break;
                     }
@@ -481,12 +481,12 @@ export class Responsive2D extends Component {
 
 
                     switch (this.node.name) {
-                        case 'Title':
-                            ratio > 0.6 && ratio < 1 ? this.node.active = false : this.node.active = true;
-                            break;
-                        case 'Button':
-                            ratio > 0.6 && ratio < 1 ? this.node.active = false : this.node.active = true;
-                            break;
+                        // case 'Title':
+                        //     ratio > 0.6 && ratio < 1 ? this.node.active = false : this.node.active = true;
+                        //     break;
+                        // case 'Button':
+                        //     ratio > 0.6 && ratio < 1 ? this.node.active = false : this.node.active = true;
+                        //     break;
                         default:
                             break;
                     }

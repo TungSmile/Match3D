@@ -1,4 +1,4 @@
-import { _decorator, AudioClip, Camera, Component, EventTouch, geometry, log, Node, PhysicsSystem, Sprite, SpriteFrame, tween, Vec3, view } from 'cc';
+import { _decorator, AudioClip, Camera, Component, EventTouch, geometry, GradientRange, Graphics, log, macro, Mat4, Node, PhysicsSystem, Size, Sprite, SpriteFrame, tween, UITransform, Vec2, Vec3, view } from 'cc';
 // import { AudioManager } from './AudioManager';
 import { Constants } from '../data/Constants';
 import { GameData } from '../data/GameData';
@@ -31,11 +31,16 @@ export class GameControll extends Component {
     poolItem: Node = null
 
     @property({ type: Node })
+    framePool: Node = null
+
+    @property({ type: Node })
     nodeHint: Node = null
 
     @property({ type: [AudioClip] })
     sound: AudioClip[] = [];
 
+    @property({ type: Graphics })
+    pen: Graphics = null
 
     private ItemHoldUp: Node = null;
     // block muti event touch
@@ -46,24 +51,80 @@ export class GameControll extends Component {
     // world position
     posTouchHand: Vec3 = null
 
-
     fristTouchCount: boolean = false;
+
+    scaleNew: Vec3 = null;
 
     protected onLoad(): void {
         GameData.instance.useScriptGame = this.useScriptGame;
         GameData.instance.createDataLogicGame();
+        this.responsize()
         view.on("canvas-resize", () => {
-            this.setWhenStart();
+            this.responsize();
         });
     }
 
-    setWhenStart() {
+    responsize() {
         let t = this;
         const screenSize = view.getVisibleSize();
         let width = screenSize.width;
         let height = screenSize.height;
         let ratio = width / height;
-        log(width, height, ratio)
+        // log(width, height, ratio, "???");
+        let header = t.Menu2d.getChildByName("HeadMenu");
+        let body = t.Menu2d.getChildByName("ArenaListenerTouch");
+        let footer = t.Menu2d.getChildByName("footerCTA");
+        let textF = t.Menu2d.getChildByName("text");
+        let hint = t.Menu2d.getChildByName("hint");
+
+        if (width > height) {
+            // ngang
+            t.CamMain.node.setPosition(new Vec3(0, 14, -0.6 - (ratio * 0.1)));
+            // t.CamMain.node.setRotationFromEuler(new Vec3(-90, -90, 0));
+            t.scaleNew = new Vec3(1 / (ratio), 1 / (ratio), 1 / (ratio))
+            t.nodeHint.setScale(new Vec3(0.5, 0.5, 0.5))
+
+            // header.setRotationFromEuler(new Vec3(0, 0, 90));
+            // header.getComponent(UITransform).setContentSize(new Size(50, 108));
+
+            // footer.setRotationFromEuler(new Vec3(0, 0, 90));
+            // footer.getComponent(UITransform).setContentSize(new Size(200, 1080));
+
+            // body.setRotationFromEuler(new Vec3(0, 0, 90));
+            // body.getComponent(UITransform).setContentSize(new Size(120, 108));
+
+            // textF?.setRotationFromEuler(new Vec3(0, 0, 90));
+            // textF?.setScale(new Vec3(1 / (ratio), 1 / (ratio), 1 / (ratio)))
+
+            // hint?.setRotationFromEuler(new Vec3(0, 0, 90));
+            // hint?.setScale(new Vec3(1 / ratio, 1 / ratio, 1 / ratio))
+
+        } else {
+            // doc
+            t.CamMain.node.setPosition(new Vec3(0, 14 + ratio, ratio > 0.6 ? -ratio - 0.2 : -0.6));
+            // t.CamMain.node.setRotationFromEuler(new Vec3(-90, 0, 0));
+
+            t.scaleNew = new Vec3(1, 1, 1)
+
+            t.nodeHint.setScale(new Vec3(1, 1, 1))
+            // header.setRotationFromEuler(new Vec3(0, 0, 0));
+            // header.getComponent(UITransform).setContentSize(new Size(108, 50));
+
+            // footer.setRotationFromEuler(new Vec3(0, 0, 0));
+            // footer.getComponent(UITransform).setContentSize(new Size(1080, 200));
+
+            // body.setRotationFromEuler(new Vec3(0, 0, 0));
+            // body.getComponent(UITransform).setContentSize(new Size(108, 120));
+
+            // textF?.setRotationFromEuler(new Vec3(0, 0, 0));
+            // textF?.setScale(new Vec3(1, 1, 1))
+            // t.scaleNew = new Vec3(1, 1, 1)
+
+            // hint?.setRotationFromEuler(new Vec3(0, 0, 0));
+            // hint?.setScale(new Vec3(1, 1, 1))
+
+        }
+        log("check pos cam", t.CamMain.node.getPosition(new Vec3), ratio)
     }
 
 
@@ -85,6 +146,7 @@ export class GameControll extends Component {
         if (t.fristTouchCount) {
             return
         }
+        // GameData.instance.playAudio(t.node, t.sound[0])
         t.fristTouchCount = true;
         t.Menu2d.getChildByName("fristTouch").destroy();
         t.Menu2d.getChildByName("text").destroy();
@@ -93,64 +155,94 @@ export class GameControll extends Component {
     }
 
 
-
-
-
     // sự kiện bắt item
     touchStart(event) {
         let t = this;
+        t.resetAnimMoveHand();
         if (!t.eventTouch || t.endGame) {
-            return
+            return;
         }
         t.eventTouch = false;
-        t.posTouchHand = t.Menu2d.getChildByName("Camera").getComponent(Camera).screenToWorld(new Vec3(event.getLocationX(), event.getLocationY(), 0))
-        // t.startEventRotation = event.getLocation();
-        const camera = t.CamMain.getComponent(Camera);
+        t.posTouchHand = t.Menu2d.getChildByName("Camera").getComponent(Camera).screenToWorld(new Vec3(event.getLocationX(), event.getLocationY(), 0));
+        let rs = t.bowRayCast(new Vec3(event.getLocationX(), event.getLocationY(), 0));
+        if (rs != null) {
+            t.checkItem(rs);
+        } else {
+            t.eventTouch = true;
+        }
+    }
+
+    bowRayCast(pos: Vec3) {
+        let t = this;
         let ray = new geometry.Ray();
-        camera.screenPointToRay(event.getLocationX(), event.getLocationY(), ray);
+        const camera = t.CamMain.getComponent(Camera);
+        camera.screenPointToRay(pos.x, pos.y, ray);
         const mask = 0xffffffff;
         const maxDistance = 10000;
         const queryTrigger = true;
         const bResult = PhysicsSystem.instance.raycastClosest(ray, mask, maxDistance, queryTrigger);
         if (bResult) {
-            // raycasst chạy qua hết
-            const results = PhysicsSystem.instance.raycastResults;
-            // raycast gặp vật cản đầu tiên
             const raycastClosestResult = PhysicsSystem.instance.raycastClosestResult;
-            // bắt = colider
             const collider = raycastClosestResult.collider;
             if (collider.node) {
-                // fun checkItem sovle all above
-                // 1 animation pull up item
-                // 2 light bold
-                t.checkItem(collider.node);
-                // log(collider.node.name, "check touch item ")
-            } else {
-                t.eventTouch = true;
-                return
+                return collider.node;
             }
         }
-        t.resetAnimHint(true)
+        return null;
     }
 
 
     checkItem(n: Node) {
         let t = this;
-        // let typeItem = Number(n.name);
-        // log(typeItem, "check")
-        // let taskS = GameData.instance.getTaskMission();
+
+        log(n.name, "check name node")
+        // let pen = t.node.getComponent(Graphics);
         if (n.getComponent(Item)) {
             t.ItemHoldUp = n
-            n.getComponent(Item).pickByHand();
-            n.getComponent(Item).lightFrame(true, t.CamMain.node.getWorldPosition())
+            // n.getComponent(Item).pickByHand();
+            n.getComponent(Item).pullToCam(t.CamMain.node.getWorldPosition(new Vec3), true)
+            n.getComponent(Item).lightFrame(true, t.CamMain.node.getWorldPosition(new Vec3));
+            // let positions = n.getComponent(Item).getPos();
+            // let indices = n.getComponent(Item).getIndi();
+            // t.pen.clear();
+            // t.pen.lineWidth = 50;
+            // t.pen.strokeColor.fromHEX('#FF0000');
+            // for (let i = 0; i < indices.length; i += 3) {
+            //     const v0 = new Vec3(positions[indices[i] * 3], positions[indices[i] * 3 + 1], positions[indices[i] * 3 + 2]);
+            //     const v1 = new Vec3(positions[indices[i + 1] * 3], positions[indices[i + 1] * 3 + 1], positions[indices[i + 1] * 3 + 2]);
+            //     const v2 = new Vec3(positions[indices[i + 2] * 3], positions[indices[i + 2] * 3 + 1], positions[indices[i + 2] * 3 + 2]);
+            //     // Chuyển đổi sang tọa độ thế giới
+            //     Vec3.transformMat4(v0, v0, n.worldMatrix);
+            //     Vec3.transformMat4(v1, v1, n.worldMatrix);
+            //     Vec3.transformMat4(v2, v2, n.worldMatrix);
+            //     // Chuyển đổi sang tọa độ 2D
+            //     const p0 = this.convert3DTo2D(v0);
+            //     const p1 = this.convert3DTo2D(v1);
+            //     const p2 = this.convert3DTo2D(v2);
+            //     // Vẽ tam giác
+            //     t.pen.moveTo(p0.x, p0.y);
+            //     t.pen.lineTo(p1.x, p1.y);
+            //     t.pen.lineTo(p2.x, p2.y);
+            //     t.pen.lineTo(p0.x, p0.y);
+            //     t.pen.stroke();
+            // }
+            // t.pen.moveTo(0, 0);
+            // t.pen.lineTo(10, 10);
+            // t.pen.lineTo(50, 50);
+            // t.pen.lineTo(100, 100);
+            // t.pen.stroke();
+
+        } else {
+            t.touchCancel()
         }
-        // log(taskS.some(item => item.type == typeItem))
-        // if (taskS.some(item => item.type == typeItem)) {
-        //     n.destroy();
-        //     GameData.instance.removeItem(typeItem);
-        //     log(GameData.instance.getPoolItem())
-        // }
+
     }
+
+    convert3DTo2D(worldPos: Vec3): Vec3 {
+        let t = this;
+        return this.CamMain.getComponent(Camera).convertToUINode(worldPos, t.Menu2d);
+    }
+
 
     touchMove(event) {
         let t = this;
@@ -158,9 +250,26 @@ export class GameControll extends Component {
             return
         }
         let curentPoint = t.Menu2d.getChildByName("Camera").getComponent(Camera).screenToWorld(new Vec3(event.getLocationX(), event.getLocationY(), 0));
-        if (Vec3.distance(curentPoint, t.posTouchHand) > 30) {
-            t.touchCancel()
+        // if (Vec3.distance(curentPoint, t.posTouchHand) > 50) {
+        //     t.touchCancel();
+        // }
+        let rs = t.bowRayCast(new Vec3(event.getLocationX(), event.getLocationY(), 0));
+        if (rs != null) {
+            if (t.ItemHoldUp == null) {
+                t.checkItem(rs);
+                return;
+            } else if (t.ItemHoldUp.getSiblingIndex() != rs.getSiblingIndex()) {
+                t.ItemHoldUp.getComponent(Item).lightFrame(false);
+                t.ItemHoldUp.getComponent(Item).pullToCam(t.CamMain.node.getWorldPosition(new Vec3), false);
+                t.checkItem(rs);
+                return;
+            }
+            log('case special', t.ItemHoldUp.getSiblingIndex(), rs.getSiblingIndex())
+            // if (t.ItemHoldUp != null && t.ItemHoldUp.getSiblingIndex() != rs.getSiblingIndex())
+            //     t.checkItem(rs);
         }
+        t.eventTouch = true;
+        t.touchCancel();
     }
 
 
@@ -178,15 +287,13 @@ export class GameControll extends Component {
         }
         let typeItem = Number(t.ItemHoldUp.name);
         if (GameData.instance.findIdTaskByType(typeItem) > -1) {
-            t.scheduleOnce(() => {
-                t.correctItem(typeItem);
-                t.eventTouch = true;
-            }, 0.3)
+            GameData.instance.playAudio(t.node, t.sound[0])
+            t.correctItem(typeItem);
+            t.eventTouch = true;
         } else {
-            t.scheduleOnce(() => {
-                t.wrongItem(typeItem);
-                t.eventTouch = true;
-            }, 0.3)
+            GameData.instance.playAudio(t.node, t.sound[0])
+            t.wrongItem(typeItem);
+            t.eventTouch = true;
         }
 
         t.scheduleOnce(() => {
@@ -199,8 +306,8 @@ export class GameControll extends Component {
         let itemInHand = t.ItemHoldUp?.getComponent(Item);
         if (itemInHand) {
             t.ItemHoldUp.getComponent(Item).lightFrame(false)
-            t.ItemHoldUp.getComponent(Item).unPicKItem();
-            GameData.instance.playAudio(t.node, t.sound[2])
+            t.ItemHoldUp.getComponent(Item).pullToCam(t.CamMain.node.getWorldPosition(new Vec3), false)
+            // t.ItemHoldUp.getComponent(Item).unPicKItem();
 
         }
         t.eventTouch = true;
@@ -251,7 +358,7 @@ export class GameControll extends Component {
                 uiAnimtion.setItemEvent(type)
                 uiAnimtion.animItemToTask(t.posTouchHand);
                 t.scheduleOnce(() => {
-                    GameData.instance.playAudio(t.node, t.sound[1])
+                    GameData.instance.playAudio(t.node, t.sound[2])
                 }, 0.3)
                 GameData.instance.scoreWin++;
                 break;
@@ -275,7 +382,7 @@ export class GameControll extends Component {
                 uiAnimtion.setItemEvent(type)
                 uiAnimtion.animItemToTask(t.posTouchHand);
                 t.scheduleOnce(() => {
-                    GameData.instance.playAudio(t.node, t.sound[1])
+                    GameData.instance.playAudio(t.node, t.sound[2])
                 }, 0.3)
                 GameData.instance.scoreWin++;
                 break;
@@ -291,6 +398,7 @@ export class GameControll extends Component {
         let item = t.poolItem.getComponent(PoolItem).findPosItemClosetByType(Constants.scriptGame[GameData.instance.hintCount]);
         let pos = t.CamMain.convertToUINode(item.getWorldPosition(new Vec3), t.Menu2d, new Vec3);
         t.ItemHoldUp = item;
+        log(pos, "check Pos")
         return pos;
     }
 
@@ -305,11 +413,11 @@ export class GameControll extends Component {
                     // .delay(1)
                     .to(1, { position: pos })
                     .call(() => {
-                        t.Menu2d.getChildByName("CTA").on(Node.EventType.TOUCH_START, () => {
+                        t.Menu2d.getChildByName("footerCTA").on(Node.EventType.TOUCH_START, () => {
                             GameData.instance.scoreLose = 4;
                             t.checkEndGame();
                         }, t);
-                        t.animPushHand();
+                        t.animMoveHand();
                     })
                     // .delay(3)
                     .call(() => {
@@ -324,11 +432,13 @@ export class GameControll extends Component {
                 break;
             case 1:
                 pos = t.getPosForHint();
-                t.resetAnimHint()
+                // t.resetAnimHint()
+                t.resetAnimMoveHand()
                 tween(t.nodeHint)
                     .to(1, { position: pos })
                     .call(() => {
-                        t.animPushHand()
+                        // t.animPushHand()
+                        t.animMoveHand()
                     })
                     // .delay(3)
                     .call(() => {
@@ -344,12 +454,16 @@ export class GameControll extends Component {
                 break;
             case 2:
                 pos = t.getPosForHint();
-                t.resetAnimHint()
+
+                // t.resetAnimHint()
+                t.resetAnimMoveHand()
                 tween(t.nodeHint)
                     .to(1, { position: pos })
                     .call(() => {
-                        t.animPushHand();
-                        t.animScaleCTA()
+                        t.animMoveHand();
+                        t.animScaleFooter();
+                        t.cleanHint = true;
+                        t.ItemHoldUp.getComponent(Item).lightFrame(true)
                         t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_START, t.touchStart, t);
                         t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_MOVE, t.touchMove, t);
                         t.Menu2d.getChildByName("ArenaListenerTouch").on(Node.EventType.TOUCH_END, t.touchEnd, t);
@@ -383,9 +497,42 @@ export class GameControll extends Component {
         //     .sequence(eff)
         //     .repeat(time)
         //     .start();
-
+    }
+    effHand1 = null;
+    animMoveHand() {
+        let t = this;
+        let hand = t.nodeHint.getChildByName("hand");
+        t.nodeHint.setPosition(t.getPosForHint())
+        hand.active = true;
+        let timeAnim = 0.3;
+        t.effHand1 = tween(hand)
+            .by(timeAnim, { scale: new Vec3(0.1, 0.1, 0.1) })
+            .by(timeAnim, { scale: new Vec3(-0.1, -0.1, -0.1) })
+            // .to(timeAnim, { scale: new Vec3(0, 15, 0) })
+            .call(() => {
+                t.animMoveHand()
+            })
+            .start()
 
     }
+
+    cleanHint: boolean = false
+    resetAnimMoveHand() {
+        let t = this;
+        if (t.effHand1 != null) {
+            t.effHand1.stop();
+            t.effHand1 = null;
+        }
+        if (t.cleanHint) {
+            t.cleanHint = false
+            t.nodeHint.destroy();
+            t.ItemHoldUp.getComponent(Item).lightFrame(false)
+
+        }
+    }
+
+
+
     resetAnimHint(isDestroy: boolean = false) {
         let t = this;
         if (t.effHand != null) {
@@ -395,6 +542,8 @@ export class GameControll extends Component {
 
         if (isDestroy) {
             t.nodeHint.destroy()
+            t.ItemHoldUp.getComponent(Item).lightFrame(false)
+
         }
     }
 
@@ -407,8 +556,8 @@ export class GameControll extends Component {
         t.Menu2d.getChildByName("ArenaListenerTouch").off(Node.EventType.TOUCH_CANCEL, t.touchCancel, t);
     }
 
-    effCTA = null
-    animScaleCTA() {
+    effFooter = null
+    animScaleFooter() {
         let t = this;
         // let targetRD = t.Menu2d.getChildByPath("CTA/rd").getComponent(Sprite);
         // let time = 2;
@@ -421,14 +570,14 @@ export class GameControll extends Component {
         //         t.animRendedCTA()
         //     }).start()
 
-        let targetRD = t.Menu2d.getChildByPath("CTA/text");
+        let targetRD = t.Menu2d.getChildByPath("footerCTA/text");
         targetRD.active = true;
         let timeAnim = 0.6;
-        t.effCTA = tween(targetRD)
-            .to(timeAnim, { scale: new Vec3(1.2, 1.2, 1.2) })
-            .to(timeAnim, { scale: new Vec3(1, 1, 1) })
+        t.effFooter = tween(targetRD)
+            .by(timeAnim, { scale: new Vec3(-0.2, -0.2, -0.2) })
+            .by(timeAnim, { scale: new Vec3(0.2, 0.2, 0.2) })
             .call(() => {
-                t.animScaleCTA()
+                t.animScaleFooter()
             })
             .start()
 
@@ -437,9 +586,9 @@ export class GameControll extends Component {
 
     resetAnimCTA() {
         let t = this;
-        if (t.effCTA != null) {
-            t.effCTA.stop();
-            t.effCTA = null;
+        if (t.effFooter != null) {
+            t.effFooter.stop();
+            t.effFooter = null;
         }
     }
 
@@ -465,15 +614,13 @@ export class GameControll extends Component {
         let targetRD = t.Menu2d.getChildByName("text");
         let timeAnim = 0.3;
         t.effFT = tween(targetRD)
-            .to(timeAnim, { scale: new Vec3(1.2, 1.2, 1.2) })
-            .to(timeAnim * 2, { scale: new Vec3(0.8, 0.8, 0.8) })
-            .to(timeAnim, { scale: new Vec3(1, 1, 1) })
+            .to(timeAnim, { scale: new Vec3(t.scaleNew.x - 0.2, t.scaleNew.y - 0.2, t.scaleNew.z - 0.2) })
+            .to(timeAnim, { scale: new Vec3(t.scaleNew.x + 0.2, t.scaleNew.y + 0.2, t.scaleNew.z + 0.2) })
             .call(() => {
                 t.animScaleFT()
             })
             .start()
     }
-
 
     resetRenderFirstTouch() {
         let t = this;
@@ -484,12 +631,9 @@ export class GameControll extends Component {
         }
     }
 
-
-
-
     checkEndGame() {
         let t = this;
-        if (GameData.instance.scoreWin >= 3) {
+        if (GameData.instance.scoreWin >= 48) {
             // event end game when win
             t.endGame = true;
             t.turnOffEventTouch();

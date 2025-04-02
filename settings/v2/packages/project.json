@@ -2,8 +2,11 @@
   "general": {
     "designResolution": {
       "height": 1920,
-      "width": 1080
-    }
+      "width": 1080,
+      "fitHeight": false,
+      "fitWidth": true
+    },
+    "renderPipeline": "fd8ec536-a354-4a17-9c74-4f3883c378c8"
   },
   "physics": {
     "defaultMaterial": {
@@ -11,6 +14,11 @@
       "rollingFriction": 0.1,
       "spinningFriction": 0.1,
       "friction": 0.5
+    }
+  },
+  "fbx": {
+    "material": {
+      "smart": true
     }
   }
 }

@@ -48,7 +48,6 @@ export class PoolItem extends Component {
                 let tg = e
                 if (rs != null) {
                     if (rs.getPosition(new Vec3).y < tg.getPosition(new Vec3).y) {
-                        console.log('a');
                         rs = tg
                     }
                 } else {

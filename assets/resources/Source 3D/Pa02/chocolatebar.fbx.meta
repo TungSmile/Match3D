@@ -1,0 +1,157 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "163cf99a-79bb-4294-97ab-e5684e9ac69e",
+  "files": [],
+  "subMetas": {
+    "0a0a7": {
+      "importer": "gltf-mesh",
+      "uuid": "163cf99a-79bb-4294-97ab-e5684e9ac69e@0a0a7",
+      "displayName": "",
+      "id": "0a0a7",
+      "name": "chocolatebar.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "00eb1": {
+      "importer": "gltf-material",
+      "uuid": "163cf99a-79bb-4294-97ab-e5684e9ac69e@00eb1",
+      "displayName": "",
+      "id": "00eb1",
+      "name": "Material #202.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5b636": {
+      "importer": "gltf-scene",
+      "uuid": "163cf99a-79bb-4294-97ab-e5684e9ac69e@5b636",
+      "displayName": "",
+      "id": "5b636",
+      "name": "chocolatebar.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "163cf99a-79bb-4294-97ab-e5684e9ac69e@5b636",
+    "assetFinder": {
+      "meshes": [
+        "163cf99a-79bb-4294-97ab-e5684e9ac69e@0a0a7"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "163cf99a-79bb-4294-97ab-e5684e9ac69e@00eb1"
+      ],
+      "scenes": [
+        "163cf99a-79bb-4294-97ab-e5684e9ac69e@5b636"
+      ]
+    },
+    "materials": {
+      "163cf99a-79bb-4294-97ab-e5684e9ac69e@00eb1": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "DCC_APP_NAME": 1,
+            "USE_ALBEDO_MAP": true
+          },
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainTexture": {
+              "__uuid__": "9654a0be-279e-4869-bf7e-38fce7540bde@6c48a",
+              "__expectedType__": "cc.Texture2D"
+            },
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 149,
+              "g": 149,
+              "b": 149,
+              "a": 255
+            },
+            "shininessExponent": 2,
+            "specularColor": {
+              "__type__": "cc.Color",
+              "r": 229,
+              "g": 229,
+              "b": 229,
+              "a": 255
+            },
+            "specularFactor": 0,
+            "transparencyFactor": 0
+          },
+          {},
+          {}
+        ]
+      }
+    }
+  }
+}

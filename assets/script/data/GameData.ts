@@ -32,11 +32,10 @@ export class GameData extends Component {
     useScriptGame: boolean = false;
 
     poolItem: number[] = [];
-    numberTypeItem: number = 7;
-    quanlityForType: number = 12;
+    numberTypeItem: number = 6;
+    quanlityForType: number = 12;   // 84
 
-
-    numberSlotTaskMission: number = 1;
+    numberSlotTaskMission: number =4;
     limitTaskMission: number = 4;
     poolTask: Task[] = [];
     newTask: boolean = false;

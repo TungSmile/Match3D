@@ -27,12 +27,12 @@ enum StatusItem {
 
 
 enum ConfigPoolItem {
+    StartX = 1.8,
+    EndX = -1.8,
     StartY = 1,
-    EndY = 3,// 
-    StartX = -2,
-    EndX = 2,
-    StartZ = 2,
-    EndZ = -3.5
+    EndY = 3,
+    StartZ = 1.8,
+    EndZ = -1.8
 }
 
 
@@ -40,8 +40,8 @@ enum ConfigPoolItem {
 export class Constants {
     public static AudioSource = AudioSource;
     public static EventGame = EventGame;
-    public static scriptGame = [0, 1, 2];
+    public static scriptGame = [0, 1, 2, 4, 5, 0, 1, 2, 3, 4, 5];
     public static StatusItem = StatusItem;
     public static ConfigPoolItem = ConfigPoolItem;
-
+    public static forceMagnitude = 500;
 }

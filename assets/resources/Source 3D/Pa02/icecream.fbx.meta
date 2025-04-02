@@ -1,0 +1,157 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "70497cac-30d5-44fd-a173-45c007e299a4",
+  "files": [],
+  "subMetas": {
+    "155dd": {
+      "importer": "gltf-mesh",
+      "uuid": "70497cac-30d5-44fd-a173-45c007e299a4@155dd",
+      "displayName": "",
+      "id": "155dd",
+      "name": "icecream.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8abac": {
+      "importer": "gltf-material",
+      "uuid": "70497cac-30d5-44fd-a173-45c007e299a4@8abac",
+      "displayName": "",
+      "id": "8abac",
+      "name": "icecream.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6d74f": {
+      "importer": "gltf-scene",
+      "uuid": "70497cac-30d5-44fd-a173-45c007e299a4@6d74f",
+      "displayName": "",
+      "id": "6d74f",
+      "name": "icecream.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "70497cac-30d5-44fd-a173-45c007e299a4@6d74f",
+    "assetFinder": {
+      "meshes": [
+        "70497cac-30d5-44fd-a173-45c007e299a4@155dd"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "70497cac-30d5-44fd-a173-45c007e299a4@8abac"
+      ],
+      "scenes": [
+        "70497cac-30d5-44fd-a173-45c007e299a4@6d74f"
+      ]
+    },
+    "materials": {
+      "70497cac-30d5-44fd-a173-45c007e299a4@8abac": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "DCC_APP_NAME": 1,
+            "USE_ALBEDO_MAP": true
+          },
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainTexture": {
+              "__uuid__": "d2c3d7f3-358e-400d-ad50-d40a10253376@6c48a",
+              "__expectedType__": "cc.Texture2D"
+            },
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 149,
+              "g": 149,
+              "b": 149,
+              "a": 255
+            },
+            "shininessExponent": 2,
+            "specularColor": {
+              "__type__": "cc.Color",
+              "r": 229,
+              "g": 229,
+              "b": 229,
+              "a": 255
+            },
+            "specularFactor": 0,
+            "transparencyFactor": 0
+          },
+          {},
+          {}
+        ]
+      }
+    }
+  }
+}
