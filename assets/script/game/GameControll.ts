@@ -162,7 +162,6 @@ export class GameControll extends Component {
         t.resetAnimMoveHand();
         if (!t.eventTouch || t.endGame || GameData.instance.eventAnim) {
             t.touchCancel();
-            log("aaaa", !t.eventTouch, t.endGame, GameData.instance.eventAnim)
             return;
         }
         t.eventTouch = false;
@@ -199,7 +198,6 @@ export class GameControll extends Component {
         let t = this;
         // let pen = t.node.getComponent(Graphics);
         if (n.getComponent(Item)) {
-
             t.ItemHoldUp = n;
             // t.paintItem();
             // n.getComponent(Item).pickByHand();
@@ -234,6 +232,8 @@ export class GameControll extends Component {
             // t.pen.lineTo(50, 50);
             // t.pen.lineTo(100, 100);
             // t.pen.stroke();
+        } else {
+            t.touchCancel()
         }
 
     }
@@ -288,6 +288,8 @@ export class GameControll extends Component {
             // if (t.ItemHoldUp != null && t.ItemHoldUp.getSiblingIndex() != rs.getSiblingIndex())
             //     t.checkItem(rs);
             return;
+        } else {
+            log("wherr")
         }
         t.eventTouch = true;
         t.touchCancel();
@@ -329,7 +331,6 @@ export class GameControll extends Component {
             t.ItemHoldUp.getComponent(Item).lightFrame(false)
             t.ItemHoldUp.getComponent(Item).pullToCam(t.CamMain.node.getWorldPosition(new Vec3), false)
             // t.ItemHoldUp.getComponent(Item).unPicKItem();
-
         }
         t.eventTouch = true;
         t.ItemHoldUp = null;
