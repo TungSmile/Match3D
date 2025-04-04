@@ -1,18 +1,20 @@
-import { _decorator, Component, ICollisionEvent, log, MeshRenderer, Quat, RigidBody, Vec3 } from 'cc';
+import { _decorator, Component, ICollisionEvent, log, MeshRenderer, Quat, renderer, RigidBody, Vec3 } from 'cc';
 import { Constants } from '../data/Constants';
+import { GameData } from '../data/GameData';
 const { ccclass, property } = _decorator;
 
 @ccclass('Item')
 export class Item extends Component {
     private rigiBody: RigidBody = null;
     private timeSmooth: number = 0.2;
-    private light: boolean = false;
     private id: number = 0;
-
+    private indexOld: number;
+    // private mat: renderer.MaterialInstance = null;
     start() {
         let t = this;
         t.rigiBody = t.node.getComponent(RigidBody)!;
-
+        // t.indexOld = t.node.getSiblingIndex();
+        // t.mat = t.node.getChildByName("ligh")?.getComponent(MeshRenderer)?.getMaterial[0];
     }
 
     pickByHand() {
@@ -21,24 +23,20 @@ export class Item extends Component {
             log('Item hasnt rigibody')
             return;
         }
-        t.rigiBody.applyLocalForce(new Vec3(0, 0, 500));
-        t.scheduleOnce(() => {
-            t.rigiBody.clearVelocity()
-            t.rigiBody.useGravity = false;
-        }, t.timeSmooth)
-
-
-
+        t.rigiBody.applyLocalForce(new Vec3(0, 700, 700));
+        // t.scheduleOnce(() => {
+        //     t.rigiBody.clearVelocity()
+        //     t.rigiBody.useGravity = false;
+        // }, t.timeSmooth)
     }
     unPicKItem() {
         let t = this;
-        t.rigiBody.applyLocalForce(new Vec3(0, -500, 0)); s
+        t.rigiBody.applyLocalForce(new Vec3(0, -500, 0));
         t.scheduleOnce(() => {
             t.rigiBody.clearVelocity()
             t.rigiBody.useGravity = true;
         }, t.timeSmooth)
     }
-
 
 
 
@@ -57,7 +55,7 @@ export class Item extends Component {
         // const force = new Vec3();
         // Vec3.multiplyScalar(force, direction, Constants.forceMagnitude);
         // t.rigiBody.applyForce(force);
-        t.rigiBody.applyForce(new Vec3(0, isPull ? 50 : -50, 0));
+        t.rigiBody.applyForce(new Vec3(0, isPull ? 100 : -100, 0));
         // log(force, "how strong")
         // t.scheduleOnce(() => {
         //     t.rigiBody.clearVelocity()
@@ -73,16 +71,38 @@ export class Item extends Component {
     // this hot fix
     turnLight: boolean = false;
     camForward: Vec3
-    lightFrame(on: boolean = true, posCam: Vec3 = new Vec3()) {
+    lightFrame(on: boolean = true, posCam: Vec3 = new Vec3(), newId: number = 0) {
         let t = this;
-        let round = t.node.getChildByName("round");
-        round ? round.active = on : 0;
-        t.turnLight = on;
+        let round = t.node.getChildByName("light");
+        // let item = t.node.getChildByName("item");
+        if (round) {
+            round.active = on;
+            // item.active = !on;
+            // t.node.setSiblingIndex(on ? newId : t.indexOld)
+
+        }
+
+
+
+        // t.turnLight = on;
+
         // if (on) {
         //     round.lookAt(posCam);
         //     t.camForward = posCam
         // }
         // t.getIndi()
+
+        // let mesh = t.node.children[0].getComponent(MeshRenderer);
+        // log(t.mat)
+        // if (on && t.mat) {
+        //     // mesh.setInstancedAttribute("i_mainColor", GameData.instance.insColor.WHITE)
+        //     t.mat.setProperty('lineWidth', 60);
+        // } else {
+        //     t.mat.setProperty('lineWidth', 0);
+        // }
+
+
+
     }
 
 
@@ -105,7 +125,7 @@ export class Item extends Component {
 
 
 
-    getIndi() {
+    getPos() {
         let t = this;
         let mesh = t.node.children[0].getComponent(MeshRenderer).mesh;
         if (mesh) {
@@ -114,13 +134,15 @@ export class Item extends Component {
         // log(mesh.renderingSubMeshes[0].geometricInfo.indices), "test dinh";
     }
 
-    getPos() {
+    getIndi() {
         let t = this;
         let mesh = t.node.children[0].getComponent(MeshRenderer).mesh;
         if (mesh) {
             return mesh.renderingSubMeshes[0].geometricInfo.indices;
         }
     }
+
+
 
 
     getId() {
@@ -133,17 +155,7 @@ export class Item extends Component {
 
     update(deltaTime: number) {
         let t = this;
-        // if (t.turnLight) {
-        //     let tg = t.node.getChildByName("round")
-        //     let nodePos = tg.getWorldPosition(new Vec3);
-        //     const directionToCamera = new Vec3();
-        //     Vec3.subtract(directionToCamera, t.camForward, nodePos);
-        //     directionToCamera.normalize();
-        //     const targetDirection = new Vec3(0, directionToCamera.y, 0);
-        //     const rotation = new Quat();
-        //     Quat.fromViewUp(rotation, Vec3.ZERO, targetDirection);
-        //     tg.setWorldRotation(rotation);
-        // }
+
     }
 }
 

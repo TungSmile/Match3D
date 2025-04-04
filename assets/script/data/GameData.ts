@@ -1,4 +1,4 @@
-import { _decorator, AudioClip, AudioSource, Component, log, Node } from 'cc';
+import { _decorator, AudioClip, AudioSource, Component, log, Node, Vec3, color } from 'cc';
 import { Constants } from './Constants';
 const { ccclass, property } = _decorator;
 
@@ -35,7 +35,7 @@ export class GameData extends Component {
     numberTypeItem: number = 6;
     quanlityForType: number = 12;   // 84
 
-    numberSlotTaskMission: number =4;
+    numberSlotTaskMission: number = 4;
     limitTaskMission: number = 4;
     poolTask: Task[] = [];
     newTask: boolean = false;
@@ -59,6 +59,27 @@ export class GameData extends Component {
     scoreWin: number = 0;
     scoreLose: number = 0;
 
+    eventAnim: boolean = false;
+
+    insColor = ({
+        BLACK: [0, 0, 0, 255],
+        TRANSPARENT: [0, 0, 0, 0],
+        RED: [255, 0, 0, 255],
+        WHITE: [255, 255, 255, 255]
+    })
+    eleColor = ({
+        /* prop：修改的材质属性，可以增加自定义的，color：修改的颜色，dura：持续事件 */
+        Normal: { name: "边缘光", prop: "rimLightColor", color: color(255, 122, 0, 160), insArr: [255, 122, 0, 160], dura: 0.4 },
+        Fire: { name: "火焰元素", prop: "rimLightColor", color: color(255, 0, 0, 255), insArr: [255, 0, 0, 255], dura: 0.35 },
+        Veno: { name: "剧毒元素", prop: "rimLightColor", color: color(59, 22, 255, 255), insArr: [59, 22, 255, 255], dura: 0.3 },
+        Ice: { name: "寒冰元素", prop: "rimLightColor", color: color(97, 68, 255, 255), insArr: [97, 68, 255, 255], dura: 0.35 },
+        Outline: { name: "描边高亮", prop: "baseColor", color: color(255, 255, 0, 255), insArr: [255, 255, 0, 255], dura: 0.5 },
+        Gray: { name: "死亡元素", prop: "grayColor", color: color(255, 111, 0, 160), insArr: [255, 111, 0, 160], dura: 2 },
+        Red: { name: "发怒红色", prop: "mainColor", color: color(255, 0, 0, 255), insArr: [255, 0, 0, 255], dura: 0.5 },
+        WhiteAdd: { name: "闪白叠加", prop: "emissive", color: color(125, 125, 125, 0), insArr: [125, 125, 125, 0], dura: 0.25 },
+        BlueAdd: { name: "冰蓝叠加", prop: "emissive", color: color(125, 0, 255, 0), insArr: [125, 0, 255, 0], dura: 0.35 },
+        GreenAdd: { name: "原谅叠加", prop: "emissive", color: color(0, 99, 0, 0), insArr: [0, 99, 0, 0], dura: 0 },
+    })
 
     createDataLogicGame() {
         let t = this;
@@ -342,7 +363,7 @@ export class GameData extends Component {
                 audioSource.play();
             }, this)
         }
-       
+
     }
 
 

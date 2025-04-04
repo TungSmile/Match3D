@@ -1,4 +1,4 @@
-import { _decorator, Camera, Component, Node, view } from 'cc';
+import { _decorator, Camera, Component, Node, RenderTexture, Sprite, SpriteFrame, view } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Cam3DController')
@@ -7,9 +7,17 @@ export class Cam3DController extends Component {
     @property({ type: Camera })
     camera: Camera = null;
 
+    @property(Sprite)
+    sprite: Sprite = null;
+
+
     start() {
-        this.adjustCamera();
-        view.on('design-resolution-changed', this.onResize, this);
+        // this.adjustCamera();
+        // view.on('design-resolution-changed', this.onResize, this);
+        const renderTexture = new RenderTexture();
+        renderTexture.initialize({ width: 512, height: 512 });
+        this.camera.targetTexture = renderTexture;
+        this.sprite.spriteFrame = new SpriteFrame();
     }
 
     adjustCamera() {

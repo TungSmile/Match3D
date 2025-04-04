@@ -23,13 +23,15 @@ export class PoolItem extends Component {
         for (let i = 0; i < data.length; i++) {
             let qualityItem = data[i];
             for (let j = 0; j < qualityItem; j++) {
+                t.scheduleOnce(() => { })
                 let item = instantiate(t.item[i]);
                 item.name = i.toString();
                 item.setPosition(new Vec3(t.randomDecimalToTwo(Constants.ConfigPoolItem.StartX, Constants.ConfigPoolItem.EndX), t.randomDecimalToTwo(Constants.ConfigPoolItem.StartY, Constants.ConfigPoolItem.EndY), t.randomDecimalToTwo(Constants.ConfigPoolItem.StartZ, Constants.ConfigPoolItem.EndZ)))
                 t.node.addChild(item);
-                t.scheduleOnce(() => {
-                    item.getComponent(Item).cleanVector();
-                }, 1)
+                // item.getComponent(Item).unPicKItem()
+                // t.scheduleOnce(() => {
+                //     item.getComponent(Item).cleanVector();
+                // }, 0.2)
             }
         }
     }

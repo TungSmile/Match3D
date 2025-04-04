@@ -1,4 +1,4 @@
-import { _decorator } from 'cc';
+import { _decorator, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 enum AudioSource {
@@ -29,18 +29,22 @@ enum StatusItem {
 enum ConfigPoolItem {
     StartX = 1.8,
     EndX = -1.8,
-    StartY = 1,
-    EndY = 3,
+    StartY = 2,
+    EndY = 4,
     StartZ = 1.8,
     EndZ = -1.8
 }
+
+
+
+
 
 
 @ccclass("Constants")
 export class Constants {
     public static AudioSource = AudioSource;
     public static EventGame = EventGame;
-    public static scriptGame = [0, 1, 2, 4, 5, 0, 1, 2, 3, 4, 5];
+    public static scriptGame = [0, 1, 2, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5];
     public static StatusItem = StatusItem;
     public static ConfigPoolItem = ConfigPoolItem;
     public static forceMagnitude = 500;

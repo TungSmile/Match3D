@@ -20,5 +20,15 @@
     "material": {
       "smart": true
     }
-  }
+  },
+  "layer": [
+    {
+      "name": "Test",
+      "value": 1
+    },
+    {
+      "name": "Quad",
+      "value": 2
+    }
+  ]
 }

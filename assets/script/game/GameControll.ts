@@ -55,6 +55,7 @@ export class GameControll extends Component {
 
     scaleNew: Vec3 = null;
 
+
     protected onLoad(): void {
         GameData.instance.useScriptGame = this.useScriptGame;
         GameData.instance.createDataLogicGame();
@@ -159,7 +160,9 @@ export class GameControll extends Component {
     touchStart(event) {
         let t = this;
         t.resetAnimMoveHand();
-        if (!t.eventTouch || t.endGame) {
+        if (!t.eventTouch || t.endGame || GameData.instance.eventAnim) {
+            t.touchCancel();
+            log("aaaa", !t.eventTouch, t.endGame, GameData.instance.eventAnim)
             return;
         }
         t.eventTouch = false;
@@ -178,7 +181,7 @@ export class GameControll extends Component {
         const camera = t.CamMain.getComponent(Camera);
         camera.screenPointToRay(pos.x, pos.y, ray);
         const mask = 0xffffffff;
-        const maxDistance = 20;
+        const maxDistance = 50;
         const queryTrigger = true;
         const bResult = PhysicsSystem.instance.raycastClosest(ray, mask, maxDistance, queryTrigger);
         if (bResult) {
@@ -196,12 +199,12 @@ export class GameControll extends Component {
         let t = this;
         // let pen = t.node.getComponent(Graphics);
         if (n.getComponent(Item)) {
-            log("??????")
-            t.ItemHoldUp = n
-            t.paintItem();
+
+            t.ItemHoldUp = n;
+            // t.paintItem();
             // n.getComponent(Item).pickByHand();
-            n.getComponent(Item).pullToCam(t.CamMain.node.getWorldPosition(new Vec3), true)
-            n.getComponent(Item).lightFrame(true, t.CamMain.node.getWorldPosition(new Vec3));
+            n.getComponent(Item).pullToCam(t.CamMain.node.getWorldPosition(new Vec3), true);
+            n.getComponent(Item).lightFrame(true, t.CamMain.node.getWorldPosition(new Vec3), t.poolItem.children.length);
             // let positions = n.getComponent(Item).getPos();
             // let indices = n.getComponent(Item).getIndi();
             // t.pen.clear();
@@ -231,8 +234,6 @@ export class GameControll extends Component {
             // t.pen.lineTo(50, 50);
             // t.pen.lineTo(100, 100);
             // t.pen.stroke();
-        } else {
-            t.ItemHoldUp = null
         }
 
     }
@@ -245,7 +246,10 @@ export class GameControll extends Component {
             return
         }
         let pos = t.CamMain.convertToUINode(t.ItemHoldUp.getWorldPosition(new Vec3), t.Menu2d, new Vec3);
-        log(pos.x, pos.y, "what the fucking position")
+        t.ItemHoldUp.getComponent(Item).getIndi();
+
+
+
         t.pen.clear();
         t.pen.lineWidth = 10;
         t.pen.strokeColor.fromHEX('#FF0000');
@@ -281,9 +285,9 @@ export class GameControll extends Component {
                 t.checkItem(rs);
                 return;
             }
-            log('case special', t.ItemHoldUp.getSiblingIndex(), rs.getSiblingIndex())
             // if (t.ItemHoldUp != null && t.ItemHoldUp.getSiblingIndex() != rs.getSiblingIndex())
             //     t.checkItem(rs);
+            return;
         }
         t.eventTouch = true;
         t.touchCancel();
@@ -335,6 +339,7 @@ export class GameControll extends Component {
 
     correctItem(typeItem: number) {
         let t = this;
+        GameData.instance.eventAnim = true;
         GameData.instance.removeItemInPool(typeItem);
         GameData.instance.addItemToTask(typeItem);
         if (GameData.instance.scoreWin < 2) {
@@ -343,10 +348,16 @@ export class GameControll extends Component {
         else if (GameData.instance.needCleanStock) {
             t.refreshUIMenu(Constants.StatusItem.TempToTask, typeItem);
         } else
-
             t.refreshUIMenu(Constants.StatusItem.PoolToTask, typeItem);
-        t.ItemHoldUp.destroy();
+
+
+
+        // t.ItemHoldUp.getComponent(Item).pickByHand();
+        // t.scheduleOnce(() => {
+        t.ItemHoldUp?.destroy();
         t.ItemHoldUp = null;
+        // }, 5)
+
 
 
     }

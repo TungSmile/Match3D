@@ -4,7 +4,7 @@
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "07d95e5d-deec-42d5-8974-1849349395d7",
+    "__uuid__": "57922bf4-0739-4aec-bf69-73c57099d9db",
     "__expectedType__": "cc.EffectAsset"
   },
   "_techIdx": 0,
@@ -25,17 +25,14 @@
   "_props": [
     {
       "mainTexture": {
-        "__uuid__": "ec793d78-4d4b-479d-bfe0-a560c1ac8bed@6c48a",
-        "__expectedType__": "cc.Texture2D"
+        "__uuid__": "d326cf9c-dd3c-4480-87b3-b9ca204d1f2f",
+        "__expectedType__": "cc.RenderTexture"
       },
-      "rimLightColor": {
-        "__type__": "cc.Color",
-        "r": 232,
-        "g": 85,
-        "b": 245,
-        "a": 255
-      },
-      "rimIntensity": 1.4
+      "textureSize": {
+        "__type__": "cc.Vec2",
+        "x": 108,
+        "y": 192
+      }
     }
   ]
 }

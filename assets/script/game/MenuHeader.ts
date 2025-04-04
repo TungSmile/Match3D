@@ -111,6 +111,7 @@ export class Menu2D extends Component {
             .call(() => {
                 t.itemMove.getComponent(Sprite).spriteFrame = null;
                 t.loadUITempStock()
+                GameData.instance.eventAnim = false
             })
             .start()
     }
@@ -123,12 +124,13 @@ export class Menu2D extends Component {
         let loacalTo = t.node.getComponent(UITransform).convertToNodeSpaceAR(posTo, new Vec3);
         t.itemMove.getComponent(Sprite).spriteFrame = t.poolIcons[t.typeItemSelecter];
         t.itemMove.setPosition(localFrom);
-
+        let check = false
         // action item fly to task
         tween(t.itemMove)
             .to(time, { position: loacalTo })
             .call(() => {
                 t.itemMove.getComponent(Sprite).spriteFrame = null;
+                check ? t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]) : 0;
             })
             .start()
 
@@ -136,11 +138,13 @@ export class Menu2D extends Component {
         // t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
         if (t.numberTaskHasShow != GameData.instance.countTask) {
             t.numberTaskHasShow = GameData.instance.countTask;
-            t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
+            check = true;
+            // t.animationTakeBox(t.taskMission.children[GameData.instance.eventTask]);
             time += (t.timeAnim * 2)
         }
         t.scheduleOnce(() => {
-            t.loadUITaskMission()
+            t.loadUITaskMission();
+            GameData.instance.eventAnim = check;
         }, time)
     }
 
@@ -190,33 +194,7 @@ export class Menu2D extends Component {
         }
 
 
-        // data.forEach(e => {
-        //     let temp = t.tempStock.children[e]
-        //     if (temp) {
-        //         let icon = temp.getChildByName("icon");
-        //         let posOrigin = icon.getWorldPosition(new Vec3);
-        //         GameData.instance.addItemToTask(GameData.instance.typeItemCleanStock);
-        //         tween(icon)
-        //             .to(time, { worldPosition: taskPos })
-        //             .call(() => {
-        //                 GameData.instance.remoteItemInStock(GameData.instance.typeItemCleanStock)
-        //                 icon.getComponent(Sprite).spriteFrame = null;
-        //             })
-        //             .to(0, { worldPosition: posOrigin })
-        //             .call(() => {
-        //                 t.loadUITaskMission()
-        //                 t.loadUITempStock()
-        //             })
-        //             .start()
-        //     }
-        // });
-        // t.scheduleOnce(() => {
-        //     // log(GameData.instance.getTempTask(), "after clean stock");
-        //     log(GameData.instance.getTaskMission(), "after clean stock");
-        //     // log(GameData.instance.getPoolItem(), "after clean stock");
-        //     t.loadUITaskMission()
-        //     // t.loadUITempStock()
-        // }, time + (data.length * 0.1))
+
     }
 
     findTaskByTypeItem(type: number) {
@@ -289,6 +267,9 @@ export class Menu2D extends Component {
             })
             .delay(t.timeAnim)
             .to(t.timeAnim, { position: t.positiveDis })
+            .call(() => {
+                GameData.instance.eventAnim = false;
+            })
             .start();
         tween(box)
             .to(t.timeAnim, { position: Vec3.ZERO })
